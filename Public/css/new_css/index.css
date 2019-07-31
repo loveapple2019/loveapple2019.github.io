@@ -1,0 +1,352 @@
+@font-face {font-family: 'siyuan';
+    src: url('https://www.banggood.cn/Public/images/new_images/font-siyuan/webfont.eot'); /* IE9*/
+    src: url('https://www.banggood.cn/Public/images/new_images/font-siyuan/webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('https://www.banggood.cn/Public/images/new_images/font-siyuan/webfont.woff') format('woff'), /* chrome、firefox */
+    url('https://www.banggood.cn/Public/images/new_images/font-siyuan/webfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('https://www.banggood.cn/Public/images/new_images/font-siyuan/webfont.svg#webfont') format('svg'); /* iOS 4.1- */
+}
+.siyuan {
+    font-family:"siyuan" !important;
+    font-size: 14px;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+img {display: block}
+#header {border-bottom: none}
+#logo:active {outline: none}
+body {
+    background: #f5f5f5
+}
+.banner {
+    width: 100%;
+    min-width: 1200px;
+    max-height: 566px;
+    overflow: hidden;
+}
+#lightSlider {
+    height: 100%;
+}
+.banner img {
+    width: 100%;
+    height: 100%;
+}
+.content {margin-top: 0}
+.con_about {
+    width: 1200px;
+    margin: 85px auto 0;
+}
+/* .con_about_logo {margin-right: 82px} */
+.con_about_logo > h2 {
+    font-family: ArialMT;
+    font-weight: normal;
+    font-size: 34px;
+    color: #999;
+}
+.con_about_logo .about_logo {
+    width: 300px;
+    height: 50px;
+    margin: 10px 0 15px;    
+    background: url("https://www.banggood.cn/Public/images/new_images/logo_old.png") no-repeat -20px;
+    background-size: contain;
+}
+.con_about_logo > span {
+    display: inline-block;
+    font-size: 16px;
+    color: #777;
+    letter-spacing: 1px;
+    margin-top: 20px;
+}
+.con_about_introduce {
+    width: 900px;
+    line-height: 26px; 
+    color: #777;
+}
+.con_about_introduce > p {margin-top: 10px;}
+.con_about_introduce > h3 {font-weight: normal}
+
+.cooperation {
+    position: relative;
+    min-width: 1200px;
+    height: 440px;
+    /* padding-top: 100px; */
+    background: url("https://www.banggood.cn/Public/images/new_images/banner/cooperation_banner.png") no-repeat;
+    overflow: hidden
+}
+.cooperation .cooperation_box {
+    position: relative;
+    top: 474px;
+    z-index: 1;
+    width: 360px;
+    height: 240px;
+    margin: 0 auto;
+    padding: 0 60px;
+    transform: translate(-44px, -34px);
+    background: #ff6700;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+.cooperation .cooperation_box .opacity_box {
+    opacity: 0;
+    transition: all 1.5s ease;
+}
+.cooperation .cooperation_box .opacity_box.show {
+    opacity: 1;
+} 
+.cooperation .cooperation_bg {
+    position: absolute;
+    z-index: 0;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    width: 480px;
+    height: 262px;
+    background: url("https://www.banggood.cn/Public/images/new_images/cooperation_bg.png") no-repeat;
+    transition: all 0.3s ease;
+}
+.cooperation .cooperation_box.show {
+    transform: translate(-44px, -395px);
+}
+.cooperation.show .cooperation_bg {
+    transform: translate(-50%, -340px);
+}
+.cooperation .cooperation_title {
+    margin: 30px 0 0;
+    font-size: 26px;
+}
+.cooperation .stripes {
+    display: inline-block;
+    margin-top: 19px;
+    background: #fff;
+}
+.cooperation .stripes_text {
+    margin-top: 20px;    
+    line-height: 1.6em;
+}
+.cooperation .cooperation_btn {
+    display: inline-block;
+    color: #fff;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 15px;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    /* font-size: 14px; */
+    margin-top: 25px;
+    transition: all 0.5s ease;
+}
+.cooperation .cooperation_btn:hover {
+    text-decoration: none;
+    background: rgba(255,255,255,0.35);
+}
+.join {
+    width: 1200px;
+    margin: 137px auto 0;
+}
+.join > div {
+    box-sizing: border-box;
+    display: table-cell;
+    height: 400px
+}
+.join > div:first-child {
+    width: 690px;
+}
+.join > div:first-child > img {max-width: 100%}
+.join > div:last-child {
+    width: 510px;
+    padding-left: 77px;
+    padding-right: 140px;
+    vertical-align: top;
+    background: #e8e8e8;
+}
+.join_box > h3{
+    margin-top: 30px;
+    font-size: 26px;
+    color: #666;
+    font-weight: normal;
+}
+.join_box .stripes {
+    margin-top: 15px;
+}
+.join_box > h4 {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #777;
+    font-weight: normal;
+}
+.join_box .apply_box {
+    position: relative;
+    margin-top: 50px;
+    color: #777; 
+}
+.join_box .apply_box:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 1px;
+    background-color: #a0a0a0;
+	opacity: 0.6;
+}
+.join_box .apply_box > span {
+    position: relative;
+    padding-right: 10px;
+    background: #e8e8e8
+}
+.join_box .step_list {
+    display: table;
+    margin-top: 25px;
+}
+.join_box .step_list > li {
+    display: table-cell;
+    width: 2000px;
+    text-align: center;
+    /* height: 20px; */
+}
+.join_box .step_list > li > i {
+    font-size: 38px;
+}
+.join_box .step_list > li > p {
+    margin-top: 16px;
+    color: #777
+}
+.join_box .step_list > li:nth-child(1) {
+    text-align: left;
+}
+.join_box .step_list > li:nth-child(1) > i {
+    margin-left: 10px;
+}
+.join_box .step_list > li:nth-child(3) {
+    text-align: right
+}
+.join_box .step_list > li:nth-child(3) > i {
+    margin-right: 10px;
+}
+.join_box .join_us_btn {
+    position: relative;
+    display: inline-block;
+    padding: 7px 27px;
+    margin-top: 34px;
+    background: #ff6700;
+    border-radius: 4px;
+    color: #fff;
+    transition: all 0.5s ease; 
+}
+.join_box .join_us_btn:hover {
+    text-decoration: none;
+    background: rgba(255,103,0, 0.65);
+}
+/* .join_box .join_us_btn:active {
+    background: #cc5200;
+} */
+.dynamic {
+    width: 1200px;
+    margin: 100px auto 0;
+    text-align: center;
+    color: #777;
+}
+.dynamic > h3 {
+    font-size: 26px;
+}
+.dynamic > h3 > span {
+    position: relative;
+}
+.dynamic > h3 > span:before,
+.dynamic > h3> span:after {
+    content: "";
+    position: absolute;
+    width: 48px;
+    height: 1px;
+    background: #999;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.dynamic > h3 > span:before {
+    left: -70px
+}
+.dynamic > h3 > span:after {
+    right: -70px;
+}
+.dynamic .stripes {display: inline-block}
+.dynamic .news_box {
+    font-size: 0;
+}
+.dynamic .news_box > div{
+    display: inline-block;
+    width: 520px;
+    font-size: 14px;
+    vertical-align: top;
+}
+.dynamic .news_box > div:hover {
+    cursor: pointer;
+}
+.dynamic .news_box > div:last-child {margin-left: 160px;}
+.dynamic .news_box .news_item {display: table}
+
+.dynamic .news_box .news_item {
+    margin-top: 44px;
+    text-align: left
+}
+.dynamic .news_box .news_item > div {
+    display: table-cell
+}
+.dynamic .news_box .news_item > div:last-child {
+    width: 140px;
+    text-align: right
+}
+.dynamic .news_box .news_item h3 {
+    font-size: 18px;
+    width: 400px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap
+}
+.dynamic .news_box .news_item h3 > a {
+    cursor: pointer;
+}
+.dynamic .news_box .news_item:hover a,
+.dynamic .news_box .news_item h3 > a:hover {
+    color: #ff6700
+} 
+.dynamic .news_box .news_item p {
+    width: 400px;
+    margin-top: 15px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap
+}
+.dynamic .news_more_box {
+    margin: 35px 0 105px;
+    text-align: right
+}
+.dynamic .news_more:hover {
+    color: #ff6700
+}
+.dynamic .news_more > i {
+    margin-left: 5px; 
+}
+/*覆盖banner样式*/
+.lSSlideOuter .lSPager.lSpg {
+    position: relative;
+    top: -100px;
+}
+.lSSlideOuter .lSPager.lSpg>li a {
+    width: 6px;
+    height: 6px;
+    background: #fff;
+    border-radius: 50%;
+    transition: all 0.4s ease-in-out
+}
+.lSSlideOuter .lSPager.lSpg>li.active a {
+    width: 42px;
+    background: #ec7612;
+    border-radius: 2px;
+}
+.lSSlideOuter .lSPager.lSpg>li:hover a {
+    background: #ec7612;
+}
