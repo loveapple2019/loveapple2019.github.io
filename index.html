@@ -1,42 +1,768 @@
----
-layout: page
-description: "Thinking will not overcome fear but action will."
----
+<meta charset="utf-8" />
+<!DOCTYPE html>
+<html lang="zh" class="ie ie8">
+<head>
+<meta http-equiv="content-Type" content="text/html; charset=utf-8" />
+<!-- 基础应用站点信息 -->
+<meta charset="utf-8" />
+<title>广州智能科技</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>系统管理</title>
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
 
-{% for post in paginator.posts %}
-<div class="post-preview">
-    <a href="{{ post.url | prepend: site.baseurl }}">
-        <h2 class="post-title">
-            {{ post.title }}
-        </h2>
-        {% if post.subtitle %}
-        <h3 class="post-subtitle">
-            {{ post.subtitle }}
-        </h3>
-        {% endif %}
-        <div class="post-content-preview">
-            {{ post.content | strip_html | truncate:200 }}
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
-    </p>
+<!-- 系统基础样式 -->
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="fonts/iconfont/style.css" />
+<link rel="stylesheet" type="text/css" href="fonts/awesome/style.css" />
+<link rel="stylesheet" type="text/css" href="fonts/feather/style.css" />
+<link rel="stylesheet" type="text/css" href="fonts/themify/style.css" />
+<link rel="stylesheet" type="text/css" href="sites/www/css/style.css" ></link>
+
+<link rel="stylesheet" type="text/css" href="css/cms-style.css" ></link>
+<script charset="utf-8" type="text/javascript" src="layui.js" ></script>
+</head>
+<body class="layui-layout-front">
+	<div class="layui-layout">
+		<!-- header 模块 -->
+<meta charset="utf-8" />
+
+<div class="layui-header">
+	<div class="layui-logo"></div>
+	<!-- 头部区域（可配合layui已有的水平导航） -->
+	<ul class="layui-nav layui-layout-left">
+		<li class="layui-nav-item"><a href="">首页</a></li>
+		<li class="layui-nav-item">
+				<a href="product/index.html">产品中心</a>
+		</li>
+		<li class="layui-nav-item">
+				<a href="solve/index.html">解决方案</a>
+		</li>
+		<li class="layui-nav-item">
+				<a href="news/index.html">新闻中心</a>
+		</li>
+	</ul>
+	<ul class="layui-nav layui-layout-right">
+		<li class="layui-nav-item"><a href="templ/memorabilia/index.html">公司大事记</a></li>
+		<li class="layui-nav-item"><a href="templ/contactus/index.html">联系我们</a></li>
+<!-- 		 -->
+			<li class="layui-nav-item"><a href="login.html">登录|注册</a></li>
+<!-- 		 -->
+	</ul>
 </div>
-<hr>
-{% endfor %}
 
-<!-- Pager -->
-{% if paginator.total_pages > 1 %}
-<ul class="pager">
-    {% if paginator.previous_page %}
-    <li class="previous">
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
-    </li>
-    {% endif %}
-    {% if paginator.next_page %}
-    <li class="next">
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
-    </li>
-    {% endif %}
+<!-- 右侧浮动工具栏 -->
+<ul class="layui-fixbar fixed-right-tool" id="fixtoolbar">
+	<li lay-type="airlines" class="pt-15">
+		<i class="layui-icon layui-icon-headset"></i>
+		<span class="layui-title">在线客服</span>
+	</li>
+	<li lay-type="qq" class="pt-15">
+		<i class="layui-icon layui-icon-login-qq"></i>
+		<span class="layui-title">QQ</span>
+	</li>
+	<li lay-type="tel" class="pt-15" >
+		<i class="layui-icon layui-icon-cellphone-fine"></i>
+		<span class="layui-title">电话热线</span>
+	</li>
+	<li lay-type="gestbook" class="pt-15">
+		<i class="layui-icon layui-icon-edit"></i>
+		<span class="layui-title">在线留言</span>
+	</li>
 </ul>
-{% endif %}
+
+<div name="browserMsg" class="text-center layui-layer-content" style="display: none;">
+	<div class="mt-40">
+		<span class="spanMsg">您正在使用的浏览器版本过低，将不能正常浏览和使用本网站</span>
+		<br><span class="spanMsg">请升级浏览器至IE9版本或以上，推荐浏览器如下：</span>
+	</div>
+	<div class="browserDiv mt-40">
+		<table style="width: 100%;">
+			<tr>
+				<td style="width:200px;" align="center">
+					<a href="https://support.microsoft.com/zh-cn/help/17621/internet-explorer-downloads">
+						<div class="solution-carousel-content">
+							<img src="sites/www/images/browser/ie11-logo.png" style="height: 120px;">
+							<div class="solution-content2 mt-20">
+								<span class="spanMsg">升级IE浏览器</span>
+							</div>
+						</div>
+					</a>
+				</td>
+				<td style="width:200px;" align="center">
+					<a href="https://www.google.cn/chrome/">
+						<div class="solution-carousel-content">
+							<img src="sites/www/images/browser/chrome-logo.png" style="height: 120px;">
+							<div class="solution-content2 mt-20">
+								<span class="spanMsg">使用谷歌浏览器</span>
+							</div>
+						</div>
+					</a>
+				</td>
+				<td style="width:200px;" align="center">
+					<a href="http://www.firefox.com.cn/">
+						<div class="solution-carousel-content">
+							<img src="sites/www/images/browser/firefox-logo.png" style="height: 120px;">
+							<div class="solution-content2 mt-20">
+								<span class="spanMsg">使用火狐浏览器</span>
+							</div>
+						</div>
+					</a>
+				</td>
+			</tr>
+		</table>
+		
+	</div>
+</div>
+<!-- 右侧浮动工具栏 end -->
+<script type="text/javascript">
+layui.use(['jquery','util','layer'], function(){
+	var $ = layui.jquery;
+	var util = layui.util;
+	var layer = layui.layer;
+	
+	 //固定块
+	util.fixbar({
+		elem : '#fixtoolbar',
+		css : {
+			right : 20,
+			bottom : 100
+		},
+		click : function(type) {
+			window.location.href="/templ/contactus/index.html";
+		}
+	});
+	 
+	var url = window.location.pathname;
+	// 首页url处理
+	if (url == "/") {
+		url = "";		
+	}
+	// 获取href=url的a标签所在的li元素，添加选中样式
+	$("div.layui-header [href='"+url+"']").parents("li.layui-nav-item").addClass("layui-this");
+	
+	// 浏览器判断
+	// 添加弹出框
+	if(navigator.appName == "Microsoft Internet Explorer" 
+			&& ( navigator.appVersion.match(/7./i)=="7." ||
+					navigator.appVersion.match(/8./i)=="8.")){ 
+		layer.open({
+			type:1,
+			title: false, // 无标题
+			content:$("div[name=browserMsg]"),
+			closeBtn: 0, // 无关闭按钮
+			shade: [0.8, '#393D49'], // 遮罩层
+			area: ['630px','390px']
+		});
+		$("div[name=browserMsg]").show();
+	}
+});
+</script>		
+		<!-- 页面主体 -->
+		<div class="layui-body">
+
+			<!-- 头部轮播 -->
+<meta charset="utf-8" />
+<!-- 头部轮播 begine -->
+<section class="index-section">
+	<div class="layui-carousel top-carousel" id="topCarousel">
+		<div carousel-item="">
+			<div style="position:relative;">
+				<img src="sites/www/images/index/topCarousel/banner1.jpg.png">
+				<!-- <div class="layui-col-sm1 layui-col-md1 layui-col-lg1"><div></div></div>
+				<div class="layui-col-xs2 layui-col-sm2 layui-col-md3 layui-col-lg2 layui-col-md-offset1 layui-col-lg-offset1 layui-col-sm-offset3 layui-col-xs-offset2"  style="position:absolute;left: 0px;top: 270px;width: 900px;">
+					<div align="left" style="font-family: Impact Regular;font-size: 60px;color: #ffffff;padding-bottom: 50px;text-shadow: 5px 2px 2px #2b20d4;">云计算，更快更安全</div>
+					<div align="left" style="width: 360px;font-size: 20px;padding-bottom: 25px;color: #ffffff;">云计算技术、云计算应用、云计算产品、云计算市场、云存储、云安全、云服务</div>
+					<div align="left" style="width: 255px;"><button class="layui-btn layui-btn-primary layui-btn-lg" style="height: 50px;width: 185px;font-size: 20px;color: #FFFFFF;font-family: MicrosoftYaHei Regular;background:none;border-color: #ffffff;border-radius: 50px">进入查看</button></div>
+				</div> -->
+			</div>
+			<div><img src="sites/www/images/index/topCarousel/banner2.png"></div>
+			<!-- <div><img src="/sites/www/images/index/topCarousel/banner3.png"></div> -->
+			<div><img src="sites/www/images/index/topCarousel/banner4.jpg"></div>
+		</div>	
+	</div>
+	<script type="text/javascript">
+	layui.use(['carousel','jquery'], function(){
+		var $ = layui.jquery;
+		var carouselheight =$(document).height()-$('.layui-header').height();
+		var carousel = layui.carousel;
+		carousel.render({
+		    elem: '#topCarousel',
+		    width: '100%',
+		    height: carouselheight,
+		    interval: 3000
+		});
+	});
+	</script>
+</section>
+<!-- 头部轮播 end -->
+			<!-- 业务领域 -->
+<meta charset="utf-8" />
+<section class="index-section">
+<!-- 业务领域 begine -->
+	<div align="center" class="part business">
+		<div class="businesshead">
+			<div class="enfont"><span>Business Overview</span></div>
+			<div class="zhfont"><a href="business/index.html"><span>业务领域</span></a></div>
+		</div>
+		<div style="width:1120px;">
+		<div class="layui-carousel top-carousel" id="businessarea">
+			<div carousel-item="">
+						
+							<div class="layui-row business-content">
+						
+						<div class="layui-col-sm4 layui-col-md3 layui-col-lg2 business-content1">
+				    		<div class="layui-card">
+				    			<img style="width: 262px;height: 160px;" src="ftp/gxxy/2018/10/10/153914306089391.jpg">
+					    		<p class="business-content1-title">
+					    		社会信用
+					    		</p>
+					    		<div class="business-content1-data">
+					    		<p>●政府信用●公共服务●合同信用●产业链信用</p>
+					    		</div>
+					    		<div align="center" class="business-content1-button">
+					    				<a href="business/68822B8375EC4D57B48EA3D850B8742E.html" class="layui-btn layui-btn-primary layui-btn-radius son-box business-content1-button-box">进入</a>
+					    		</div>
+				    		</div>
+				    	</div>
+				    	
+				    	
+						
+						
+						<div class="layui-col-sm4 layui-col-md3 layui-col-lg2 business-content1">
+				    		<div class="layui-card">
+				    			<img style="width: 262px;height: 160px;" src="ftp/gxxy/2018/09/29/1538182624458940.jpg">
+					    		<p class="business-content1-title">
+					    		智慧应急
+					    		</p>
+					    		<div class="business-content1-data">
+					    		<p>●城市应急●区域应急●指挥调度</p>
+					    		</div>
+					    		<div align="center" class="business-content1-button">
+					    				<a href="business/782F7AA41D034BEE8C03507C6627A198.html" class="layui-btn layui-btn-primary layui-btn-radius son-box business-content1-button-box">进入</a>
+					    		</div>
+				    		</div>
+				    	</div>
+				    	
+				    	
+						
+						
+						<div class="layui-col-sm4 layui-col-md3 layui-col-lg2 business-content1">
+				    		<div class="layui-card">
+				    			<img style="width: 262px;height: 160px;" src="ftp/gxxy/2018/12/20/1545287285437647.jpg">
+					    		<p class="business-content1-title">
+					    		数据可视化
+					    		</p>
+					    		<div class="business-content1-data">
+					    		<p>●大数据应用●数据展现●大数据分析</p>
+					    		</div>
+					    		<div align="center" class="business-content1-button">
+					    				<a href="business/7D3FE84A51CE413F932A24089C19432D.html" class="layui-btn layui-btn-primary layui-btn-radius son-box business-content1-button-box">进入</a>
+					    		</div>
+				    		</div>
+				    	</div>
+				    	
+				    	
+						
+						
+						<div class="layui-col-sm4 layui-col-md3 layui-col-lg2 business-content1">
+				    		<div class="layui-card">
+				    			<img style="width: 262px;height: 160px;" src="ftp/gxxy/2018/12/19/1545202072410452.jpg">
+					    		<p class="business-content1-title">
+					    		安全生产
+					    		</p>
+					    		<div class="business-content1-data">
+					    		<p>●安全管控中心●隐患治理●执法检查</p>
+					    		</div>
+					    		<div align="center" class="business-content1-button">
+					    				<a href="business/80437E3ABF624F30889C31308FE6958E.html" class="layui-btn layui-btn-primary layui-btn-radius son-box business-content1-button-box">进入</a>
+					    		</div>
+				    		</div>
+				    	</div>
+				    	
+							</div>
+				    	
+						
+							<div class="layui-row business-content">
+						
+						<div class="layui-col-sm4 layui-col-md3 layui-col-lg2 business-content1">
+				    		<div class="layui-card">
+				    			<img style="width: 262px;height: 160px;" src="ftp/gxxy/2018/12/19/1545216474903438.jpg">
+					    		<p class="business-content1-title">
+					    		智慧机场
+					    		</p>
+					    		<div class="business-content1-data">
+					    		<p>●企业HSE●企业能力提升●智慧机场</p>
+					    		</div>
+					    		<div align="center" class="business-content1-button">
+					    				<a href="business/8DFF440C7E664D7B93950DD77F352876.html" class="layui-btn layui-btn-primary layui-btn-radius son-box business-content1-button-box">进入</a>
+					    		</div>
+				    		</div>
+				    	</div>
+				    	
+				    	
+						
+						
+						<div class="layui-col-sm4 layui-col-md3 layui-col-lg2 business-content1">
+				    		<div class="layui-card">
+				    			<img style="width: 262px;height: 160px;" src="ftp/gxxy/2018/10/08/1538982526807716.jpg">
+					    		<p class="business-content1-title">
+					    		智慧城市
+					    		</p>
+					    		<div class="business-content1-data">
+					    		<p>●新型智慧城市●智能城市大脑</p>
+					    		</div>
+					    		<div align="center" class="business-content1-button">
+					    				<a href="business/3EE0538EFC804D8ABBFADCB0FC015369.html" class="layui-btn layui-btn-primary layui-btn-radius son-box business-content1-button-box">进入</a>
+					    		</div>
+				    		</div>
+				    	</div>
+				    	
+				    	
+						
+						
+						<div class="layui-col-sm4 layui-col-md3 layui-col-lg2 business-content1">
+				    		<div class="layui-card">
+				    			<img style="width: 262px;height: 160px;" src="ftp/gxxy/2018/12/19/1545191127970629.jpg">
+					    		<p class="business-content1-title">
+					    		大数据治理
+					    		</p>
+					    		<div class="business-content1-data">
+					    		<p>●大数据应用●大数据展现●大数据分析</p>
+					    		</div>
+					    		<div align="center" class="business-content1-button">
+					    				<a href="business/58B7EC2C33C94D2EB0FA7F3494F711E1.html" class="layui-btn layui-btn-primary layui-btn-radius son-box business-content1-button-box">进入</a>
+					    		</div>
+				    		</div>
+				    	</div>
+				    	
+				    	
+						
+						
+						<div class="layui-col-sm4 layui-col-md3 layui-col-lg2 business-content1">
+				    		<div class="layui-card">
+				    			<img style="width: 262px;height: 160px;" src="ftp/gxxy/2018/12/20/154529871875465.jpg">
+					    		<p class="business-content1-title">
+					    		智慧园林
+					    		</p>
+					    		<div class="business-content1-data">
+					    		<p>●森林防火演练●园林防火演练●三维模拟训练</p>
+					    		</div>
+					    		<div align="center" class="business-content1-button">
+					    				<a href="business/3A2A96B230F54929B205179B0CE87AB7.html" class="layui-btn layui-btn-primary layui-btn-radius son-box business-content1-button-box">进入</a>
+					    		</div>
+				    		</div>
+				    	</div>
+				    	
+							</div>
+				    	
+			</div>
+		</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+	layui.use(['carousel'], function(){
+		var carousel = layui.carousel;
+		carousel.render({
+		    elem: '#businessarea',
+		    width: '100%',
+		    arrow: 'always',
+		    height: '450px',
+		    autoplay: false,
+		    indicator: 'none'
+		});
+	});
+	</script>
+<!-- 业务领域 end -->
+</section>			
+			<!-- 成功案例 -->
+			
+			<!-- 新闻动态 -->
+<meta charset="utf-8" />
+<section class="index-section">
+	<div align="center" class="part inew_main">
+		<div class="enfont">News Information</div>
+		<div class="zhfont">
+			<a href="news/index.html"><span>新闻动态</span></a>
+		</div>
+		<div class="partcontent">
+			<div class="index_main_content">
+						<a href="news/FCE921101FD043ACB8E0C05E6509936B.html">
+							<div class="inews_left">
+									<img src="ftp/gxxy/2019/06/05/1559729654326550.png.html" class="inews_left_pic" onerror="this.src='/sites/www/images/index/news/newsDynamic.png'"/>
+								
+								<div style="width: 495px; margin: 10px">
+									<div class="inews_title_left">广州智能科技发展有限公司项目团队荣获2018年广州市工业和信息化局工作突出表现奖</div>
+									<div class="inews_content_left">2019年4月22日讯：在近日广州市工业和信息化局对2018年全市企业情况综合数据采集工作表现突出的47名人员作出通报表彰大会上，广州智能科技发展有限公司项目部多名工作人员获得“2018年全市企业情况综合数据采集”工作突出表现奖。
+基于以上人员对广州市2018年企业情况综合数据采集工作任务的突出贡献，广州市在全省各地市的量化评分评价中，获得综合评价优等第一名。</div>
+									<div class="text-right">2019-06-05</div>
+								</div>
+							</div>
+						</a>
+				<div class="inews_right">
+					<a href="news/AFC0140ADD2F4898AC4E0CF3C9C0CC67.html">
+							<div class="new_container">
+							<div class="new_date">
+								<div class="new_date_day">15</div>
+								<div class="new_date_year">2019-03</div>
+							</div>
+							<div class="new_text">
+								<div class="new_title">智能动力，为智慧园区建设赋能提效 ——齐齐哈尔市经济合作促进局局长张德龙一行莅临我司</div>
+								<div class="new_desc">近日,黑龙江省齐齐哈尔市经济合作促进局局长张德龙一行与广州市协作办公室有关领导、五山博士联盟相关领导莅临我司参观交流，并与我司总裁罗敏静等公司领导交流了两地合作开展智慧园区建设、政府政务信息化建设等热点话题。齐齐哈尔是东北地区西北部区域中心城市，也是黑龙江省西部地区政治、经济、科技、文化教育、医疗、商贸和交通的中心。
+</div>
+							</div>
+						</div>
+						</a>
+					<a href="news/75C2F4724D1F4F158CE19D16AA2A7464.html">
+							<div class="new_container">
+							<div class="new_date">
+								<div class="new_date_day">29</div>
+								<div class="new_date_year">2018-12</div>
+							</div>
+							<div class="new_text">
+								<div class="new_title">第二届粤港澳大湾区新型智慧城市高峰论坛举办，广州智能科技发展携大安全、大应急、大信用、数据展现方案展</div>
+								<div class="new_desc">12月21日，2018粤港澳大湾区新型智慧城市高峰论坛于广州省府旁的广东科学馆举行。此次论坛由中国信息协会主办，广州信息协会承办，四大主题分论坛全面总结了粤港澳大湾区在智慧城市建设领域的丰硕成果，为新型智慧城市建设启迪了新智慧、新思路、新能量。</div>
+							</div>
+						</div>
+						</a>
+					<a href="news/59DC5B456C1F47569851FFBBEC0ADFC9.html">
+							<div class="new_container_last">
+							<div class="new_date">
+								<div class="new_date_day">17</div>
+								<div class="new_date_year">2018-12</div>
+							</div>
+							<div class="new_text">
+								<div class="new_title">我司 “广州市公共信用信息服务系统”荣获“2017中国新型智慧城市优秀平台案例奖”</div>
+								<div class="new_desc">由国家发改委高技术司支持、中国信息协会主办的&ldquo;2018首届中国智慧社会发展大会暨第二届新型智慧城市发展高峰论坛&rdquo;。本次大会有百余试点城市主管代表参会，交流新型智慧城市建设经验与方向。另有千余优秀企业代表参会，交流投资新型智慧城市建设解决方案国家&ldquo;十三五&rdquo;规划纲要明确提出...</div>
+							</div>
+						</div>
+						</a>
+				</div>
+				<a href="news/index.html">
+					<div class="inew_botton_content" style="" align="center">
+						<div class="inew_botton">了解更多</div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+</section>			
+			<!-- 解决方案 -->
+<meta charset="utf-8" />
+<!-- 解决方案 begine -->
+<div align="center" class="part case">
+	<div class="casehead">
+		<div class="enfont">
+			<span>Support & Service</span>
+		</div>
+		<div class="zhfont">
+			<a href="solve/index.html"><span>解决方案</span></a>
+		</div>
+		<div class="title3 pt-5">
+			<span>提高技术，完善服务，多行业解决方案，为您发掘更多更大价值</span>
+		</div>
+	</div>
+	<div class="case-content">
+		<div class="layui-tab case-tab">
+			<div class="layui-tab-content">
+				<div class="layui-tab-item layui-show">
+					<div class="layui-row">
+								<div class="layui-col-sm4 layui-col-md3 layui-col-lg2 caseshow">
+									<img style="width: 248px; height: 218px; margin: 7px;" src="ftp/gxxy/2018/12/20/1545290641494529.jpg">
+									<p class="pl-5">智能动力服务式3D GIS平台</p>
+									<div class="layui-row layui-col-space8">
+										<!-- <div class="layui-col-md1 caseshow-img">
+											<img id='case-img' src="/sites/www/images/index/successcase/浏览量.png">
+										</div> -->
+										<!-- <div class="layui-col-md1 caseshow-views">
+										</div> -->
+										<div class="caseshow-details pr-10">
+											<span class="tab-text"><a href="solve/0140E53C01804BAEADA97A767CC756A7.html">查看详情</a></span>
+										</div>
+									</div>
+								</div>
+								<div class="layui-col-sm4 layui-col-md3 layui-col-lg2 caseshow">
+									<img style="width: 248px; height: 218px; margin: 7px;" src="ftp/gxxy/2018/12/20/1545286471680363.jpg">
+									<p class="pl-5">智能化应急指挥管理平台</p>
+									<div class="layui-row layui-col-space8">
+										<!-- <div class="layui-col-md1 caseshow-img">
+											<img id='case-img' src="/sites/www/images/index/successcase/浏览量.png">
+										</div> -->
+										<!-- <div class="layui-col-md1 caseshow-views">
+										</div> -->
+										<div class="caseshow-details pr-10">
+											<span class="tab-text"><a href="solve/07E76A15BE4A4E978889918C846A721E.html">查看详情</a></span>
+										</div>
+									</div>
+								</div>
+								<div class="layui-col-sm4 layui-col-md3 layui-col-lg2 caseshow">
+									<img style="width: 248px; height: 218px; margin: 7px;" src="ftp/gxxy/2018/12/20/154528921858188.jpg">
+									<p class="pl-5">数据全流通总线系统</p>
+									<div class="layui-row layui-col-space8">
+										<!-- <div class="layui-col-md1 caseshow-img">
+											<img id='case-img' src="/sites/www/images/index/successcase/浏览量.png">
+										</div> -->
+										<!-- <div class="layui-col-md1 caseshow-views">
+										</div> -->
+										<div class="caseshow-details pr-10">
+											<span class="tab-text"><a href="solve/1068A000822D4FC88169AEC0CB68E4DB.html">查看详情</a></span>
+										</div>
+									</div>
+								</div>
+								<div class="layui-col-sm4 layui-col-md3 layui-col-lg2 caseshow">
+									<img style="width: 248px; height: 218px; margin: 7px;" src="ftp/gxxy/2018/12/20/1545287816285462.jpg">
+									<p class="pl-5">公文交换系统</p>
+									<div class="layui-row layui-col-space8">
+										<!-- <div class="layui-col-md1 caseshow-img">
+											<img id='case-img' src="/sites/www/images/index/successcase/浏览量.png">
+										</div> -->
+										<!-- <div class="layui-col-md1 caseshow-views">
+										</div> -->
+										<div class="caseshow-details pr-10">
+											<span class="tab-text"><a href="solve/15B4B4B9EE73493D875E6BDA2EB91812.html">查看详情</a></span>
+										</div>
+									</div>
+								</div>
+								<div class="layui-col-sm4 layui-col-md3 layui-col-lg2 caseshow">
+									<img style="width: 248px; height: 218px; margin: 7px;" src="ftp/gxxy/2018/12/20/1545295792396361.jpg">
+									<p class="pl-5">应急大数据服务平台</p>
+									<div class="layui-row layui-col-space8">
+										<!-- <div class="layui-col-md1 caseshow-img">
+											<img id='case-img' src="/sites/www/images/index/successcase/浏览量.png">
+										</div> -->
+										<!-- <div class="layui-col-md1 caseshow-views">
+										</div> -->
+										<div class="caseshow-details pr-10">
+											<span class="tab-text"><a href="solve/1648077D4E014B879895C52B4CA4C31B.html">查看详情</a></span>
+										</div>
+									</div>
+								</div>
+								<div class="layui-col-sm4 layui-col-md3 layui-col-lg2 caseshow">
+									<img style="width: 248px; height: 218px; margin: 7px;" src="ftp/gxxy/2018/12/20/1545290790468564.jpg">
+									<p class="pl-5">大屏幕控制系统</p>
+									<div class="layui-row layui-col-space8">
+										<!-- <div class="layui-col-md1 caseshow-img">
+											<img id='case-img' src="/sites/www/images/index/successcase/浏览量.png">
+										</div> -->
+										<!-- <div class="layui-col-md1 caseshow-views">
+										</div> -->
+										<div class="caseshow-details pr-10">
+											<span class="tab-text"><a href="solve/1870A42969AA4A6D988C9A02F1A93BE9.html">查看详情</a></span>
+										</div>
+									</div>
+								</div>
+								<div class="layui-col-sm4 layui-col-md3 layui-col-lg2 caseshow">
+									<img style="width: 248px; height: 218px; margin: 7px;" src="ftp/gxxy/2018/12/20/1545290712870479.jpg">
+									<p class="pl-5">商务会展业公共服务平台</p>
+									<div class="layui-row layui-col-space8">
+										<!-- <div class="layui-col-md1 caseshow-img">
+											<img id='case-img' src="/sites/www/images/index/successcase/浏览量.png">
+										</div> -->
+										<!-- <div class="layui-col-md1 caseshow-views">
+										</div> -->
+										<div class="caseshow-details pr-10">
+											<span class="tab-text"><a href="solve/210EC5E0F7DA47008E15FA469B4E99B6.html">查看详情</a></span>
+										</div>
+									</div>
+								</div>
+								<div class="layui-col-sm4 layui-col-md3 layui-col-lg2 caseshow">
+									<img style="width: 248px; height: 218px; margin: 7px;" src="ftp/gxxy/2018/12/20/1545287090350577.jpg">
+									<p class="pl-5">港务应急管理系统</p>
+									<div class="layui-row layui-col-space8">
+										<!-- <div class="layui-col-md1 caseshow-img">
+											<img id='case-img' src="/sites/www/images/index/successcase/浏览量.png">
+										</div> -->
+										<!-- <div class="layui-col-md1 caseshow-views">
+										</div> -->
+										<div class="caseshow-details pr-10">
+											<span class="tab-text"><a href="solve/2D36B66203704107A158905739FA25E8.html">查看详情</a></span>
+										</div>
+									</div>
+								</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- 解决方案end -->			
+			<!-- <meta charset="utf-8" />
+<section class="index-section">
+	<div align="center" class="part">
+		<div class="enfont" >Enterprise Qualifications</div>
+		<div class="zhfont">企业资质</div>
+		<div class="partcontent">
+			<div class="index_main_content">
+				<div style="color:#333;font-size:20px;height:50px">我司连续六年被评为“广东省诚信示范企业”。并在计算机软件著作权多次获得登记证书</div>
+				<div class="cOne" style="">
+					<div class="cOneContent cOne1">
+						<div class="cpicture1">
+							<img  src="/sites/www/images/index/certificate/奖牌1.jpg" >
+						</div>
+						<div class="cfont">计算机软件著作权登记证书</div>
+					</div>
+					<div class="cOneContent cOne2">
+						<div class="cpicture1">
+							<img  src="/sites/www/images/index/certificate/奖牌2.jpg" >
+						</div>
+						<div class="cfont">计算机软件著作权登记证书</div>
+					</div>
+					<div class="cOneContent cOne3">
+						<div class="cpicture1">
+							<img  src="/sites/www/images/index/certificate/奖牌3.jpg" >
+						</div>
+						<div class="cfont">计算机软件著作权登记证书</div>
+					</div>
+					<div class="cOneContent cOne4">
+						<div class="cpicture1">
+							<img  src="/sites/www/images/index/certificate/奖牌4.jpg" >
+						</div>
+						<div class="cfont">计算机软件著作权登记证书</div>
+					</div>
+				</div>
+				<div class="cTwo">
+					<div class="cTwoContent cTwo1">
+						<div class="cpicture2">
+							<img  src="/sites/www/images/index/certificate/奖牌5.jpg" >
+						</div>
+						<div class="cfont">广东省守合同重信用企业证书</div>
+					</div>
+					<div class="cTwoContent cTwo2">
+						<div class="cpicture2">
+							<img  src="/sites/www/images/index/certificate/奖牌6.jpg" >
+						</div>
+						<div class="cfont">广东省诚信示范企业</div>
+					</div>
+					<div class="cTwoContent cTwo3">
+						<div class="cpicture2">
+							<img  src="/sites/www/images/index/certificate/奖牌7.jpg" >
+						</div>
+						<div class="cfont">广州个企研究开发机构证书</div>
+					</div>
+					<div class="cTwoContent cTwo4">
+						<div class="cpicture2">
+							<img  src="/sites/www/images/index/certificate/奖牌8.jpg" >
+						</div>
+						<div class="cfont">信息行业诚信企业证书</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section> -->
+			
+			<!-- 合作伙伴 -->
+<meta charset="utf-8" />
+<style>.cbackimg{
+		background:url('sites/www/images/index/coopPartner/backimg.png');
+		margin-top:50px;
+}
+.cimge{
+	width:100%;
+	height:100%;
+	margin:2px;
+}
+</style>
+<section class="index-section">
+	<div align="center" class="part cbackimg">
+		<div class="enfont" >Cooperative Partner</div>
+		<div class="zhfont">合作伙伴</div>
+		<div class="partcontent" style="">
+			<div class="index_main_content c_content" >
+				<ul class="ul1">
+					<li><img class="cimge"  src="sites/www/images/index/coopPartner/cp1.jpg" ></li>
+					<li><img class="cimge"  src="sites/www/images/index/coopPartner/cp2.jpg" ></li>
+					<li><img class="cimge"  src="sites/www/images/index/coopPartner/cp3.jpg" ></li>
+					<li><img class="cimge"  src="sites/www/images/index/coopPartner/cp4.jpg" ></li>
+					<li><img class="cimge"  src="sites/www/images/index/coopPartner/cp5.jpg" ></li>
+				</ul>
+				<ul class="ul2">
+					<li><img class="cimge"  src="sites/www/images/index/coopPartner/cp6.jpg" ></li>
+					<li><img class="cimge"  src="sites/www/images/index/coopPartner/cp7.jpg" ></li>
+					<li><img class="cimge"  src="sites/www/images/index/coopPartner/cp8.jpg" ></li>
+					<li><img class="cimge"  src="sites/www/images/index/coopPartner/cp9.jpg" ></li>
+					<li><img class="cimge"  src="sites/www/images/index/coopPartner/cp10.jpg" ></li>
+					<li><img class="cimge"  src="sites/www/images/index/coopPartner/cp11.jpg" ></li>
+				</ul>
+				<ul class="ul3">
+					<li><img class="cimge"  src="sites/www/images/index/coopPartner/cp12.jpg" ></li>
+					<li><img class="cimge"  src="sites/www/images/index/coopPartner/cp13.jpg" ></li>
+					<li><img class="cimge"  src="sites/www/images/index/coopPartner/cp14.jpg" ></li>
+					<li><img class="cimge"  src="sites/www/images/index/coopPartner/cp15.jpg" ></li>
+					<li><img class="cimge"  src="sites/www/images/index/coopPartner/cp16.jpg" ></li>
+				</ul>
+				<ul class="ul4">
+					<li><img class="cimge"  src="sites/www/images/index/coopPartner/cp17.jpg" ></li>
+					<li><img class="cimge"  src="sites/www/images/index/coopPartner/cp18.jpg" ></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
+
+
+			
+			<!-- footer 模块 -->
+			<div style="float:left;width:100%">
+<div class="layui-footer">
+	<div class="footer-info layui-row">
+		<div class="layui-col-xs8">
+			<div class="infos">
+				<div class="info-item info-head text-left ">新手指南</div>
+				<div class="info-item info-head">关于智能</div>
+				<div class="info-item info-head">服务与支持</div>
+				<div class="info-item info-head">产品中心</div>
+				<div class="info-item info-head text-right">其他服务</div>
+				
+				<div class="info-item text-left "><a href="index.html">网站首页</a></div>
+				<div class="info-item"><a href="templ/contactus/index.html">企业简介</a></div>
+				<div class="info-item"><a href="solve/index.html">解决方案</a></div>
+				<div class="info-item">产品介绍</div>
+				<div class="info-item text-right">系统集成</div>
+				
+				<div class="info-item text-left ">帮助中心</div>
+				<div class="info-item"><a href="templ/memorabilia/index.html">发展历程</a></div>
+				<div class="info-item">服务热线</div>
+				<div class="info-item">产品资料</div>
+				<div class="info-item text-right">软件资讯</div>
+				
+				<div class="info-item text-left ">联系我们</div>
+				<div class="info-item">奖项荣誉</div>
+				<div class="info-item">下载中心</div>
+				<div class="info-item">产品试用</div>
+				<div class="info-item text-right">其他</div>
+			</div>
+		</div>
+		<div class="layui-col-xs4 qrcodes">
+			<div class="qrcode">
+				<img class="qrcode-image" src="sites/www/images/qrcode/wx_gzh.jpg"/>
+				<span class="qrcode-title">微信公众号</span>
+			</div>
+			<div class="qrcode">
+				<img class="qrcode-image" src="sites/www/images/qrcode/app.jpg"/>
+				<span class="qrcode-title">手机APP</span>
+			</div>
+		</div>
+	</div>
+	<div class="copy-right">Copyright © 2018 广州智能科技发展有限公司，版权所有</div>
+</div>
+
+<script type="text/javascript">
+	layui.use('element', function() {
+		var element = layui.element;
+	});
+</script>			</div>
+		</div>
+		<!-- 页面主体 end -->
+	</div>
+
+</body>
+</html>

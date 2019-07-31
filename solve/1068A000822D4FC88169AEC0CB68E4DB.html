@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh" class="ie ie8">
+<head>
+<meta http-equiv="content-Type" content="text/html; charset=utf-8" />
+<!-- 基础应用站点信息 -->
+<meta charset="utf-8" />
+<title>广州智能科技</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>系统管理</title>
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+
+<!-- 系统基础样式 -->
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+<link rel="stylesheet" type="text/css" href="../fonts/iconfont/style.css" />
+<link rel="stylesheet" type="text/css" href="../fonts/awesome/style.css" />
+<link rel="stylesheet" type="text/css" href="../fonts/feather/style.css" />
+<link rel="stylesheet" type="text/css" href="../fonts/themify/style.css" />
+<link rel="stylesheet" type="text/css" href="../sites/www/css/style.css" ></link>
+
+<link rel="stylesheet" type="text/css" href="../css/cms-style.css" ></link>
+<script charset="utf-8" type="text/javascript" src="../layui.js" ></script>
+</head>
+<body class="layui-layout-front">
+	<div class="layui-layout">
+		<!-- header 模块 -->
+<meta charset="utf-8" />
+
+<div class="layui-header">
+	<div class="layui-logo"></div>
+	<!-- 头部区域（可配合layui已有的水平导航） -->
+	<ul class="layui-nav layui-layout-left">
+		<li class="layui-nav-item"><a href="../index.html">首页</a></li>
+		<li class="layui-nav-item">
+				<a href="../product/index.html">产品中心</a>
+		</li>
+		<li class="layui-nav-item">
+				<a href="index.html">解决方案</a>
+		</li>
+		<li class="layui-nav-item">
+				<a href="../news/index.html">新闻中心</a>
+		</li>
+	</ul>
+	<ul class="layui-nav layui-layout-right">
+		<li class="layui-nav-item"><a href="../templ/memorabilia/index.html">公司大事记</a></li>
+		<li class="layui-nav-item"><a href="../templ/contactus/index.html">联系我们</a></li>
+<!-- 		 -->
+			<li class="layui-nav-item"><a href="http://www.it2000.com.cn/login-JSESSIONID=d864056c-ee6b-4461-b794-9e7980141508.html">登录|注册</a></li>
+<!-- 		 -->
+	</ul>
+</div>
+
+<!-- 右侧浮动工具栏 -->
+<ul class="layui-fixbar fixed-right-tool" id="fixtoolbar">
+	<li lay-type="airlines" class="pt-15">
+		<i class="layui-icon layui-icon-headset"></i>
+		<span class="layui-title">在线客服</span>
+	</li>
+	<li lay-type="qq" class="pt-15">
+		<i class="layui-icon layui-icon-login-qq"></i>
+		<span class="layui-title">QQ</span>
+	</li>
+	<li lay-type="tel" class="pt-15" >
+		<i class="layui-icon layui-icon-cellphone-fine"></i>
+		<span class="layui-title">电话热线</span>
+	</li>
+	<li lay-type="gestbook" class="pt-15">
+		<i class="layui-icon layui-icon-edit"></i>
+		<span class="layui-title">在线留言</span>
+	</li>
+</ul>
+
+<div name="browserMsg" class="text-center layui-layer-content" style="display: none;">
+	<div class="mt-40">
+		<span class="spanMsg">您正在使用的浏览器版本过低，将不能正常浏览和使用本网站</span>
+		<br><span class="spanMsg">请升级浏览器至IE9版本或以上，推荐浏览器如下：</span>
+	</div>
+	<div class="browserDiv mt-40">
+		<table style="width: 100%;">
+			<tr>
+				<td style="width:200px;" align="center">
+					<a href="https://support.microsoft.com/zh-cn/help/17621/internet-explorer-downloads">
+						<div class="solution-carousel-content">
+							<img src="../sites/www/images/browser/ie11-logo.png" style="height: 120px;">
+							<div class="solution-content2 mt-20">
+								<span class="spanMsg">升级IE浏览器</span>
+							</div>
+						</div>
+					</a>
+				</td>
+				<td style="width:200px;" align="center">
+					<a href="https://www.google.cn/chrome/">
+						<div class="solution-carousel-content">
+							<img src="../sites/www/images/browser/chrome-logo.png" style="height: 120px;">
+							<div class="solution-content2 mt-20">
+								<span class="spanMsg">使用谷歌浏览器</span>
+							</div>
+						</div>
+					</a>
+				</td>
+				<td style="width:200px;" align="center">
+					<a href="http://www.firefox.com.cn/">
+						<div class="solution-carousel-content">
+							<img src="../sites/www/images/browser/firefox-logo.png" style="height: 120px;">
+							<div class="solution-content2 mt-20">
+								<span class="spanMsg">使用火狐浏览器</span>
+							</div>
+						</div>
+					</a>
+				</td>
+			</tr>
+		</table>
+		
+	</div>
+</div>
+<!-- 右侧浮动工具栏 end -->
+<script type="text/javascript">
+layui.use(['jquery','util','layer'], function(){
+	var $ = layui.jquery;
+	var util = layui.util;
+	var layer = layui.layer;
+	
+	 //固定块
+	util.fixbar({
+		elem : '#fixtoolbar',
+		css : {
+			right : 20,
+			bottom : 100
+		},
+		click : function(type) {
+			window.location.href="/cms-web/templ/contactus/index.html";
+		}
+	});
+	 
+	var url = window.location.pathname;
+	// 首页url处理
+	if (url == "/cms-web/") {
+		url = "/cms-web";		
+	}
+	// 获取href=url的a标签所在的li元素，添加选中样式
+	$("div.layui-header [href='"+url+"']").parents("li.layui-nav-item").addClass("layui-this");
+	
+	// 浏览器判断
+	// 添加弹出框
+	if(navigator.appName == "Microsoft Internet Explorer" 
+			&& ( navigator.appVersion.match(/7./i)=="7." ||
+					navigator.appVersion.match(/8./i)=="8.")){ 
+		layer.open({
+			type:1,
+			title: false, // 无标题
+			content:$("div[name=browserMsg]"),
+			closeBtn: 0, // 无关闭按钮
+			shade: [0.8, '#393D49'], // 遮罩层
+			area: ['630px','390px']
+		});
+		$("div[name=browserMsg]").show();
+	}
+});
+</script>		
+		<!-- 页面主体 -->
+		<div class="layui-body">
+		<!-- 头部图片-->
+			<div align="center" class="newdetail">
+				<div class="newdetail-head">
+				<img src="http://www.it2000.com.cn/sites/www/images/newlist/1.jpg" style="width:100%; height:100%;">
+				<div  style="position:absolute;left: 300px;top: 100px;width: 900px;">
+					<div align="left" style="font-size: 35px;padding-bottom: 20px;color: #FF801E;text-shadow: 2px 2px 2px #ffffff;">
+						<span>关于智能</span>
+					</div>
+					<div align="left">
+						<span style="font-size: 20px;color: #ffffff;">软件创造价值是智能人永远的追求</span>
+					</div>
+				</div>
+				</div>
+			</div>
+			<div class="breadcrumbs">
+			<div class="layui-col-md3 pl-20 pt-10">
+				<span><img src="http://www.it2000.com.cn/sites/www/images/newlist/4.jpg.png"></span>
+				<span style="font-size: 14px;color: #4c4c4c;font-family: 雅黑;">当前位置：</span>
+				<span class="layui-breadcrumb" lay-separator="<i class='layui-icon layui-icon-right'></i>">
+				  <a href="../index.html">首页</a>
+				  <a href="">解决方案</a>
+				</span></div>
+			</div>
+			<div  align="center"  class="detail-main">
+				<div style="width: 950px;background-color: #ffffff;">
+					<div align="left" class="layui-row detail-main-title" style="">
+						<span>数据全流通总线系统</span>
+					</div>
+					<div align="left" class="layui-row detail-main-title2">
+					<span>诚信为本</span><span>客户至上</span><span>品质第一</span><span>追求卓越</span>
+					</div>
+					<div align="left" style="font-family: ArialMT Regular;padding-left: 50px;padding-top: 2px;font-size: 12px;color: #B3B3B3;margin-bottom: 20px;">Integty based customer first quilty first</div>
+					<div align="left" class="detail-content"><p>【概述】</p><p>数据全流通总线建设是以分布式消息总线为核心支撑工具，结合多级虚拟数据中心的微服务，提供数据敏捷感知，批量、实时地快速同步，数据整合、数据传输安全、数据分发、各关联平台的接口管理功能。为数据源通网提供基础支撑作用，从而实现数据源通网、数据组织网、算法流通网、敏捷感知网、数据环境网的五网数据全流通。</p><p>分布式消息总线，突出的优点是高吞吐量、易于扩展，能持续稳定可靠地轻松处理百万级别的数据传输。</p><p>【适应范围】</p><p>客户群体 ：全国各省级、地市、区县信息化建设主管部门；大集团公司信息化部门</p><p>适用的业务范围：数据收集、治理、清洗、共享</p><p>【概述特点】</p><p><a name="_Toc525808551">&ldquo;</a>点对点&rdquo;，&rdquo;点对多点&rdquo;实时数据共享交换技术，大幅提高数据的及时性</p><p>通过创新的数据资源流通机制、算法资源流通机制，通过实时点对点,或点对多点的数据共享交换，最大限度缩短了数据提供者数据共享者的交互时间，有效提高了数据的及时性，使政府的跨部门信息共享和业务协同更为高效。同时采用先进技术架构和数据传输技术，数据库交换效率可达8M/秒；文件交换效率可达50M/秒。</p><p>通过算法模型，实现大批量数据整体交互</p><p>对于各应用系统需要产生的大批量数据交互，采用基于容器技术，通过算法模型封装数组加载到数据交互过程，实现经济、高效的传输。利用交换标准动态适应性，在数据交换过程中实现数据中心的数据整合，降低数据中心与各数据源系统之间的耦合度，支持非标准化的系统接入，最大限度的降低各数据源系统的改造量，实现自动化的数据整合利用。</p><p>数据流通全过程透明化管理，最大程度提高对数据流通的监控力度</p><p>基于大数据先进的管理架构，提供多层次的监控功能，确保交换业务运行稳定、可靠、可管、可控，数据可跟踪，实现数据流通过程的透明化管理，比传统行业的政府部门间的数据共享交换模式和机制，提高政府数据交换共享过程中对数据流通的监控力度。</p></div>
+				</div>
+				<div style="width: 950px;">
+					<div style="display: inline-block; position: relative; right: 100px; line-height: 80px;">
+								<a href="07E76A15BE4A4E978889918C846A721E.html">上一篇：智能化应急指挥管理平台</a>
+					</div>
+					<div style="display: inline-block; position: relative; left: 100px; line-height: 80px;">
+								<a href="15B4B4B9EE73493D875E6BDA2EB91812.html">公文交换系统:下一篇</a>
+					</div>
+				</div>
+			</div>
+			<!-- footer 模块 -->
+			<div style="float:left;width:100%">
+<div class="layui-footer">
+	<div class="footer-info layui-row">
+		<div class="layui-col-xs8">
+			<div class="infos">
+				<div class="info-item info-head text-left ">新手指南</div>
+				<div class="info-item info-head">关于智能</div>
+				<div class="info-item info-head">服务与支持</div>
+				<div class="info-item info-head">产品中心</div>
+				<div class="info-item info-head text-right">其他服务</div>
+				
+				<div class="info-item text-left "><a href="../index.html">网站首页</a></div>
+				<div class="info-item"><a href="../templ/contactus/index.html">企业简介</a></div>
+				<div class="info-item"><a href="index.html">解决方案</a></div>
+				<div class="info-item">产品介绍</div>
+				<div class="info-item text-right">系统集成</div>
+				
+				<div class="info-item text-left ">帮助中心</div>
+				<div class="info-item"><a href="../templ/memorabilia/index.html">发展历程</a></div>
+				<div class="info-item">服务热线</div>
+				<div class="info-item">产品资料</div>
+				<div class="info-item text-right">软件资讯</div>
+				
+				<div class="info-item text-left ">联系我们</div>
+				<div class="info-item">奖项荣誉</div>
+				<div class="info-item">下载中心</div>
+				<div class="info-item">产品试用</div>
+				<div class="info-item text-right">其他</div>
+			</div>
+		</div>
+		<div class="layui-col-xs4 qrcodes">
+			<div class="qrcode">
+				<img class="qrcode-image" src="../sites/www/images/qrcode/wx_gzh.jpg"/>
+				<span class="qrcode-title">微信公众号</span>
+			</div>
+			<div class="qrcode">
+				<img class="qrcode-image" src="../sites/www/images/qrcode/app.jpg"/>
+				<span class="qrcode-title">手机APP</span>
+			</div>
+		</div>
+	</div>
+	<div class="copy-right">Copyright © 2018 广州智能科技发展有限公司，版权所有</div>
+</div>
+
+<script type="text/javascript">
+	layui.use('element', function() {
+		var element = layui.element;
+	});
+</script>			</div>
+		</div>
+		<!-- 页面主体 end -->
+	</div>
+		
+</body>
+	<script type="text/javascript">
+	layui.use(['laypage','jquery'], function(){
+		var $ = layui.jquery;
+	});
+	</script>
+</html>

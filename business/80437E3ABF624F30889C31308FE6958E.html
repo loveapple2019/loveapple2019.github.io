@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh" class="ie ie8">
+<head>
+<meta http-equiv="content-Type" content="text/html; charset=utf-8" />
+<!-- 基础应用站点信息 -->
+<meta charset="utf-8" />
+<title>广州智能科技</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>系统管理</title>
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+
+<!-- 系统基础样式 -->
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+<link rel="stylesheet" type="text/css" href="../fonts/iconfont/style.css" />
+<link rel="stylesheet" type="text/css" href="../fonts/awesome/style.css" />
+<link rel="stylesheet" type="text/css" href="../fonts/feather/style.css" />
+<link rel="stylesheet" type="text/css" href="../fonts/themify/style.css" />
+<link rel="stylesheet" type="text/css" href="../sites/www/css/style.css" ></link>
+
+<link rel="stylesheet" type="text/css" href="../css/cms-style.css" ></link>
+<script charset="utf-8" type="text/javascript" src="../layui.js" ></script>
+</head>
+<body class="layui-layout-front">
+	<div class="layui-layout">
+		<!-- header 模块 -->
+<meta charset="utf-8" />
+
+<div class="layui-header">
+	<div class="layui-logo"></div>
+	<!-- 头部区域（可配合layui已有的水平导航） -->
+	<ul class="layui-nav layui-layout-left">
+		<li class="layui-nav-item"><a href="">首页</a></li>
+		<li class="layui-nav-item">
+				<a href="../product/index.html">产品中心</a>
+		</li>
+		<li class="layui-nav-item">
+				<a href="../solve/index.html">解决方案</a>
+		</li>
+		<li class="layui-nav-item">
+				<a href="../news/index.html">新闻中心</a>
+		</li>
+	</ul>
+	<ul class="layui-nav layui-layout-right">
+		<li class="layui-nav-item"><a href="../templ/memorabilia/index.html">公司大事记</a></li>
+		<li class="layui-nav-item"><a href="../templ/contactus/index.html">联系我们</a></li>
+<!-- 		 -->
+			<li class="layui-nav-item"><a href="../login.html">登录|注册</a></li>
+<!-- 		 -->
+	</ul>
+</div>
+
+<!-- 右侧浮动工具栏 -->
+<ul class="layui-fixbar fixed-right-tool" id="fixtoolbar">
+	<li lay-type="airlines" class="pt-15">
+		<i class="layui-icon layui-icon-headset"></i>
+		<span class="layui-title">在线客服</span>
+	</li>
+	<li lay-type="qq" class="pt-15">
+		<i class="layui-icon layui-icon-login-qq"></i>
+		<span class="layui-title">QQ</span>
+	</li>
+	<li lay-type="tel" class="pt-15" >
+		<i class="layui-icon layui-icon-cellphone-fine"></i>
+		<span class="layui-title">电话热线</span>
+	</li>
+	<li lay-type="gestbook" class="pt-15">
+		<i class="layui-icon layui-icon-edit"></i>
+		<span class="layui-title">在线留言</span>
+	</li>
+</ul>
+
+<div name="browserMsg" class="text-center layui-layer-content" style="display: none;">
+	<div class="mt-40">
+		<span class="spanMsg">您正在使用的浏览器版本过低，将不能正常浏览和使用本网站</span>
+		<br><span class="spanMsg">请升级浏览器至IE9版本或以上，推荐浏览器如下：</span>
+	</div>
+	<div class="browserDiv mt-40">
+		<table style="width: 100%;">
+			<tr>
+				<td style="width:200px;" align="center">
+					<a href="https://support.microsoft.com/zh-cn/help/17621/internet-explorer-downloads">
+						<div class="solution-carousel-content">
+							<img src="../sites/www/images/browser/ie11-logo.png" style="height: 120px;">
+							<div class="solution-content2 mt-20">
+								<span class="spanMsg">升级IE浏览器</span>
+							</div>
+						</div>
+					</a>
+				</td>
+				<td style="width:200px;" align="center">
+					<a href="https://www.google.cn/chrome/">
+						<div class="solution-carousel-content">
+							<img src="../sites/www/images/browser/chrome-logo.png" style="height: 120px;">
+							<div class="solution-content2 mt-20">
+								<span class="spanMsg">使用谷歌浏览器</span>
+							</div>
+						</div>
+					</a>
+				</td>
+				<td style="width:200px;" align="center">
+					<a href="http://www.firefox.com.cn/">
+						<div class="solution-carousel-content">
+							<img src="../sites/www/images/browser/firefox-logo.png" style="height: 120px;">
+							<div class="solution-content2 mt-20">
+								<span class="spanMsg">使用火狐浏览器</span>
+							</div>
+						</div>
+					</a>
+				</td>
+			</tr>
+		</table>
+		
+	</div>
+</div>
+<!-- 右侧浮动工具栏 end -->
+<script type="text/javascript">
+layui.use(['jquery','util','layer'], function(){
+	var $ = layui.jquery;
+	var util = layui.util;
+	var layer = layui.layer;
+	
+	 //固定块
+	util.fixbar({
+		elem : '#fixtoolbar',
+		css : {
+			right : 20,
+			bottom : 100
+		},
+		click : function(type) {
+			window.location.href="/templ/contactus/index.html";
+		}
+	});
+	 
+	var url = window.location.pathname;
+	// 首页url处理
+	if (url == "/") {
+		url = "";		
+	}
+	// 获取href=url的a标签所在的li元素，添加选中样式
+	$("div.layui-header [href='"+url+"']").parents("li.layui-nav-item").addClass("layui-this");
+	
+	// 浏览器判断
+	// 添加弹出框
+	if(navigator.appName == "Microsoft Internet Explorer" 
+			&& ( navigator.appVersion.match(/7./i)=="7." ||
+					navigator.appVersion.match(/8./i)=="8.")){ 
+		layer.open({
+			type:1,
+			title: false, // 无标题
+			content:$("div[name=browserMsg]"),
+			closeBtn: 0, // 无关闭按钮
+			shade: [0.8, '#393D49'], // 遮罩层
+			area: ['630px','390px']
+		});
+		$("div[name=browserMsg]").show();
+	}
+});
+</script>		
+		<!-- 页面主体 -->
+		<div class="layui-body">
+		<!-- 头部图片-->
+			<div align="center" class="newdetail">
+				<div class="newdetail-head">
+				<img src="http://www.it2000.com.cn/sites/www/images/newlist/1.jpg" style="width:100%; height:100%;">
+				<div  style="position:absolute;left: 300px;top: 100px;width: 900px;">
+					<div align="left" style="font-size: 35px;padding-bottom: 20px;color: #FF801E;text-shadow: 2px 2px 2px #ffffff;">
+						<span>关于智能</span>
+					</div>
+					<div align="left">
+						<span style="font-size: 20px;color: #ffffff;">软件创造价值是智能人永远的追求</span>
+					</div>
+				</div>
+				</div>
+			</div>
+			<div class="breadcrumbs">
+			<div class="layui-col-md3 pl-20 pt-10">
+				<span><img src="http://www.it2000.com.cn/sites/www/images/newlist/4.jpg.png"></span>
+				<span style="font-size: 14px;color: #4c4c4c;font-family: 雅黑;">当前位置：</span>
+				<span class="layui-breadcrumb" lay-separator="<i class='layui-icon layui-icon-right'></i>">
+				  <a href="">首页</a>
+				  <a href="">业务领域</a>
+				</span></div>
+			</div>
+			<div  align="center"  class="detail-main">
+				<div style="width: 950px;background-color: #ffffff;">
+					<div align="left" class="layui-row detail-main-title" style="">
+						<span>安全生产</span>
+					</div>
+					<div align="left" class="layui-row detail-main-title2">
+					<span>诚信为本</span><span>客户至上</span><span>品质第一</span><span>追求卓越</span>
+					</div>
+					<div align="left" style="font-family: ArialMT Regular;padding-left: 50px;padding-top: 2px;font-size: 12px;color: #B3B3B3;margin-bottom: 20px;">Integty based customer first quilty first</div>
+					<div align="left" class="detail-content"><h1>&nbsp;</h1><h1><a>&nbsp;&nbsp;&nbsp;&nbsp; 1 产品功能介绍</a></h1><h2><a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.1隐患排查系统</a></h2><p><span style="line-height:150%"><span style="font-size:16px"><span style="line-height:150%"><span style="font-family:宋体"><span style="letter-spacing:1px">隐患排查系统构建了监管部门与企业共同冶理隐患的沟通渠道，主要为是落实企业安全生产主体责任，监管部门根据国家相关法律法规，制定隐患排查标准，企业自我检查，发现隐患，主动上报，接受监管，自我整改。通过系统&ldquo;隐患排查治理&rdquo;&ldquo;分级评定&rdquo;&ldquo;诚信管理&rdquo;&ldquo;企业系统管理&rdquo;等主要功能，监管人员可以不出办公室，就能了解企业存在的隐患情况、整改情况，实现精准监管、重点检查。</span></span></span></span></span></p><p style="text-indent:35px;line-height:150%"><span style="font-size:16px;line-height:150%;font-family: 宋体;letter-spacing:1px">让企业安全检查人员实行标准化检查，通过系统自带5326条隐患排查标准，实行清单化的检查标准进行检查能基本保证隐患查而不漏，强调标准式检查，保证检查全面、隐患不&ldquo;隐&rdquo;，避免漏查、误判。</span><span style="font-size:16px;font-family:宋体;letter-spacing:1px">通过检查过程和检查标准，边检查边学习，提升个人业务素养。及时发现、实时上报、实时督办，和隐患赛跑。</span></p><p style="text-align: center;"><span style="line-height:150%"><span style="font-size:16px"><span style="line-height:150%"><span style="font-family:宋体"><span style="letter-spacing:1px">隐患排查系统主要建设内容</span></span></span></span></span></p><p style="text-align:center"><img alt="" height="239" src="http://www.it2000.com.cn/ftp/ckeditor/images/2018/12/20/1545301310017169.png" width="276" /></p><p style="text-align: center;"><span style="line-height:150%"><span style="font-size:16px"><span style="line-height:150%"><span style="font-family:宋体"><span style="letter-spacing:1px">隐患排查系统企业端</span></span></span></span></span></p><p style="text-align:center"><img alt="" height="331" src="http://www.it2000.com.cn/ftp/ckeditor/images/2018/12/20/1545301360033711.png" width="661" /></p><p>&nbsp;</p><h2><a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.2执法检查系统</a></h2><p><span style="line-height:150%">&nbsp; <span style="font-size:16px"><span style="line-height:150%"><span style="font-family:宋体">执法检查系统是一款专门为安全生产监管部门量身定做的一套日常检查、执法业务的平台，包含PC端和移动端；主要功能设置有【计划管理】、【现场检查】、【待整改复查】等，对日常检查从计划制定、检查实施、隐患/问题跟踪全过程管理，规范执法检查工作，监督执法检查过程，分析执法检查工作情况。执法检查系统实现了移动执法，解决了手写文书不规范、公章申请麻烦、执法效率低、数据采集不及时等痛点。</span></span></span></span></p><p style="text-align:center"><img alt="" height="329" src="http://www.it2000.com.cn/ftp/ckeditor/images/2018/12/20/154530159965980.png" width="659" /></p><p style="text-align:center"><span style="line-height:150%"><span style="font-family:宋体">图</span> 4.2-1<span style="font-size:16px"><span style="line-height:150%"><span style="font-family:宋体">执法检查系统PC端</span></span></span></span></p><p style="text-align:center"><img alt="" height="296" src="http://www.it2000.com.cn/ftp/ckeditor/images/2018/12/20/1545301649940977.png" width="656" /></p><p style="text-align:center"><span style="line-height:150%"><span style="font-family:宋体">图</span> 4.2-2 <span style="font-size:16px"><span style="line-height:150%"><span style="font-family:宋体">移动端执法系统</span></span></span></span></p><p>&nbsp;</p><h2><a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.3危化品系统</a></h2><p>&nbsp;</p><p><span style="line-height:150%">&nbsp;<span style="font-size:16px"><span style="line-height:150%"><span style="font-family:宋体">危化品系统主要通过&ldquo;一张图&rdquo;的形式，在地图上对全市危化品企业所处地理位置，企业属性进行分类显示，监管部门通过危化品地图就可清晰的了解全市危化品企业分布情况 、安全红线，并且通过地图将安全监管的精度从企业延伸到仓库或储罐，以及了解危化品流向。系统主要功能有&ldquo;企业信息&rdquo;&ldquo;危化品地图&rdquo;&ldquo;出入库管理&rdquo;&ldquo;统计分析&rdquo;等</span></span></span></span></p><p style="text-align:center"><img alt="" height="291" src="http://www.it2000.com.cn/ftp/ckeditor/images/2018/12/20/1545301823051717.png" width="655" /></p><p style="text-align:center"><span style="line-height:150%"><span style="font-family:宋体">图</span> 4.3-1&nbsp; <span style="font-family:宋体">危化品一张图</span></span></p><p style="text-align:center"><img alt="" height="280" src="http://www.it2000.com.cn/ftp/ckeditor/images/2018/12/20/1545301856084415.png" width="662" /></p><p style="text-align:center"><span style="line-height:150%"><span style="font-family:宋体">图</span> 4.3-2 <span style="font-size:16px"><span style="line-height:150%"><span style="font-family:宋体">单个重大危险源储罐信息</span></span></span></span></p><p>&nbsp;</p><h2><a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.4职业卫生系统</a></h2><p><a>安监局职业卫生信息电子管理平台是根据职业安全监管工作情况出发，为基层执法、监督人员提供统一录入、统一查询工作平台，便于我局掌握广州市职业卫生和健康总体状况的工作需要而建立的综合信息服务平台。以服务企业为中心，进一步拓宽公共服务渠道，使企业办事前可以全面准确了解相关程序、办理后可以及时跟踪办理状态和评价结果，各级职安部门能够提升办事效率。</a> 职业卫生系统主要有企业管理，中介服务机构管理，定期检测管理，现状评价，三同时上报管理，企业分级分类管理，执法清单管理，职业健康检查信息管理、职业病诊断信息，职业病鉴定信息，异常监控管理，督办信息管理，重大事件管理、执法检查职业卫生问题管理、技术服务机构诚信管理等</p><p style="text-align:center"><img alt="" height="327" src="http://www.it2000.com.cn/ftp/ckeditor/images/2018/12/20/1545302141888912.png" width="662" /></p><p>&nbsp;</p><h2><a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.5值班管理系统</a></h2><p>&nbsp;</p><p style="text-align:left"><span style="line-height:150%"><span style="font-size:16px"><span style="line-height:150%"><span style="font-family:宋体">值班管理系统主要是解决安监单位自动排班，值班记录，事故上报等业务。 </span></span></span></span></p><p style="text-align:left"><span style="line-height:150%"><span style="font-size:16px"><span style="line-height:150%"><span style="font-family:宋体">系统主要功能包括：值班管理，值班事故管理，事故快报，事故月报管理，事故指标管理，安全生产形势分析，事故快报统计。</span></span></span></span></p><p style="text-align:center"><img alt="" height="314" src="http://www.it2000.com.cn/ftp/ckeditor/images/2018/12/20/1545302191593604.png" width="658" /></p><h2><a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.6应急管理系统</a></h2><p>&nbsp;</p><p><span style="line-height:150%"><span style="font-size:16px"><span style="line-height:150%"><span style="font-family:宋体">应急管理系统的主要包括：应急值守、隐患管理、预测预警、立案、定性定级、预案检索与匹配、应急处置、应急联动、过程记录、善后处理等。</span></span></span></span></p><p>&nbsp;</p><h2><a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.7数据中心系统</a></h2><p>&nbsp;</p><p><span style="line-height:150%">&nbsp;<span style="font-size:16px"><span style="line-height:150%"><span style="font-family:宋体">数据中心即&ldquo;安全生产数据中心&rdquo;，是顶层设计的三大内容之一，数据中心承担着广州智慧安监的数据存储、共享、交换、筛选、整理等工作。数据中心包括数据支撑平台、公共服务平台、数据资源库，主要子系统有目录管理子系统、数据共享交换子系统、数据质量管理子系统、信息统一采集管理子系统。</span></span></span></span></p><p><span style="line-height:150%"><span style="font-size:16px"><span style="line-height:150%"><span style="font-family:宋体">数据中心的建设，统一了数据标准、完善了数据管理规则、打通了整个平台的数据通道，消除信息孤岛，各业务系统实现互联互通，完成了&ldquo;一企一档&rdquo;建设，为后续大数据分析提供支撑。</span></span></span></span></p><p><span style="line-height:150%">&nbsp;</span></p><p style="text-align:center"><img alt="" height="264" src="http://www.it2000.com.cn/ftp/ckeditor/images/2018/12/20/1545302259303856.png" width="545" /></p><p>&nbsp;</p><p style="text-align: center;"><span style="font-family:宋体">图</span> 4.8-1<span style="font-family:宋体">数据归集的业务流程</span></p><p style="text-align:center"><img alt="" height="314" src="http://www.it2000.com.cn/ftp/ckeditor/images/2018/12/20/154530229440432.png" width="657" /></p><p style="text-align:center"><span style="font-family:宋体">图</span> 4.8-2<span style="font-family:宋体">数据交换平台拖拽式交换配置界面</span></p><p style="text-align:center"><img alt="" height="413" src="http://www.it2000.com.cn/ftp/ckeditor/images/2018/12/20/1545302338749973.png" width="446" /></p><p style="text-align:center"><span style="font-family:宋体">图</span> 4.8--3<span style="font-size:16px"><span style="font-family:宋体">数据归集后企业档案</span></span></p><p style="text-align:center">&nbsp;</p><p style="text-align:center"><img alt="" height="329" src="http://www.it2000.com.cn/ftp/ckeditor/images/2018/12/20/1545302372085932.png" width="656" /></p><p style="text-align:center"><span style="font-family:宋体">图</span> 4.8&mdash;4<span style="font-family:宋体">数据中心企业档案</span></p><p>&nbsp;</p><h1><a><span style="font-size:24px"><span style="line-height:200%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2<span style="font-family:黑体">产品特征</span></span></span></a></h1><h2><a><span style="font-size:24px"><span style="line-height:200%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>2.1<span style="font-family:宋体">全面汇聚信息资源，建立统一大数据中心</span></a></h2><p style="margin-top:10px; margin-right:0; margin-bottom:10px; margin-left:0"><span style="line-height:150%"><span style="font-size:16px"><span style="line-height:150%"><span style="font-family:宋体">城市智能化管控中心将依托城市统一信息平台和城市管理大数据资源库，分期汇接公安、人力资源和社会保障、国土房管、环保、城建、交通、水务、卫生、人口计生、规划、城管、林业园林、质监、食品药品、安监、水电气、电信、消防、气象等城市管理相关的职能部门、单位的信息系统和子平台，实现城市各种设施广泛接入、信息互联互通，并将各业务线相关的信息资源汇聚到城市智能化管控中心。</span></span></span></span></p><h2><a><span style="font-size:24px"><span style="line-height:200%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>2.2<span style="font-family:宋体">智能数据融合，一体化业务协作模式</span></a></h2><p style="margin-top:10px; margin-right:0; margin-bottom:10px; margin-left:0"><span style="line-height:150%"><span style="font-size:16px"><span style="line-height:150%"><span style="font-family:宋体">城市智能化管控中心将利用汇聚集中的信息资源，通过业务应用和市区两级平台的对接联动，实现不同业务应用系统之间的数据融合与业务协同，对城市管理事件的实现分级响应和按权属的快速分发，最终实现城市管理一体化业务协作模式，从而提升城市管理运行的整体效能。</span></span></span></span></p><h2><a><span style="font-size:24px"><span style="line-height:200%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>2.3<span style="font-family:宋体">动态实时监控，可视化智能指挥调度</span></a></h2><p style="margin-top:10px; margin-right:0; margin-bottom:10px; margin-left:0"><span style="line-height:150%"><span style="font-size:16px"><span style="line-height:150%"><span style="font-family:宋体">城市智能化管控中心将汇集城市管理相关部门已建设的视频网络资源，并通过网格化管理，实现对城市管理事件热点的实时监控；同时基于统一信息平台的智能化视频分析能力，实现智能化、可视化指挥调度。</span></span></span></span></p><h2><a><span style="font-size:24px"><span style="line-height:200%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>2.4<span style="font-family:宋体">以数字精准说话，科学支持辅助决策</span></a></h2><p style="margin-top:10px; margin-right:0; margin-bottom:10px; margin-left:0"><span style="line-height:150%"><span style="font-size:16px"><span style="line-height:150%"><span style="font-family:宋体">城市智能化管控中心针对城市管理相关业务主题建立起相应的数学模型，利用智能化的决策支持技术，辅助城市管理的重要问题及事件处理决策。</span></span></span></span></p><p>&nbsp;</p><h1><a><span style="font-size:24px"><span style="line-height:200%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>3<span style="font-size:24px"><span style="line-height:200%"><span style="font-family:黑体">.产品成功案例</span></span></span></a></h1><h2><a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.1广州市安监局安全生产管控平台</a></h2><h2><a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.1.1项目简介</a></h2><p>广州市安全生产监督管理局在2015年至2017年共进行三次安全生产管控平台优化建设，广州智能科技发展有限公司承建了安全生产管控平台项目二、三、四期工程。</p><p>2015年度安全生产管控平台二期项目主要是在一期数据资源规划和指标体系设计的基础上，完成数据中心建设，构建市、区、街（镇）的三级安全生产业务数据共享与交换平台；建立安全生产指标分析体系，实现对各类安监企业数据资源的统一管理。2016年度管控三期建设项目建设了综合监管工作平台、企业安全管理服务平台，开发了安全生产执法检查系统，实现了安全生产移动执法。2017年度管控四期建设项目是建设安生生产日常监督平台，实现动态化监管，建成对工贸行业及非煤矿山行业企业、危险化学品企业的日常监管功能，为安全生产监督管理提供准确而有效的数据信息。</p><h3>&nbsp;</h3><h2><a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.1.2项目建设内容</a></h2><p style="text-align:center"><img alt="" height="475" src="http://www.it2000.com.cn/ftp/ckeditor/images/2018/12/20/1545302792724854.png" width="669" /></p><h2><a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.1.3项目建议成效</a></h2><h3>&nbsp;</h3><p>&nbsp;</p><p>2015年度安全生产管控平台二期项目：实现对各类安监企业数据资源的统一管理，实现企业基础信息定时更新，解决安监监管企业数据存量问题，为后续安监信息化应用提供统一的数据基础和公共服务；通过建立安全生产指标分析体系，初步实现安全生产形势分析和风险预警等。</p><p>2016年度安全生产管控平台三期项目：实现了安全生产移动执法，提高了执法效率；通过编制广州市安全生产信息化标准与规范，指导并规范全市安全生产信息化建设，实现信息互联互通。</p><p>2017年度安全生产管控平台四期项目：对安全生产的日常监督管理工作实现了动态化监管，明显提升安全监管人员的业务水平和监管手段；形成一个全面管控、智能管理、动态监控的格局，及时为安全生产监督管理提供准确而有效的数据信息。</p><p>&nbsp;</p><p>&nbsp;</p></div>
+				</div>
+				<div style="width: 950px;">
+					<div style="display: inline-block; position: relative; right: 100px; line-height: 80px;">
+								<a href="7D3FE84A51CE413F932A24089C19432D.html">上一篇：数据可视化</a>
+					</div>
+					<div style="display: inline-block; position: relative; left: 100px; line-height: 80px;">
+								<a href="8DFF440C7E664D7B93950DD77F352876.html">智慧机场:下一篇</a>
+					</div>
+				</div>
+			</div>
+			<!-- footer 模块 -->
+			<div style="float:left;width:100%">
+<div class="layui-footer">
+	<div class="footer-info layui-row">
+		<div class="layui-col-xs8">
+			<div class="infos">
+				<div class="info-item info-head text-left ">新手指南</div>
+				<div class="info-item info-head">关于智能</div>
+				<div class="info-item info-head">服务与支持</div>
+				<div class="info-item info-head">产品中心</div>
+				<div class="info-item info-head text-right">其他服务</div>
+				
+				<div class="info-item text-left "><a href="../index.html">网站首页</a></div>
+				<div class="info-item"><a href="../templ/contactus/index.html">企业简介</a></div>
+				<div class="info-item"><a href="../solve/index.html">解决方案</a></div>
+				<div class="info-item">产品介绍</div>
+				<div class="info-item text-right">系统集成</div>
+				
+				<div class="info-item text-left ">帮助中心</div>
+				<div class="info-item"><a href="../templ/memorabilia/index.html">发展历程</a></div>
+				<div class="info-item">服务热线</div>
+				<div class="info-item">产品资料</div>
+				<div class="info-item text-right">软件资讯</div>
+				
+				<div class="info-item text-left ">联系我们</div>
+				<div class="info-item">奖项荣誉</div>
+				<div class="info-item">下载中心</div>
+				<div class="info-item">产品试用</div>
+				<div class="info-item text-right">其他</div>
+			</div>
+		</div>
+		<div class="layui-col-xs4 qrcodes">
+			<div class="qrcode">
+				<img class="qrcode-image" src="../sites/www/images/qrcode/wx_gzh.jpg"/>
+				<span class="qrcode-title">微信公众号</span>
+			</div>
+			<div class="qrcode">
+				<img class="qrcode-image" src="../sites/www/images/qrcode/app.jpg"/>
+				<span class="qrcode-title">手机APP</span>
+			</div>
+		</div>
+	</div>
+	<div class="copy-right">Copyright © 2018 广州智能科技发展有限公司，版权所有</div>
+</div>
+
+<script type="text/javascript">
+	layui.use('element', function() {
+		var element = layui.element;
+	});
+</script>			</div>
+		</div>
+		<!-- 页面主体 end -->
+	</div>
+		
+</body>
+	<script type="text/javascript">
+	layui.use(['laypage','jquery'], function(){
+		var $ = layui.jquery;
+	});
+	</script>
+</html>

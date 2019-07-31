@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="zh" class="ie ie8">
+<head>
+<meta http-equiv="content-Type" content="text/html; charset=utf-8" />
+<!-- 基础应用站点信息 -->
+<meta charset="utf-8" />
+<title>广州智能科技</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>系统管理</title>
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+
+<!-- 系统基础样式 -->
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+<link rel="stylesheet" type="text/css" href="../fonts/iconfont/style.css" />
+<link rel="stylesheet" type="text/css" href="../fonts/awesome/style.css" />
+<link rel="stylesheet" type="text/css" href="../fonts/feather/style.css" />
+<link rel="stylesheet" type="text/css" href="../fonts/themify/style.css" />
+<link rel="stylesheet" type="text/css" href="../sites/www/css/style.css" ></link>
+
+<link rel="stylesheet" type="text/css" href="../css/cms-style.css" ></link>
+<script charset="utf-8" type="text/javascript" src="../layui.js" ></script>
+</head>
+<body class="layui-layout-front">
+	<div class="layui-layout">
+		<!-- header 模块 -->
+<meta charset="utf-8" />
+
+<div class="layui-header">
+	<div class="layui-logo"></div>
+	<!-- 头部区域（可配合layui已有的水平导航） -->
+	<ul class="layui-nav layui-layout-left">
+		<li class="layui-nav-item"><a href="../index.html">首页</a></li>
+		<li class="layui-nav-item">
+				<a href="../product/index.html">产品中心</a>
+		</li>
+		<li class="layui-nav-item">
+				<a href="index.html">解决方案</a>
+		</li>
+		<li class="layui-nav-item">
+				<a href="../news/index.html">新闻中心</a>
+		</li>
+	</ul>
+	<ul class="layui-nav layui-layout-right">
+		<li class="layui-nav-item"><a href="../templ/memorabilia/index.html">公司大事记</a></li>
+		<li class="layui-nav-item"><a href="../templ/contactus/index.html">联系我们</a></li>
+<!-- 		 -->
+			<li class="layui-nav-item"><a href="http://www.it2000.com.cn/login-JSESSIONID=d864056c-ee6b-4461-b794-9e7980141508.html">登录|注册</a></li>
+<!-- 		 -->
+	</ul>
+</div>
+
+<!-- 右侧浮动工具栏 -->
+<ul class="layui-fixbar fixed-right-tool" id="fixtoolbar">
+	<li lay-type="airlines" class="pt-15">
+		<i class="layui-icon layui-icon-headset"></i>
+		<span class="layui-title">在线客服</span>
+	</li>
+	<li lay-type="qq" class="pt-15">
+		<i class="layui-icon layui-icon-login-qq"></i>
+		<span class="layui-title">QQ</span>
+	</li>
+	<li lay-type="tel" class="pt-15" >
+		<i class="layui-icon layui-icon-cellphone-fine"></i>
+		<span class="layui-title">电话热线</span>
+	</li>
+	<li lay-type="gestbook" class="pt-15">
+		<i class="layui-icon layui-icon-edit"></i>
+		<span class="layui-title">在线留言</span>
+	</li>
+</ul>
+
+<div name="browserMsg" class="text-center layui-layer-content" style="display: none;">
+	<div class="mt-40">
+		<span class="spanMsg">您正在使用的浏览器版本过低，将不能正常浏览和使用本网站</span>
+		<br><span class="spanMsg">请升级浏览器至IE9版本或以上，推荐浏览器如下：</span>
+	</div>
+	<div class="browserDiv mt-40">
+		<table style="width: 100%;">
+			<tr>
+				<td style="width:200px;" align="center">
+					<a href="https://support.microsoft.com/zh-cn/help/17621/internet-explorer-downloads">
+						<div class="solution-carousel-content">
+							<img src="../sites/www/images/browser/ie11-logo.png" style="height: 120px;">
+							<div class="solution-content2 mt-20">
+								<span class="spanMsg">升级IE浏览器</span>
+							</div>
+						</div>
+					</a>
+				</td>
+				<td style="width:200px;" align="center">
+					<a href="https://www.google.cn/chrome/">
+						<div class="solution-carousel-content">
+							<img src="../sites/www/images/browser/chrome-logo.png" style="height: 120px;">
+							<div class="solution-content2 mt-20">
+								<span class="spanMsg">使用谷歌浏览器</span>
+							</div>
+						</div>
+					</a>
+				</td>
+				<td style="width:200px;" align="center">
+					<a href="http://www.firefox.com.cn/">
+						<div class="solution-carousel-content">
+							<img src="../sites/www/images/browser/firefox-logo.png" style="height: 120px;">
+							<div class="solution-content2 mt-20">
+								<span class="spanMsg">使用火狐浏览器</span>
+							</div>
+						</div>
+					</a>
+				</td>
+			</tr>
+		</table>
+		
+	</div>
+</div>
+<!-- 右侧浮动工具栏 end -->
+<script type="text/javascript">
+layui.use(['jquery','util','layer'], function(){
+	var $ = layui.jquery;
+	var util = layui.util;
+	var layer = layui.layer;
+	
+	 //固定块
+	util.fixbar({
+		elem : '#fixtoolbar',
+		css : {
+			right : 20,
+			bottom : 100
+		},
+		click : function(type) {
+			window.location.href="/cms-web/templ/contactus/index.html";
+		}
+	});
+	 
+	var url = window.location.pathname;
+	// 首页url处理
+	if (url == "/cms-web/") {
+		url = "/cms-web";		
+	}
+	// 获取href=url的a标签所在的li元素，添加选中样式
+	$("div.layui-header [href='"+url+"']").parents("li.layui-nav-item").addClass("layui-this");
+	
+	// 浏览器判断
+	// 添加弹出框
+	if(navigator.appName == "Microsoft Internet Explorer" 
+			&& ( navigator.appVersion.match(/7./i)=="7." ||
+					navigator.appVersion.match(/8./i)=="8.")){ 
+		layer.open({
+			type:1,
+			title: false, // 无标题
+			content:$("div[name=browserMsg]"),
+			closeBtn: 0, // 无关闭按钮
+			shade: [0.8, '#393D49'], // 遮罩层
+			area: ['630px','390px']
+		});
+		$("div[name=browserMsg]").show();
+	}
+});
+</script>		
+		<!-- 页面主体 -->
+		<div class="layui-body newlist">
+			<!-- 头部图片-->
+			<div class="newlist-img">
+			</div>
+			<div class="breadcrumbs">
+				<div class="layui-col-md3 pl-20 pt-10">
+					<span><img src="http://www.it2000.com.cn/sites/www/images/newlist/4.jpg.png"></span>
+					<span style="">当前位置：</span>
+					<span class="layui-breadcrumb" lay-separator="<i class='layui-icon layui-icon-right'></i>">
+					  <a href="../index.html">首页</a>
+					  <a href="">解决方案</a>
+					</span>
+				</div>
+			</div>
+			<div class="list-main" align="center">
+			<div class="casehead">
+				<div class="enfont pt-100">
+					<span>Support & Service</span>
+				</div>
+				<div class="zhfont">
+					<a href="index.html"><span>解决方案</span></a>
+				</div>
+				<div class="title3 pt-5">
+					<span>提高技术，完善服务，多行业解决方案，为您发掘更多更大价值</span>
+				</div>
+			</div>
+						<div class="list-solution layui-row">
+								<div class="layui-col-sm3">
+									<div class="caseshow">
+										<img style="width: 248px; height: 218px; margin: 7px;" src="../ftp/gxxy/2018/12/20/1545290641494529.jpg">
+										<div class="title">智能动力服务式3D GIS平台</div>
+										<div class="layui-row layui-col-space8 footer-bar">
+											<!-- <img id='case-img' class="caseshow-img" src="/cms-web/sites/www/images/index/successcase/浏览量.png">
+							    			 -->
+											<a href="0140E53C01804BAEADA97A767CC756A7.html" class="layui-btn layui-btn-primary layui-btn-sm caseshow-detail">查看详情</a>
+										</div>
+									</div>
+								</div>
+								<div class="layui-col-sm3">
+									<div class="caseshow">
+										<img style="width: 248px; height: 218px; margin: 7px;" src="../ftp/gxxy/2018/12/20/1545286471680363.jpg">
+										<div class="title">智能化应急指挥管理平台</div>
+										<div class="layui-row layui-col-space8 footer-bar">
+											<!-- <img id='case-img' class="caseshow-img" src="/cms-web/sites/www/images/index/successcase/浏览量.png">
+							    			 -->
+											<a href="07E76A15BE4A4E978889918C846A721E.html" class="layui-btn layui-btn-primary layui-btn-sm caseshow-detail">查看详情</a>
+										</div>
+									</div>
+								</div>
+								<div class="layui-col-sm3">
+									<div class="caseshow">
+										<img style="width: 248px; height: 218px; margin: 7px;" src="../ftp/gxxy/2018/12/20/154528921858188.jpg">
+										<div class="title">数据全流通总线系统</div>
+										<div class="layui-row layui-col-space8 footer-bar">
+											<!-- <img id='case-img' class="caseshow-img" src="/cms-web/sites/www/images/index/successcase/浏览量.png">
+							    			 -->
+											<a href="1068A000822D4FC88169AEC0CB68E4DB.html" class="layui-btn layui-btn-primary layui-btn-sm caseshow-detail">查看详情</a>
+										</div>
+									</div>
+								</div>
+								<div class="layui-col-sm3">
+									<div class="caseshow">
+										<img style="width: 248px; height: 218px; margin: 7px;" src="../ftp/gxxy/2018/12/20/1545287816285462.jpg">
+										<div class="title">公文交换系统</div>
+										<div class="layui-row layui-col-space8 footer-bar">
+											<!-- <img id='case-img' class="caseshow-img" src="/cms-web/sites/www/images/index/successcase/浏览量.png">
+							    			 -->
+											<a href="15B4B4B9EE73493D875E6BDA2EB91812.html" class="layui-btn layui-btn-primary layui-btn-sm caseshow-detail">查看详情</a>
+										</div>
+									</div>
+								</div>
+								<div class="layui-col-sm3">
+									<div class="caseshow">
+										<img style="width: 248px; height: 218px; margin: 7px;" src="../ftp/gxxy/2018/12/20/1545295792396361.jpg">
+										<div class="title">应急大数据服务平台</div>
+										<div class="layui-row layui-col-space8 footer-bar">
+											<!-- <img id='case-img' class="caseshow-img" src="/cms-web/sites/www/images/index/successcase/浏览量.png">
+							    			 -->
+											<a href="1648077D4E014B879895C52B4CA4C31B.html" class="layui-btn layui-btn-primary layui-btn-sm caseshow-detail">查看详情</a>
+										</div>
+									</div>
+								</div>
+								<div class="layui-col-sm3">
+									<div class="caseshow">
+										<img style="width: 248px; height: 218px; margin: 7px;" src="../ftp/gxxy/2018/12/20/1545290790468564.jpg">
+										<div class="title">大屏幕控制系统</div>
+										<div class="layui-row layui-col-space8 footer-bar">
+											<!-- <img id='case-img' class="caseshow-img" src="/cms-web/sites/www/images/index/successcase/浏览量.png">
+							    			 -->
+											<a href="1870A42969AA4A6D988C9A02F1A93BE9.html" class="layui-btn layui-btn-primary layui-btn-sm caseshow-detail">查看详情</a>
+										</div>
+									</div>
+								</div>
+								<div class="layui-col-sm3">
+									<div class="caseshow">
+										<img style="width: 248px; height: 218px; margin: 7px;" src="../ftp/gxxy/2018/12/20/1545290712870479.jpg">
+										<div class="title">商务会展业公共服务平台</div>
+										<div class="layui-row layui-col-space8 footer-bar">
+											<!-- <img id='case-img' class="caseshow-img" src="/cms-web/sites/www/images/index/successcase/浏览量.png">
+							    			 -->
+											<a href="210EC5E0F7DA47008E15FA469B4E99B6.html" class="layui-btn layui-btn-primary layui-btn-sm caseshow-detail">查看详情</a>
+										</div>
+									</div>
+								</div>
+								<div class="layui-col-sm3">
+									<div class="caseshow">
+										<img style="width: 248px; height: 218px; margin: 7px;" src="../ftp/gxxy/2018/12/20/1545287090350577.jpg">
+										<div class="title">港务应急管理系统</div>
+										<div class="layui-row layui-col-space8 footer-bar">
+											<!-- <img id='case-img' class="caseshow-img" src="/cms-web/sites/www/images/index/successcase/浏览量.png">
+							    			 -->
+											<a href="2D36B66203704107A158905739FA25E8.html" class="layui-btn layui-btn-primary layui-btn-sm caseshow-detail">查看详情</a>
+										</div>
+									</div>
+								</div>
+								<div class="layui-col-sm3">
+									<div class="caseshow">
+										<img style="width: 248px; height: 218px; margin: 7px;" src="http://www.it2000.com.cn/ftp/gxxy/2018/12/20/1545287994389500.jpg">
+										<div class="title">政务协同系统</div>
+										<div class="layui-row layui-col-space8 footer-bar">
+											<!-- <img id='case-img' class="caseshow-img" src="/cms-web/sites/www/images/index/successcase/浏览量.png">
+							    			 -->
+											<a href="http://www.it2000.com.cn/solve/3E7B0D20FD0449CD923E484137A09FE1.html" class="layui-btn layui-btn-primary layui-btn-sm caseshow-detail">查看详情</a>
+										</div>
+									</div>
+								</div>
+								<div class="layui-col-sm3">
+									<div class="caseshow">
+										<img style="width: 248px; height: 218px; margin: 7px;" src="http://www.it2000.com.cn/ftp/gxxy/2018/12/20/1545307728003629.jpg">
+										<div class="title">大数据综合展现系统</div>
+										<div class="layui-row layui-col-space8 footer-bar">
+											<!-- <img id='case-img' class="caseshow-img" src="/cms-web/sites/www/images/index/successcase/浏览量.png">
+							    			 -->
+											<a href="http://www.it2000.com.cn/solve/678D3D984082400F990D9CD02504B0C2.html" class="layui-btn layui-btn-primary layui-btn-sm caseshow-detail">查看详情</a>
+										</div>
+									</div>
+								</div>
+								<div class="layui-col-sm3">
+									<div class="caseshow">
+										<img style="width: 248px; height: 218px; margin: 7px;" src="http://www.it2000.com.cn/ftp/gxxy/2018/12/20/15452895248393.jpg">
+										<div class="title">合同信用服务管理大数据平台</div>
+										<div class="layui-row layui-col-space8 footer-bar">
+											<!-- <img id='case-img' class="caseshow-img" src="/cms-web/sites/www/images/index/successcase/浏览量.png">
+							    			 -->
+											<a href="http://www.it2000.com.cn/solve/7271F389A3C14E339CF89BBEC1F16206.html" class="layui-btn layui-btn-primary layui-btn-sm caseshow-detail">查看详情</a>
+										</div>
+									</div>
+								</div>
+								<div class="layui-col-sm3">
+									<div class="caseshow">
+										<img style="width: 248px; height: 218px; margin: 7px;" src="http://www.it2000.com.cn/ftp/gxxy/2018/12/20/1545286905850872.jpg">
+										<div class="title">智慧园区</div>
+										<div class="layui-row layui-col-space8 footer-bar">
+											<!-- <img id='case-img' class="caseshow-img" src="/cms-web/sites/www/images/index/successcase/浏览量.png">
+							    			 -->
+											<a href="http://www.it2000.com.cn/solve/806FF8C1FBF44339ACB3AF7EB241CD60.html" class="layui-btn layui-btn-primary layui-btn-sm caseshow-detail">查看详情</a>
+										</div>
+									</div>
+								</div>
+								<div class="layui-col-sm3">
+									<div class="caseshow">
+										<img style="width: 248px; height: 218px; margin: 7px;" src="http://www.it2000.com.cn/ftp/gxxy/2018/12/20/1545293159300459.jpg">
+										<div class="title">城市运行管控中心</div>
+										<div class="layui-row layui-col-space8 footer-bar">
+											<!-- <img id='case-img' class="caseshow-img" src="/cms-web/sites/www/images/index/successcase/浏览量.png">
+							    			 -->
+											<a href="http://www.it2000.com.cn/solve/994AC20DFEE04B7D8C006266A048961B.html" class="layui-btn layui-btn-primary layui-btn-sm caseshow-detail">查看详情</a>
+										</div>
+									</div>
+								</div>
+								<div class="layui-col-sm3">
+									<div class="caseshow">
+										<img style="width: 248px; height: 218px; margin: 7px;" src="http://www.it2000.com.cn/ftp/gxxy/2018/12/20/1545286026968746.jpg">
+										<div class="title">智慧防震减灾</div>
+										<div class="layui-row layui-col-space8 footer-bar">
+											<!-- <img id='case-img' class="caseshow-img" src="/cms-web/sites/www/images/index/successcase/浏览量.png">
+							    			 -->
+											<a href="http://www.it2000.com.cn/solve/9F87049D8D844FDB953EAA9CC62DF548.html" class="layui-btn layui-btn-primary layui-btn-sm caseshow-detail">查看详情</a>
+										</div>
+									</div>
+								</div>
+								<div class="layui-col-sm3">
+									<div class="caseshow">
+										<img style="width: 248px; height: 218px; margin: 7px;" src="http://www.it2000.com.cn/ftp/gxxy/2018/12/20/1545292463781625.jpg">
+										<div class="title">大型活动调度系统</div>
+										<div class="layui-row layui-col-space8 footer-bar">
+											<!-- <img id='case-img' class="caseshow-img" src="/cms-web/sites/www/images/index/successcase/浏览量.png">
+							    			 -->
+											<a href="http://www.it2000.com.cn/solve/AD3C98478C9B4D078F15F0DAE5EF0FCB.html" class="layui-btn layui-btn-primary layui-btn-sm caseshow-detail">查看详情</a>
+										</div>
+									</div>
+								</div>
+								<div class="layui-col-sm3">
+									<div class="caseshow">
+										<img style="width: 248px; height: 218px; margin: 7px;" src="http://www.it2000.com.cn/ftp/gxxy/2018/12/20/1545289597889534.jpg">
+										<div class="title">安全生产大数据平台</div>
+										<div class="layui-row layui-col-space8 footer-bar">
+											<!-- <img id='case-img' class="caseshow-img" src="/cms-web/sites/www/images/index/successcase/浏览量.png">
+							    			 -->
+											<a href="http://www.it2000.com.cn/solve/ADE00A8F93874A21B63EFDC2BF43AF86.html" class="layui-btn layui-btn-primary layui-btn-sm caseshow-detail">查看详情</a>
+										</div>
+									</div>
+								</div>
+								<div class="layui-col-sm3">
+									<div class="caseshow">
+										<img style="width: 248px; height: 218px; margin: 7px;" src="http://www.it2000.com.cn/ftp/gxxy/2018/12/20/1545289089518704.jpg">
+										<div class="title">新一代数据共享交换平台</div>
+										<div class="layui-row layui-col-space8 footer-bar">
+											<!-- <img id='case-img' class="caseshow-img" src="/cms-web/sites/www/images/index/successcase/浏览量.png">
+							    			 -->
+											<a href="http://www.it2000.com.cn/solve/B6DB4ED130974C7A8F185A6C6951A71B.html" class="layui-btn layui-btn-primary layui-btn-sm caseshow-detail">查看详情</a>
+										</div>
+									</div>
+								</div>
+								<div class="layui-col-sm3">
+									<div class="caseshow">
+										<img style="width: 248px; height: 218px; margin: 7px;" src="http://www.it2000.com.cn/ftp/gxxy/2018/12/20/1545285681163131.jpg">
+										<div class="title">智慧园林</div>
+										<div class="layui-row layui-col-space8 footer-bar">
+											<!-- <img id='case-img' class="caseshow-img" src="/cms-web/sites/www/images/index/successcase/浏览量.png">
+							    			 -->
+											<a href="http://www.it2000.com.cn/solve/C0300C0B22C64C28994BDA1D802AADEF.html" class="layui-btn layui-btn-primary layui-btn-sm caseshow-detail">查看详情</a>
+										</div>
+									</div>
+								</div>
+								<div class="layui-col-sm3">
+									<div class="caseshow">
+										<img style="width: 248px; height: 218px; margin: 7px;" src="http://www.it2000.com.cn/ftp/gxxy/2018/12/20/1545288688998671.jpg">
+										<div class="title">公共信用信息管理系统</div>
+										<div class="layui-row layui-col-space8 footer-bar">
+											<!-- <img id='case-img' class="caseshow-img" src="/cms-web/sites/www/images/index/successcase/浏览量.png">
+							    			 -->
+											<a href="http://www.it2000.com.cn/solve/C12BE0591ADD4A4087ACF8E520ED43F3.html" class="layui-btn layui-btn-primary layui-btn-sm caseshow-detail">查看详情</a>
+										</div>
+									</div>
+								</div>
+								<div class="layui-col-sm3">
+									<div class="caseshow">
+										<img style="width: 248px; height: 218px; margin: 7px;" src="http://www.it2000.com.cn/ftp/gxxy/2018/12/20/1545288854463227.jpg">
+										<div class="title">政务信息门户系统</div>
+										<div class="layui-row layui-col-space8 footer-bar">
+											<!-- <img id='case-img' class="caseshow-img" src="/cms-web/sites/www/images/index/successcase/浏览量.png">
+							    			 -->
+											<a href="http://www.it2000.com.cn/solve/C1A3579EC7524FBF8D61D3C5082F3F69.html" class="layui-btn layui-btn-primary layui-btn-sm caseshow-detail">查看详情</a>
+										</div>
+									</div>
+								</div>
+								<div class="layui-col-sm3">
+									<div class="caseshow">
+										<img style="width: 248px; height: 218px; margin: 7px;" src="http://www.it2000.com.cn/ftp/gxxy/2018/12/20/1545288401074197.jpg">
+										<div class="title">中小型企业投融资公共服务平台</div>
+										<div class="layui-row layui-col-space8 footer-bar">
+											<!-- <img id='case-img' class="caseshow-img" src="/cms-web/sites/www/images/index/successcase/浏览量.png">
+							    			 -->
+											<a href="http://www.it2000.com.cn/solve/C37BB64E4C0B4552B5B03348388C8E0D.html" class="layui-btn layui-btn-primary layui-btn-sm caseshow-detail">查看详情</a>
+										</div>
+									</div>
+								</div>
+								<div class="layui-col-sm3">
+									<div class="caseshow">
+										<img style="width: 248px; height: 218px; margin: 7px;" src="http://www.it2000.com.cn/ftp/gxxy/2018/12/20/1545289283780613.jpg">
+										<div class="title">全量资源目录系统</div>
+										<div class="layui-row layui-col-space8 footer-bar">
+											<!-- <img id='case-img' class="caseshow-img" src="/cms-web/sites/www/images/index/successcase/浏览量.png">
+							    			 -->
+											<a href="http://www.it2000.com.cn/solve/C75AE541725341A0954CE54FDE0124C7.html" class="layui-btn layui-btn-primary layui-btn-sm caseshow-detail">查看详情</a>
+										</div>
+									</div>
+								</div>
+								<div class="layui-col-sm3">
+									<div class="caseshow">
+										<img style="width: 248px; height: 218px; margin: 7px;" src="http://www.it2000.com.cn/ftp/gxxy/2018/12/20/1545315229589784.jpg">
+										<div class="title">政务服务系统</div>
+										<div class="layui-row layui-col-space8 footer-bar">
+											<!-- <img id='case-img' class="caseshow-img" src="/cms-web/sites/www/images/index/successcase/浏览量.png">
+							    			 -->
+											<a href="http://www.it2000.com.cn/solve/F2A1D703F2004D908FA56DF52D44ABBB.html" class="layui-btn layui-btn-primary layui-btn-sm caseshow-detail">查看详情</a>
+										</div>
+									</div>
+								</div>
+								<div class="layui-col-sm3">
+									<div class="caseshow">
+										<img style="width: 248px; height: 218px; margin: 7px;" src="http://www.it2000.com.cn/ftp/gxxy/2018/12/20/1545315273632909.jpg">
+										<div class="title">效能监察系统</div>
+										<div class="layui-row layui-col-space8 footer-bar">
+											<!-- <img id='case-img' class="caseshow-img" src="/cms-web/sites/www/images/index/successcase/浏览量.png">
+							    			 -->
+											<a href="http://www.it2000.com.cn/solve/F57AAB35FDA84F3F81E4BADE67660FB6.html" class="layui-btn layui-btn-primary layui-btn-sm caseshow-detail">查看详情</a>
+										</div>
+									</div>
+								</div>
+								<div class="layui-col-sm3">
+									<div class="caseshow">
+										<img style="width: 248px; height: 218px; margin: 7px;" src="http://www.it2000.com.cn/ftp/gxxy/2018/12/20/1545291307385750.jpg">
+										<div class="title">事故隐患排查治理信息系统</div>
+										<div class="layui-row layui-col-space8 footer-bar">
+											<!-- <img id='case-img' class="caseshow-img" src="/cms-web/sites/www/images/index/successcase/浏览量.png">
+							    			 -->
+											<a href="http://www.it2000.com.cn/solve/FA8FDE8F2A7046338A231A0564D37EE2.html" class="layui-btn layui-btn-primary layui-btn-sm caseshow-detail">查看详情</a>
+										</div>
+									</div>
+								</div>
+						</div>
+				<!-- footer 模块 -->
+				<div class="footer-mt" style="float:left;width:100%">
+<div class="layui-footer">
+	<div class="footer-info layui-row">
+		<div class="layui-col-xs8">
+			<div class="infos">
+				<div class="info-item info-head text-left ">新手指南</div>
+				<div class="info-item info-head">关于智能</div>
+				<div class="info-item info-head">服务与支持</div>
+				<div class="info-item info-head">产品中心</div>
+				<div class="info-item info-head text-right">其他服务</div>
+				
+				<div class="info-item text-left "><a href="../index.html">网站首页</a></div>
+				<div class="info-item"><a href="../templ/contactus/index.html">企业简介</a></div>
+				<div class="info-item"><a href="index.html">解决方案</a></div>
+				<div class="info-item">产品介绍</div>
+				<div class="info-item text-right">系统集成</div>
+				
+				<div class="info-item text-left ">帮助中心</div>
+				<div class="info-item"><a href="../templ/memorabilia/index.html">发展历程</a></div>
+				<div class="info-item">服务热线</div>
+				<div class="info-item">产品资料</div>
+				<div class="info-item text-right">软件资讯</div>
+				
+				<div class="info-item text-left ">联系我们</div>
+				<div class="info-item">奖项荣誉</div>
+				<div class="info-item">下载中心</div>
+				<div class="info-item">产品试用</div>
+				<div class="info-item text-right">其他</div>
+			</div>
+		</div>
+		<div class="layui-col-xs4 qrcodes">
+			<div class="qrcode">
+				<img class="qrcode-image" src="../sites/www/images/qrcode/wx_gzh.jpg"/>
+				<span class="qrcode-title">微信公众号</span>
+			</div>
+			<div class="qrcode">
+				<img class="qrcode-image" src="../sites/www/images/qrcode/app.jpg"/>
+				<span class="qrcode-title">手机APP</span>
+			</div>
+		</div>
+	</div>
+	<div class="copy-right">Copyright © 2018 广州智能科技发展有限公司，版权所有</div>
+</div>
+
+<script type="text/javascript">
+	layui.use('element', function() {
+		var element = layui.element;
+	});
+</script>				</div>
+			</div>
+		</div>
+		<!-- 页面主体 end -->
+	</div>
+
+</body>
+	<script type="text/javascript">
+		layui.use(['laypage','jquery'], function(){
+			var $ = layui.jquery;
+		});
+	</script>
+</html>

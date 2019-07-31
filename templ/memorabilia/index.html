@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="zh" class="ie ie8">
+<head>
+<meta http-equiv="content-Type" content="text/html; charset=utf-8" />
+<!-- 基础应用站点信息 -->
+<meta charset="utf-8" />
+<title>广州智能科技</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>系统管理</title>
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+
+<!-- 系统基础样式 -->
+<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+<link rel="stylesheet" type="text/css" href="../../fonts/iconfont/style.css" />
+<link rel="stylesheet" type="text/css" href="../../fonts/awesome/style.css" />
+<link rel="stylesheet" type="text/css" href="../../fonts/feather/style.css" />
+<link rel="stylesheet" type="text/css" href="../../fonts/themify/style.css" />
+<link rel="stylesheet" type="text/css" href="../../sites/www/css/style.css" ></link>
+
+<link rel="stylesheet" type="text/css" href="../../css/cms-style.css" ></link>
+<script charset="utf-8" type="text/javascript" src="../../layui.js" ></script>
+</head>
+<body class="layui-layout-front">
+	<div class="layui-layout">
+		<!-- header 模块 -->
+<meta charset="utf-8" />
+
+<div class="layui-header">
+	<div class="layui-logo"></div>
+	<!-- 头部区域（可配合layui已有的水平导航） -->
+	<ul class="layui-nav layui-layout-left">
+		<li class="layui-nav-item"><a href="../../index.html">首页</a></li>
+		<li class="layui-nav-item">
+				<a href="../../product/index.html">产品中心</a>
+		</li>
+		<li class="layui-nav-item">
+				<a href="../../solve/index.html">解决方案</a>
+		</li>
+		<li class="layui-nav-item">
+				<a href="../../news/index.html">新闻中心</a>
+		</li>
+	</ul>
+	<ul class="layui-nav layui-layout-right">
+		<li class="layui-nav-item"><a href="index.html">公司大事记</a></li>
+		<li class="layui-nav-item"><a href="../contactus/index.html">联系我们</a></li>
+<!-- 		 -->
+			<li class="layui-nav-item"><a href="http://www.it2000.com.cn/login-JSESSIONID=d864056c-ee6b-4461-b794-9e7980141508.html">登录|注册</a></li>
+<!-- 		 -->
+	</ul>
+</div>
+
+<!-- 右侧浮动工具栏 -->
+<ul class="layui-fixbar fixed-right-tool" id="fixtoolbar">
+	<li lay-type="airlines" class="pt-15">
+		<i class="layui-icon layui-icon-headset"></i>
+		<span class="layui-title">在线客服</span>
+	</li>
+	<li lay-type="qq" class="pt-15">
+		<i class="layui-icon layui-icon-login-qq"></i>
+		<span class="layui-title">QQ</span>
+	</li>
+	<li lay-type="tel" class="pt-15" >
+		<i class="layui-icon layui-icon-cellphone-fine"></i>
+		<span class="layui-title">电话热线</span>
+	</li>
+	<li lay-type="gestbook" class="pt-15">
+		<i class="layui-icon layui-icon-edit"></i>
+		<span class="layui-title">在线留言</span>
+	</li>
+</ul>
+
+<div name="browserMsg" class="text-center layui-layer-content" style="display: none;">
+	<div class="mt-40">
+		<span class="spanMsg">您正在使用的浏览器版本过低，将不能正常浏览和使用本网站</span>
+		<br><span class="spanMsg">请升级浏览器至IE9版本或以上，推荐浏览器如下：</span>
+	</div>
+	<div class="browserDiv mt-40">
+		<table style="width: 100%;">
+			<tr>
+				<td style="width:200px;" align="center">
+					<a href="https://support.microsoft.com/zh-cn/help/17621/internet-explorer-downloads">
+						<div class="solution-carousel-content">
+							<img src="../../sites/www/images/browser/ie11-logo.png" style="height: 120px;">
+							<div class="solution-content2 mt-20">
+								<span class="spanMsg">升级IE浏览器</span>
+							</div>
+						</div>
+					</a>
+				</td>
+				<td style="width:200px;" align="center">
+					<a href="https://www.google.cn/chrome/">
+						<div class="solution-carousel-content">
+							<img src="../../sites/www/images/browser/chrome-logo.png" style="height: 120px;">
+							<div class="solution-content2 mt-20">
+								<span class="spanMsg">使用谷歌浏览器</span>
+							</div>
+						</div>
+					</a>
+				</td>
+				<td style="width:200px;" align="center">
+					<a href="http://www.firefox.com.cn/">
+						<div class="solution-carousel-content">
+							<img src="../../sites/www/images/browser/firefox-logo.png" style="height: 120px;">
+							<div class="solution-content2 mt-20">
+								<span class="spanMsg">使用火狐浏览器</span>
+							</div>
+						</div>
+					</a>
+				</td>
+			</tr>
+		</table>
+		
+	</div>
+</div>
+<!-- 右侧浮动工具栏 end -->
+<script type="text/javascript">
+layui.use(['jquery','util','layer'], function(){
+	var $ = layui.jquery;
+	var util = layui.util;
+	var layer = layui.layer;
+	
+	 //固定块
+	util.fixbar({
+		elem : '#fixtoolbar',
+		css : {
+			right : 20,
+			bottom : 100
+		},
+		click : function(type) {
+			window.location.href="/cms-web/templ/contactus/index.html";
+		}
+	});
+	 
+	var url = window.location.pathname;
+	// 首页url处理
+	if (url == "/cms-web/") {
+		url = "/cms-web";		
+	}
+	// 获取href=url的a标签所在的li元素，添加选中样式
+	$("div.layui-header [href='"+url+"']").parents("li.layui-nav-item").addClass("layui-this");
+	
+	// 浏览器判断
+	// 添加弹出框
+	if(navigator.appName == "Microsoft Internet Explorer" 
+			&& ( navigator.appVersion.match(/7./i)=="7." ||
+					navigator.appVersion.match(/8./i)=="8.")){ 
+		layer.open({
+			type:1,
+			title: false, // 无标题
+			content:$("div[name=browserMsg]"),
+			closeBtn: 0, // 无关闭按钮
+			shade: [0.8, '#393D49'], // 遮罩层
+			area: ['630px','390px']
+		});
+		$("div[name=browserMsg]").show();
+	}
+});
+</script>		
+		<!-- 页面主体 -->
+		<div class="layui-body">
+			<div align="center" class="memorabilia">
+				<div class="memorabilia-title">
+					<div class="enfont pt-20"><span>Company Memorabilia</span></div>
+					<div class="zhfont"><span>公司大事记</span></div>
+				</div>
+				<div align="left" class="memorabilia-head">
+					<!-- <fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+					  <legend>常规时间线</legend>
+					</fieldset> -->
+					<ul class="layui-timeline">
+					  
+					  <li class="layui-timeline-item">
+					    <i class="layui-icon layui-timeline-axis"></i>
+					    <div class="layui-timeline-content layui-text">
+					      <h3 class="layui-timeline-title">2018.12.17</h3>
+					      <p>
+					        <p style="margin:0pt 0pt 0.0001pt; text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:11.0000pt"><span style="font-family:等线"><font face="等线">配合市信用办、广州市信息化服务中心参加广州市</font>2</span></span><span style="font-size:11.0000pt"><span style="font-family:等线">018</span></span><span style="font-size:11.0000pt"><span style="font-family:等线"><font face="等线">年公共信用工作培训</font></span></span></span></span></p>
+					      </p>
+					    </div>
+					  </li>
+					  <li class="layui-timeline-item">
+					    <i class="layui-icon layui-timeline-axis"></i>
+					    <div class="layui-timeline-content layui-text">
+					      <h3 class="layui-timeline-title">2018.12.6</h3>
+					      <p>
+					        <p style="margin:0pt 0pt 0.0001pt; text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:11.0000pt"><span style="font-family:等线"><font face="等线">公司总经理罗敏静代表智能科技为广州市各政府单位讲授《信用广州介绍及人社信用大数据应用探讨》课程</font></span></span></span></span></p>
+					      </p>
+					    </div>
+					  </li>
+					  <li class="layui-timeline-item">
+					    <i class="layui-icon layui-timeline-axis"></i>
+					    <div class="layui-timeline-content layui-text">
+					      <h3 class="layui-timeline-title">2018.12.4</h3>
+					      <p>
+					        <p style="margin:0pt 0pt 0.0001pt; text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:11.0000pt"><span style="font-family:等线"><font face="等线">公司成功中标广州市财政信息中心广州市财政数据在线联网项目</font></span></span></span></span></p>
+					      </p>
+					    </div>
+					  </li>
+					  <li class="layui-timeline-item">
+					    <i class="layui-icon layui-timeline-axis"></i>
+					    <div class="layui-timeline-content layui-text">
+					      <h3 class="layui-timeline-title">2018.11.20</h3>
+					      <p>
+					        <p style="margin:0pt 0pt 0.0001pt; text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:11.0000pt"><span style="font-family:等线"><font face="等线">公司成功中标广州市安全生产监督管理局</font></span></span><span style="font-size:11.0000pt"><span style="font-family:等线">2018年度安全生产管控平台五期建设与运维管理平台项目</span></span></span></span></p>
+					      </p>
+					    </div>
+					  </li>
+					  <li class="layui-timeline-item">
+					    <i class="layui-icon layui-timeline-axis"></i>
+					    <div class="layui-timeline-content layui-text">
+					      <h3 class="layui-timeline-title">2018.11</h3>
+					      <p>
+					        <p style="margin:0pt 0pt 0.0001pt; text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:11.0000pt"><span style="font-family:等线"><font face="等线">公司承接广西自治区崇左市发展和改革委员会关于给予社会信用体系信息管理系统项目</font></span></span></span></span></p>
+					      </p>
+					    </div>
+					  </li>
+					  <li class="layui-timeline-item">
+					    <i class="layui-icon layui-timeline-axis"></i>
+					    <div class="layui-timeline-content layui-text">
+					      <h3 class="layui-timeline-title">2018.10</h3>
+					      <p>
+					        <p style="margin: 0pt 0pt 0.0001pt; text-align: justify;"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:11.0000pt"><span style="font-family:等线"><font face="等线">公司成功中标广州市民政局统一工作平台项目</font></span></span></span></span></p><p style="margin: 0pt 0pt 0.0001pt; text-align: justify;"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:11.0000pt"><span style="font-family:等线"><font face="等线">公司承接广西自治区贵港市公共信用信息系统项目</font></span></span></span></span></p>
+					      </p>
+					    </div>
+					  </li>
+					  <li class="layui-timeline-item">
+					    <i class="layui-icon layui-timeline-axis"></i>
+					    <div class="layui-timeline-content layui-text">
+					      <h3 class="layui-timeline-title">2018.9.20</h3>
+					      <p>
+					        <p style="margin:0pt 0pt 0.0001pt; text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:11.0000pt"><span style="font-family:等线"><font face="等线">代表客户在广州大厦二楼五羊厅为广州市</font>3</span></span><span style="font-size:11.0000pt"><span style="font-family:等线">0</span></span><span style="font-size:11.0000pt"><span style="font-family:等线"><font face="等线">多家政府单位</font>2</span></span><span style="font-size:11.0000pt"><span style="font-family:等线">00</span></span><span style="font-size:11.0000pt"><span style="font-family:等线"><font face="等线">多人做培系统培训工作</font></span></span></span></span></p>
+					      </p>
+					    </div>
+					  </li>
+					  <li class="layui-timeline-item">
+					    <i class="layui-icon layui-timeline-axis"></i>
+					    <div class="layui-timeline-content layui-text">
+					      <h3 class="layui-timeline-title">2018.9.10-2018.9.11</h3>
+					      <p>
+					        <p style="margin:0pt 0pt 0.0001pt; text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:11.0000pt"><span style="font-family:等线"><font face="等线">我司作为信用广州应用系统的建设方与广州市信息化服务中心一起参加全国信用观摩会</font></span></span></span></span></p>
+					      </p>
+					    </div>
+					  </li>
+					  <li class="layui-timeline-item">
+					    <i class="layui-icon layui-timeline-axis"></i>
+					    <div class="layui-timeline-content layui-text">
+					      <h3 class="layui-timeline-title">2018.8</h3>
+					      <p>
+					        <p style="margin:0pt 0pt 0.0001pt; text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:11.0000pt"><span style="font-family:等线"><font face="等线">公司成功中标广州市安全生产监督管理局</font></span></span><span style="font-size:11.0000pt"><span style="font-family:等线">2018年信息系统运维及安全服务采购项目</span></span></span></span></p>
+					      </p>
+					    </div>
+					  </li>
+					  <li class="layui-timeline-item">
+					    <i class="layui-icon layui-timeline-axis"></i>
+					    <div class="layui-timeline-content layui-text">
+					      <h3 class="layui-timeline-title">2018.7</h3>
+					      <p>
+					        <p style="margin:0pt 0pt 0.0001pt; text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:11.0000pt"><span style="font-family:等线"><font face="等线">公司成功中标广药白云山</font></span></span><span style="font-size:11.0000pt"><span style="font-family:等线">HSE管理系统项目</span></span></span></span></p>
+					      </p>
+					    </div>
+					  </li>
+					  <li class="layui-timeline-item">
+					    <i class="layui-icon layui-timeline-axis"></i>
+					    <div class="layui-timeline-content layui-text">
+					      <h3 class="layui-timeline-title">2018.6</h3>
+					      <p>
+					        <p style="margin: 0pt 0pt 0.0001pt; text-align: justify;"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:11.0000pt"><span style="font-family:等线"><font face="等线">公司承接成都双流国际机场地面信息系统升级项目</font></span></span></span></span></p><p style="margin: 0pt 0pt 0.0001pt; text-align: justify;"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:11.0000pt"><span style="font-family:等线"><font face="等线">我司承建的广州市公共信用信息管理系统荣获</font>2018年&ldquo;广州法治秀&rdquo;评选的广州市法治化营商环境建设十大案例</span></span></span></span></p>
+					      </p>
+					    </div>
+					  </li>
+					  <li class="layui-timeline-item">
+					    <i class="layui-icon layui-timeline-axis"></i>
+					    <div class="layui-timeline-content layui-text">
+					      <h3 class="layui-timeline-title">2018.5.27</h3>
+					      <p>
+					        <p style="margin:0pt 0pt 0.0001pt; text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:11.0000pt"><span style="font-family:等线"><font face="等线">在</font>2018年5月27日开幕的2018中国数博会(贵阳)-中国政府信息化大会上，我司以&ldquo;公共信用信息产品&rdquo;喜获</span></span><b><span style="font-size:11.0000pt"><span style="font-family:等线"><span style="font-weight:bold">&ldquo;2018中国政府信息化产品技术创新奖&rdquo;</span></span></span></b><span style="font-size:11.0000pt"><span style="font-family:等线"><font face="等线">，智能科技自主研发的公共信用信息产品在贵州数博会大放异彩，获得了全国与会嘉宾的高度关注与一致好评。</font></span></span></span></span></p>
+					      </p>
+					    </div>
+					  </li>
+					  <li class="layui-timeline-item">
+					    <i class="layui-icon layui-timeline-axis"></i>
+					    <div class="layui-timeline-content layui-text">
+					      <h3 class="layui-timeline-title">2018.4.2</h3>
+					      <p>
+					        <p style="margin:0pt 0pt 0.0001pt; text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:11.0000pt"><span style="font-family:等线"><font face="等线">我司获得城市海量数据实时交换管理软件Ｖ</font></span></span><span style="font-size:11.0000pt"><span style="font-family:等线">1.0</span></span><span style="font-size:11.0000pt"><span style="font-family:等线"><font face="等线">软件著作权</font></span></span></span></span></p>
+					      </p>
+					    </div>
+					  </li>
+					  <li class="layui-timeline-item">
+					    <i class="layui-icon layui-timeline-axis"></i>
+					    <div class="layui-timeline-content layui-text">
+					      <h3 class="layui-timeline-title">2017.11</h3>
+					      <p>
+					        <p style="margin:0pt 0pt 0.0001pt; text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:11.0000pt"><span style="font-family:等线"><font face="等线">在粤港澳大湾区智慧城市创新评比中，我司承接的</font></span></span><b><span style="font-size:11.0000pt"><span style="font-family:等线"><span style="font-weight:bold"><font face="等线">公共信用信息服务系统荣获</font>&ldquo;粤港澳大湾区智慧城市创新应用&rdquo;</span></span></span></b></span></span></p>
+					      </p>
+					    </div>
+					  </li>
+					  <li class="layui-timeline-item">
+					    <i class="layui-icon layui-timeline-axis"></i>
+					    <div class="layui-timeline-content layui-text">
+					      <h3 class="layui-timeline-title">2017.10</h3>
+					      <p>
+					        <p style="margin: 0pt 0pt 0.0001pt; text-align: justify;"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:11.0000pt"><span style="font-family:等线"><font face="等线">公司成功中标广州市信息化服务中心的合同信用服务管理大数据平台、据综合展现支撑平台、虚拟数据中心和共享数据全流通体系项目</font></span></span></span></span></p><p style="margin: 0pt 0pt 0.0001pt; text-align: justify;"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:11.0000pt"><span style="font-family:等线"><font face="等线">公司成功中标广州市地震监测中心广州市地震监测数据处理和信息服务系统建设（二期项目）</font></span></span></span></span></p>
+					      </p>
+					    </div>
+					  </li>
+					  <li class="layui-timeline-item">
+					    <i class="layui-icon layui-timeline-axis"></i>
+					    <div class="layui-timeline-content layui-text">
+					      <h3 class="layui-timeline-title">2017.9</h3>
+					      <p>
+					        <p style="margin-top: 0pt; margin-right: 0pt; margin-bottom: 0.0001pt; text-align: justify;"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:11.0000pt"><span style="font-family:等线"><font face="等线">公司成功中标广州市公共信用信息管理系统应用运维和服务项目</font></span></span></span></span></p><p style="margin-top: 0pt; margin-right: 0pt; margin-bottom: 0.0001pt; text-align: justify;"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:11.0000pt"><span style="font-family:等线"><font face="等线">我司承接了广西自治区桂林市公共信用信息平台项目</font></span></span></span></span></p>
+					      </p>
+					    </div>
+					  </li>
+					  <li class="layui-timeline-item">
+					    <i class="layui-icon layui-timeline-axis"></i>
+					    <div class="layui-timeline-content layui-text">
+					      <h3 class="layui-timeline-title">2017.8</h3>
+					      <p>
+					        <p style="margin:0pt 0pt 0.0001pt; text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:11.0000pt"><span style="font-family:等线"><font face="等线">我司成功中标广州市地震局广州市防震减灾数据综合管理平台（一期工程）项目</font></span></span></span></span></p>
+					      </p>
+					    </div>
+					  </li>
+					  <li class="layui-timeline-item">
+					    <i class="layui-icon layui-timeline-axis"></i>
+					    <div class="layui-timeline-content layui-text">
+					      <h3 class="layui-timeline-title">2017.7</h3>
+					      <p>
+					        <p style="margin:0pt 0pt 0.0001pt; text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:10.5000pt"><span style="font-family:等线"><font face="等线">我司成功中标广州市安全生产监督管理局</font></span></span><span style="font-size:10.5000pt"><span style="font-family:等线">2017年度安全生产管控平台(四期)项目</span></span></span></span></p>
+					      </p>
+					    </div>
+					  </li>
+					</ul>  
+				</div>
+			</div>
+			<!-- footer 模块 -->
+			<div style="float:left;width:100%">
+<div class="layui-footer">
+	<div class="footer-info layui-row">
+		<div class="layui-col-xs8">
+			<div class="infos">
+				<div class="info-item info-head text-left ">新手指南</div>
+				<div class="info-item info-head">关于智能</div>
+				<div class="info-item info-head">服务与支持</div>
+				<div class="info-item info-head">产品中心</div>
+				<div class="info-item info-head text-right">其他服务</div>
+				
+				<div class="info-item text-left "><a href="../../index.html">网站首页</a></div>
+				<div class="info-item"><a href="../contactus/index.html">企业简介</a></div>
+				<div class="info-item"><a href="../../solve/index.html">解决方案</a></div>
+				<div class="info-item">产品介绍</div>
+				<div class="info-item text-right">系统集成</div>
+				
+				<div class="info-item text-left ">帮助中心</div>
+				<div class="info-item"><a href="index.html">发展历程</a></div>
+				<div class="info-item">服务热线</div>
+				<div class="info-item">产品资料</div>
+				<div class="info-item text-right">软件资讯</div>
+				
+				<div class="info-item text-left ">联系我们</div>
+				<div class="info-item">奖项荣誉</div>
+				<div class="info-item">下载中心</div>
+				<div class="info-item">产品试用</div>
+				<div class="info-item text-right">其他</div>
+			</div>
+		</div>
+		<div class="layui-col-xs4 qrcodes">
+			<div class="qrcode">
+				<img class="qrcode-image" src="../../sites/www/images/qrcode/wx_gzh.jpg"/>
+				<span class="qrcode-title">微信公众号</span>
+			</div>
+			<div class="qrcode">
+				<img class="qrcode-image" src="../../sites/www/images/qrcode/app.jpg"/>
+				<span class="qrcode-title">手机APP</span>
+			</div>
+		</div>
+	</div>
+	<div class="copy-right">Copyright © 2018 广州智能科技发展有限公司，版权所有</div>
+</div>
+
+<script type="text/javascript">
+	layui.use('element', function() {
+		var element = layui.element;
+	});
+</script>			</div>
+		</div>
+		<!-- 页面主体 end -->
+	</div>
+
+</body>
+</html>

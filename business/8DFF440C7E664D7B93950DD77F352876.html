@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh" class="ie ie8">
+<head>
+<meta http-equiv="content-Type" content="text/html; charset=utf-8" />
+<!-- 基础应用站点信息 -->
+<meta charset="utf-8" />
+<title>广州智能科技</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>系统管理</title>
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+
+<!-- 系统基础样式 -->
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+<link rel="stylesheet" type="text/css" href="../fonts/iconfont/style.css" />
+<link rel="stylesheet" type="text/css" href="../fonts/awesome/style.css" />
+<link rel="stylesheet" type="text/css" href="../fonts/feather/style.css" />
+<link rel="stylesheet" type="text/css" href="../fonts/themify/style.css" />
+<link rel="stylesheet" type="text/css" href="../sites/www/css/style.css" ></link>
+
+<link rel="stylesheet" type="text/css" href="../css/cms-style.css" ></link>
+<script charset="utf-8" type="text/javascript" src="../layui.js" ></script>
+</head>
+<body class="layui-layout-front">
+	<div class="layui-layout">
+		<!-- header 模块 -->
+<meta charset="utf-8" />
+
+<div class="layui-header">
+	<div class="layui-logo"></div>
+	<!-- 头部区域（可配合layui已有的水平导航） -->
+	<ul class="layui-nav layui-layout-left">
+		<li class="layui-nav-item"><a href="">首页</a></li>
+		<li class="layui-nav-item">
+				<a href="../product/index.html">产品中心</a>
+		</li>
+		<li class="layui-nav-item">
+				<a href="../solve/index.html">解决方案</a>
+		</li>
+		<li class="layui-nav-item">
+				<a href="../news/index.html">新闻中心</a>
+		</li>
+	</ul>
+	<ul class="layui-nav layui-layout-right">
+		<li class="layui-nav-item"><a href="../templ/memorabilia/index.html">公司大事记</a></li>
+		<li class="layui-nav-item"><a href="../templ/contactus/index.html">联系我们</a></li>
+<!-- 		 -->
+			<li class="layui-nav-item"><a href="../login.html">登录|注册</a></li>
+<!-- 		 -->
+	</ul>
+</div>
+
+<!-- 右侧浮动工具栏 -->
+<ul class="layui-fixbar fixed-right-tool" id="fixtoolbar">
+	<li lay-type="airlines" class="pt-15">
+		<i class="layui-icon layui-icon-headset"></i>
+		<span class="layui-title">在线客服</span>
+	</li>
+	<li lay-type="qq" class="pt-15">
+		<i class="layui-icon layui-icon-login-qq"></i>
+		<span class="layui-title">QQ</span>
+	</li>
+	<li lay-type="tel" class="pt-15" >
+		<i class="layui-icon layui-icon-cellphone-fine"></i>
+		<span class="layui-title">电话热线</span>
+	</li>
+	<li lay-type="gestbook" class="pt-15">
+		<i class="layui-icon layui-icon-edit"></i>
+		<span class="layui-title">在线留言</span>
+	</li>
+</ul>
+
+<div name="browserMsg" class="text-center layui-layer-content" style="display: none;">
+	<div class="mt-40">
+		<span class="spanMsg">您正在使用的浏览器版本过低，将不能正常浏览和使用本网站</span>
+		<br><span class="spanMsg">请升级浏览器至IE9版本或以上，推荐浏览器如下：</span>
+	</div>
+	<div class="browserDiv mt-40">
+		<table style="width: 100%;">
+			<tr>
+				<td style="width:200px;" align="center">
+					<a href="https://support.microsoft.com/zh-cn/help/17621/internet-explorer-downloads">
+						<div class="solution-carousel-content">
+							<img src="../sites/www/images/browser/ie11-logo.png" style="height: 120px;">
+							<div class="solution-content2 mt-20">
+								<span class="spanMsg">升级IE浏览器</span>
+							</div>
+						</div>
+					</a>
+				</td>
+				<td style="width:200px;" align="center">
+					<a href="https://www.google.cn/chrome/">
+						<div class="solution-carousel-content">
+							<img src="../sites/www/images/browser/chrome-logo.png" style="height: 120px;">
+							<div class="solution-content2 mt-20">
+								<span class="spanMsg">使用谷歌浏览器</span>
+							</div>
+						</div>
+					</a>
+				</td>
+				<td style="width:200px;" align="center">
+					<a href="http://www.firefox.com.cn/">
+						<div class="solution-carousel-content">
+							<img src="../sites/www/images/browser/firefox-logo.png" style="height: 120px;">
+							<div class="solution-content2 mt-20">
+								<span class="spanMsg">使用火狐浏览器</span>
+							</div>
+						</div>
+					</a>
+				</td>
+			</tr>
+		</table>
+		
+	</div>
+</div>
+<!-- 右侧浮动工具栏 end -->
+<script type="text/javascript">
+layui.use(['jquery','util','layer'], function(){
+	var $ = layui.jquery;
+	var util = layui.util;
+	var layer = layui.layer;
+	
+	 //固定块
+	util.fixbar({
+		elem : '#fixtoolbar',
+		css : {
+			right : 20,
+			bottom : 100
+		},
+		click : function(type) {
+			window.location.href="/templ/contactus/index.html";
+		}
+	});
+	 
+	var url = window.location.pathname;
+	// 首页url处理
+	if (url == "/") {
+		url = "";		
+	}
+	// 获取href=url的a标签所在的li元素，添加选中样式
+	$("div.layui-header [href='"+url+"']").parents("li.layui-nav-item").addClass("layui-this");
+	
+	// 浏览器判断
+	// 添加弹出框
+	if(navigator.appName == "Microsoft Internet Explorer" 
+			&& ( navigator.appVersion.match(/7./i)=="7." ||
+					navigator.appVersion.match(/8./i)=="8.")){ 
+		layer.open({
+			type:1,
+			title: false, // 无标题
+			content:$("div[name=browserMsg]"),
+			closeBtn: 0, // 无关闭按钮
+			shade: [0.8, '#393D49'], // 遮罩层
+			area: ['630px','390px']
+		});
+		$("div[name=browserMsg]").show();
+	}
+});
+</script>		
+		<!-- 页面主体 -->
+		<div class="layui-body">
+		<!-- 头部图片-->
+			<div align="center" class="newdetail">
+				<div class="newdetail-head">
+				<img src="http://www.it2000.com.cn/sites/www/images/newlist/1.jpg" style="width:100%; height:100%;">
+				<div  style="position:absolute;left: 300px;top: 100px;width: 900px;">
+					<div align="left" style="font-size: 35px;padding-bottom: 20px;color: #FF801E;text-shadow: 2px 2px 2px #ffffff;">
+						<span>关于智能</span>
+					</div>
+					<div align="left">
+						<span style="font-size: 20px;color: #ffffff;">软件创造价值是智能人永远的追求</span>
+					</div>
+				</div>
+				</div>
+			</div>
+			<div class="breadcrumbs">
+			<div class="layui-col-md3 pl-20 pt-10">
+				<span><img src="http://www.it2000.com.cn/sites/www/images/newlist/4.jpg.png"></span>
+				<span style="font-size: 14px;color: #4c4c4c;font-family: 雅黑;">当前位置：</span>
+				<span class="layui-breadcrumb" lay-separator="<i class='layui-icon layui-icon-right'></i>">
+				  <a href="">首页</a>
+				  <a href="">业务领域</a>
+				</span></div>
+			</div>
+			<div  align="center"  class="detail-main">
+				<div style="width: 950px;background-color: #ffffff;">
+					<div align="left" class="layui-row detail-main-title" style="">
+						<span>智慧机场</span>
+					</div>
+					<div align="left" class="layui-row detail-main-title2">
+					<span>诚信为本</span><span>客户至上</span><span>品质第一</span><span>追求卓越</span>
+					</div>
+					<div align="left" style="font-family: ArialMT Regular;padding-left: 50px;padding-top: 2px;font-size: 12px;color: #B3B3B3;margin-bottom: 20px;">Integty based customer first quilty first</div>
+					<div align="left" class="detail-content"><h1>1&nbsp;<strong>产品功能介绍</strong></h1><p>1.1&nbsp;<strong>产品业务模式</strong></p><p style="text-align:center"><img alt="" height="349" src="http://www.it2000.com.cn/ftp/ckeditor/images/2018/12/20/1545301743973908.png" width="650" /></p><p style="text-align: center;"><strong>图</strong><strong>：机场总体业务</strong><strong>模型</strong><strong>示意</strong></p><p>系统提供一个各种信息共享的营运环境和统一的业务信息处理规范，提供统一的航班信息，以使应用系统和各子系统能够高可靠、高效的协同运作系统，能为旅客、航空公司以及机场自身的业务管理提供及时、准确、系统、完整的航班信息服务。</p><p>&nbsp;</p><p>1.2&nbsp;<strong>产品体系架构</strong></p><p style="text-align:center"><img alt="" height="505" src="http://www.it2000.com.cn/ftp/ckeditor/images/2018/12/20/1545301759660505.png" width="609" /></p><p style="text-align: center;"><strong>图</strong><strong>：智慧机场</strong><strong>体系架构</strong><strong>示意</strong></p><p>&nbsp;</p><p>1.3&nbsp;<strong>报文与数据共享子系统</strong></p><p>实现了报文解析及运行数据共享。提供运行数据共享目录，提高地面运行保障节点和离港时间的可预测性和准确度。可按数据接口标准衔接民航局运行监控中心运行数据共享平台，获得每个国内航班在前序机场落地、过站、起飞等信息，实现前序航班信息透明化。</p><p style="text-align:center"><img alt="" height="332" src="http://www.it2000.com.cn/ftp/ckeditor/images/2018/12/20/1545301773795215.png" width="499" /></p><p><strong>&nbsp;</strong></p><p>&nbsp;</p><p>1.4&nbsp;<strong>机场航班信息管理子系统</strong></p><p>实现了机场运营的航班信息进行创建和维护。包括季度运营航班、日计划运营航班数据和航班动态数据。</p><p style="text-align:center"><img alt="" height="356" src="http://www.it2000.com.cn/ftp/ckeditor/images/2018/12/20/1545301786657850.png" width="595" /></p><p><strong>&nbsp;</strong></p><p>1.5&nbsp;<strong>机场运营资源管理子系统</strong></p><p>实现了机场地面资源的分配。可以根据航班计划，对机场资源，如停机位、值机柜台、行李转盘等进行计划分配及动态调整。用户可以根据自己的需要，制定分配规则。</p><p style="text-align:center"><img alt="" height="358" src="http://www.it2000.com.cn/ftp/ckeditor/images/2018/12/20/1545301804920348.png" width="590" /></p><p><strong>&nbsp;</strong></p><p>1.6&nbsp;<strong>机场外场保障管理子系统</strong></p><p>实现了航班地面运行保障的进程管控。依据机场、航空公司的过站保障流程，通过自动化手段或人工方式对航班地面运行保障节点时间进行记录，实现对航班保障的全过程管控，使航班过站周期直观化和透明化，为生产调度部门有效地监控航班过站保障工作提供依据，精确定位地面运行保障的瓶颈，有助于补齐地面运行保障的短板，不断改善机场地面运行效率和品质。</p><p style="text-align:center"><img alt="" height="346" src="http://www.it2000.com.cn/ftp/ckeditor/images/2018/12/20/1545301817745746.png" width="191" /></p><p><strong>&nbsp;</strong></p><p><strong>&nbsp;</strong></p><p><strong>&nbsp;</strong></p><p>1.7&nbsp;<strong>机场安全运行AI可视化监控子系统</strong></p><p>实现了地空监测，确保地面运行安全，提升地面保障效率通过对地面保障车辆及航空器位置的监测，实现对机场飞行区内车辆的有效定位与监控，与机场现有机位分配数据融合，实现对机场各个保障任务的优化，从而提升地面的保障效率。能自动按照航班动态调出对应需要监控的视频点图像，大大提高操作效率。将能自动按照航班计划、航班动态，把当前运营的飞机自动显示在监控屏幕上。减少频繁的人工监控切换，大大提高监控效率。</p><p style="text-align:center"><img alt="" height="308" src="http://www.it2000.com.cn/ftp/ckeditor/images/2018/12/20/154530183032790.png" width="542" /></p><p><strong>&nbsp;</strong></p><p>1.8&nbsp;<strong>机场排班管理子系统</strong></p><p>实现了机场与航班保障相联动的运营排班管理，优化人力资源的使用。</p><p style="text-align:center"><img alt="" height="318" src="http://www.it2000.com.cn/ftp/ckeditor/images/2018/12/20/1545301843226226.png" width="385" /></p><p><strong>&nbsp;</strong></p><p>1.9&nbsp;<strong>机场运营收益管理子系统</strong></p><p>实现了对航班运行、航班保障情况进行统计、分析。</p><p><strong>&nbsp;</strong></p><p>1.10&nbsp;<strong>大屏幕控制子系统</strong></p><p>本系统通过（本公司发明专利）一套大屏幕管理控制软件，对整系统设备包括各种显示单元、多屏处理器、信号源及外部矩阵、摄像机云台及镜头控制器、多功能设备等外围设备进行统一管理和联动。曾用于广州亚运会、深圳大运会。</p><p><strong>&nbsp;</strong></p><p>1.11&nbsp;<strong>机场应急管理子系统</strong></p><p>应急管理系统的主要包括：应急态势、</p><p style="text-align:center"><img alt="" height="348" src="http://www.it2000.com.cn/ftp/ckeditor/images/2018/12/20/1545302118365727.png" width="650" /></p><p>隐患管理、预测预警、立案、定性定级、预案检索与匹配、应急处置、应急联动、过程记录、善后处理、培训演练等。</p><p>1.12&nbsp;<strong>航班显示子系统</strong></p><p>实现了显示机场所有的到港和离港航班信息，为旅客、机场工作人员和航空公司提供及时、准确、友好的信息服务。</p><p style="text-align:center"><img alt="" height="292" src="http://www.it2000.com.cn/ftp/ckeditor/images/2018/12/20/1545302132798363.png" width="512" /></p><p><strong>&nbsp;</strong></p><p>1.13&nbsp;<strong>公共广播子系统</strong></p><p>实现了在机场航站楼的各公共区和办公区分别播放机场的航班动态信息、机场业务信息、特别通告和紧急事件等。</p><p style="text-align:center"><img alt="" height="389" src="http://www.it2000.com.cn/ftp/ckeditor/images/2018/12/20/1545302147846473.png" width="650" /></p><p><strong>&nbsp;</strong></p><h1>2&nbsp;<strong>产品特征</strong></h1><h2>1.1&nbsp;<strong>关键业务流程可视化监控</strong></h2><p>系统以航班为核心，与AI视频、ADS-B、GPS车辆监控等系统集成，实现自动切换摄像头等功能，将减轻指挥员的工作量，扩大指挥员的监控面，提升机场对航班保障的管理水平，实现&ldquo;准时生产&rdquo;，进而提高航班的准点率。</p><p>系统能按照航班动态、机位分配、登机门分配等数据，把目前能收集到生产运行信息，例如：基于ADS-B的航空器位置、航班对应机位外景视频、对应登机桥的视频、对应登机门的视频、登机桥系统对应信息、相关保障车辆GPS信息等，以航班为核心进行展现，实现对航班从降落到起飞的全过程监控。</p><h2>1.2&nbsp;<strong>移动便携</strong></h2><p>各保障单位保障人员能方便通过智能移动终端查询航班保障任务，并通过智能移动终端实时采集录入一线保障执行动态数据，指挥中心能得到一线保障人员及时反馈，准确监控整个机场服务保障情况。</p><p>(1) 大大减轻了对讲频道负荷</p><p>(2) 多点触控技术提高了操作效率。</p><p>(3) 减轻调度人员负荷。</p><p>&nbsp;</p><h2>1.3&nbsp;<strong>保障项自定义</strong></h2><p><strong>界面人性化：</strong></p><p>人性化地显示航班信息界面，具有强大的用户自定义界面功能，每个用户可个性化显示设定：可根据需要和喜好选择列表界面显示的数据项；也可定义数据项在列表中显示的顺序。</p><p><strong>保障项自定义：</strong></p><p>可按保障流程，可自定义保障项目，例如：靠桥、护卫、开客舱门、开货舱门、加油、梯车、清洁、配餐等等, 每个保障项目可定义发生时间、开始时间、结束时间、数量(例如：加油数量)。这些保障项还可通过权限、岗位(角色)自定义，分配给不同的保障班组和保障人员。</p><p>保障模板预设了国内机场常用保障的保障项目，用户可在此基础上按照本机场具体情况进行调整。方便用户。</p><p>同时保障模板还能针对不同的机型，设定不同的保障项目、运营日(周)、保障时长、提醒时间。</p><p>例如：机场方面可很方便地通过自定义增加&ldquo;托运行李&rdquo;、&ldquo;装机行李&rdquo;、&ldquo;货邮&rdquo;3个保障项来实现对&ldquo;托运行李件数、装机行李件数和以及货邮的件数、重量&rdquo;的监控。</p><p>&nbsp;</p><p>&nbsp;</p><h1>3&nbsp;<strong>产品成功案例（应用</strong><strong>场景</strong><strong>）</strong></h1><p style="text-align:center"><img alt="" height="416" src="http://www.it2000.com.cn/ftp/ckeditor/images/2018/12/20/1545302183429777.png" width="650" /></p><p>&nbsp;</p></div>
+				</div>
+				<div style="width: 950px;">
+					<div style="display: inline-block; position: relative; right: 100px; line-height: 80px;">
+								<a href="80437E3ABF624F30889C31308FE6958E.html">上一篇：安全生产</a>
+					</div>
+					<div style="display: inline-block; position: relative; left: 100px; line-height: 80px;">
+								<a href="javascript:;">无下一条记录:下一篇</a>
+					</div>
+				</div>
+			</div>
+			<!-- footer 模块 -->
+			<div style="float:left;width:100%">
+<div class="layui-footer">
+	<div class="footer-info layui-row">
+		<div class="layui-col-xs8">
+			<div class="infos">
+				<div class="info-item info-head text-left ">新手指南</div>
+				<div class="info-item info-head">关于智能</div>
+				<div class="info-item info-head">服务与支持</div>
+				<div class="info-item info-head">产品中心</div>
+				<div class="info-item info-head text-right">其他服务</div>
+				
+				<div class="info-item text-left "><a href="../index.html">网站首页</a></div>
+				<div class="info-item"><a href="../templ/contactus/index.html">企业简介</a></div>
+				<div class="info-item"><a href="../solve/index.html">解决方案</a></div>
+				<div class="info-item">产品介绍</div>
+				<div class="info-item text-right">系统集成</div>
+				
+				<div class="info-item text-left ">帮助中心</div>
+				<div class="info-item"><a href="../templ/memorabilia/index.html">发展历程</a></div>
+				<div class="info-item">服务热线</div>
+				<div class="info-item">产品资料</div>
+				<div class="info-item text-right">软件资讯</div>
+				
+				<div class="info-item text-left ">联系我们</div>
+				<div class="info-item">奖项荣誉</div>
+				<div class="info-item">下载中心</div>
+				<div class="info-item">产品试用</div>
+				<div class="info-item text-right">其他</div>
+			</div>
+		</div>
+		<div class="layui-col-xs4 qrcodes">
+			<div class="qrcode">
+				<img class="qrcode-image" src="../sites/www/images/qrcode/wx_gzh.jpg"/>
+				<span class="qrcode-title">微信公众号</span>
+			</div>
+			<div class="qrcode">
+				<img class="qrcode-image" src="../sites/www/images/qrcode/app.jpg"/>
+				<span class="qrcode-title">手机APP</span>
+			</div>
+		</div>
+	</div>
+	<div class="copy-right">Copyright © 2018 广州智能科技发展有限公司，版权所有</div>
+</div>
+
+<script type="text/javascript">
+	layui.use('element', function() {
+		var element = layui.element;
+	});
+</script>			</div>
+		</div>
+		<!-- 页面主体 end -->
+	</div>
+		
+</body>
+	<script type="text/javascript">
+	layui.use(['laypage','jquery'], function(){
+		var $ = layui.jquery;
+	});
+	</script>
+</html>

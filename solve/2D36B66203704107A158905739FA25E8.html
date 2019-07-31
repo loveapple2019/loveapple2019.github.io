@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh" class="ie ie8">
+<head>
+<meta http-equiv="content-Type" content="text/html; charset=utf-8" />
+<!-- 基础应用站点信息 -->
+<meta charset="utf-8" />
+<title>广州智能科技</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>系统管理</title>
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+
+<!-- 系统基础样式 -->
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+<link rel="stylesheet" type="text/css" href="../fonts/iconfont/style.css" />
+<link rel="stylesheet" type="text/css" href="../fonts/awesome/style.css" />
+<link rel="stylesheet" type="text/css" href="../fonts/feather/style.css" />
+<link rel="stylesheet" type="text/css" href="../fonts/themify/style.css" />
+<link rel="stylesheet" type="text/css" href="../sites/www/css/style.css" ></link>
+
+<link rel="stylesheet" type="text/css" href="../css/cms-style.css" ></link>
+<script charset="utf-8" type="text/javascript" src="../layui.js" ></script>
+</head>
+<body class="layui-layout-front">
+	<div class="layui-layout">
+		<!-- header 模块 -->
+<meta charset="utf-8" />
+
+<div class="layui-header">
+	<div class="layui-logo"></div>
+	<!-- 头部区域（可配合layui已有的水平导航） -->
+	<ul class="layui-nav layui-layout-left">
+		<li class="layui-nav-item"><a href="../index.html">首页</a></li>
+		<li class="layui-nav-item">
+				<a href="../product/index.html">产品中心</a>
+		</li>
+		<li class="layui-nav-item">
+				<a href="index.html">解决方案</a>
+		</li>
+		<li class="layui-nav-item">
+				<a href="../news/index.html">新闻中心</a>
+		</li>
+	</ul>
+	<ul class="layui-nav layui-layout-right">
+		<li class="layui-nav-item"><a href="../templ/memorabilia/index.html">公司大事记</a></li>
+		<li class="layui-nav-item"><a href="../templ/contactus/index.html">联系我们</a></li>
+<!-- 		 -->
+			<li class="layui-nav-item"><a href="http://www.it2000.com.cn/login-JSESSIONID=d864056c-ee6b-4461-b794-9e7980141508.html">登录|注册</a></li>
+<!-- 		 -->
+	</ul>
+</div>
+
+<!-- 右侧浮动工具栏 -->
+<ul class="layui-fixbar fixed-right-tool" id="fixtoolbar">
+	<li lay-type="airlines" class="pt-15">
+		<i class="layui-icon layui-icon-headset"></i>
+		<span class="layui-title">在线客服</span>
+	</li>
+	<li lay-type="qq" class="pt-15">
+		<i class="layui-icon layui-icon-login-qq"></i>
+		<span class="layui-title">QQ</span>
+	</li>
+	<li lay-type="tel" class="pt-15" >
+		<i class="layui-icon layui-icon-cellphone-fine"></i>
+		<span class="layui-title">电话热线</span>
+	</li>
+	<li lay-type="gestbook" class="pt-15">
+		<i class="layui-icon layui-icon-edit"></i>
+		<span class="layui-title">在线留言</span>
+	</li>
+</ul>
+
+<div name="browserMsg" class="text-center layui-layer-content" style="display: none;">
+	<div class="mt-40">
+		<span class="spanMsg">您正在使用的浏览器版本过低，将不能正常浏览和使用本网站</span>
+		<br><span class="spanMsg">请升级浏览器至IE9版本或以上，推荐浏览器如下：</span>
+	</div>
+	<div class="browserDiv mt-40">
+		<table style="width: 100%;">
+			<tr>
+				<td style="width:200px;" align="center">
+					<a href="https://support.microsoft.com/zh-cn/help/17621/internet-explorer-downloads">
+						<div class="solution-carousel-content">
+							<img src="../sites/www/images/browser/ie11-logo.png" style="height: 120px;">
+							<div class="solution-content2 mt-20">
+								<span class="spanMsg">升级IE浏览器</span>
+							</div>
+						</div>
+					</a>
+				</td>
+				<td style="width:200px;" align="center">
+					<a href="https://www.google.cn/chrome/">
+						<div class="solution-carousel-content">
+							<img src="../sites/www/images/browser/chrome-logo.png" style="height: 120px;">
+							<div class="solution-content2 mt-20">
+								<span class="spanMsg">使用谷歌浏览器</span>
+							</div>
+						</div>
+					</a>
+				</td>
+				<td style="width:200px;" align="center">
+					<a href="http://www.firefox.com.cn/">
+						<div class="solution-carousel-content">
+							<img src="../sites/www/images/browser/firefox-logo.png" style="height: 120px;">
+							<div class="solution-content2 mt-20">
+								<span class="spanMsg">使用火狐浏览器</span>
+							</div>
+						</div>
+					</a>
+				</td>
+			</tr>
+		</table>
+		
+	</div>
+</div>
+<!-- 右侧浮动工具栏 end -->
+<script type="text/javascript">
+layui.use(['jquery','util','layer'], function(){
+	var $ = layui.jquery;
+	var util = layui.util;
+	var layer = layui.layer;
+	
+	 //固定块
+	util.fixbar({
+		elem : '#fixtoolbar',
+		css : {
+			right : 20,
+			bottom : 100
+		},
+		click : function(type) {
+			window.location.href="/cms-web/templ/contactus/index.html";
+		}
+	});
+	 
+	var url = window.location.pathname;
+	// 首页url处理
+	if (url == "/cms-web/") {
+		url = "/cms-web";		
+	}
+	// 获取href=url的a标签所在的li元素，添加选中样式
+	$("div.layui-header [href='"+url+"']").parents("li.layui-nav-item").addClass("layui-this");
+	
+	// 浏览器判断
+	// 添加弹出框
+	if(navigator.appName == "Microsoft Internet Explorer" 
+			&& ( navigator.appVersion.match(/7./i)=="7." ||
+					navigator.appVersion.match(/8./i)=="8.")){ 
+		layer.open({
+			type:1,
+			title: false, // 无标题
+			content:$("div[name=browserMsg]"),
+			closeBtn: 0, // 无关闭按钮
+			shade: [0.8, '#393D49'], // 遮罩层
+			area: ['630px','390px']
+		});
+		$("div[name=browserMsg]").show();
+	}
+});
+</script>		
+		<!-- 页面主体 -->
+		<div class="layui-body">
+		<!-- 头部图片-->
+			<div align="center" class="newdetail">
+				<div class="newdetail-head">
+				<img src="http://www.it2000.com.cn/sites/www/images/newlist/1.jpg" style="width:100%; height:100%;">
+				<div  style="position:absolute;left: 300px;top: 100px;width: 900px;">
+					<div align="left" style="font-size: 35px;padding-bottom: 20px;color: #FF801E;text-shadow: 2px 2px 2px #ffffff;">
+						<span>关于智能</span>
+					</div>
+					<div align="left">
+						<span style="font-size: 20px;color: #ffffff;">软件创造价值是智能人永远的追求</span>
+					</div>
+				</div>
+				</div>
+			</div>
+			<div class="breadcrumbs">
+			<div class="layui-col-md3 pl-20 pt-10">
+				<span><img src="http://www.it2000.com.cn/sites/www/images/newlist/4.jpg.png"></span>
+				<span style="font-size: 14px;color: #4c4c4c;font-family: 雅黑;">当前位置：</span>
+				<span class="layui-breadcrumb" lay-separator="<i class='layui-icon layui-icon-right'></i>">
+				  <a href="../index.html">首页</a>
+				  <a href="">解决方案</a>
+				</span></div>
+			</div>
+			<div  align="center"  class="detail-main">
+				<div style="width: 950px;background-color: #ffffff;">
+					<div align="left" class="layui-row detail-main-title" style="">
+						<span>港务应急管理系统</span>
+					</div>
+					<div align="left" class="layui-row detail-main-title2">
+					<span>诚信为本</span><span>客户至上</span><span>品质第一</span><span>追求卓越</span>
+					</div>
+					<div align="left" style="font-family: ArialMT Regular;padding-left: 50px;padding-top: 2px;font-size: 12px;color: #B3B3B3;margin-bottom: 20px;">Integty based customer first quilty first</div>
+					<div align="left" class="detail-content"><p style="margin: 0cm 0cm 0.0001pt;"><span style="font-size:12pt"><span style="line-height:150%"><span style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;"><span style="font-family:宋体"><span style="color:black">【概述】</span></span></span></span></span></p><p style="margin-top:6.0pt; margin-right:0cm; margin-bottom:6.0pt; margin-left:0cm; margin:0cm 0cm 0.0001pt; text-align:justify"><span style="font-size:12pt"><span style="line-height:150%"><span style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;"><span style="font-family:宋体">中国是全球贸易第一大国，已相继出台了促进海运业健康发展、建设丝绸之路经济带和 21世纪海上丝绸之路等国家战略。港口一直都是国家综合运输体系的重要枢纽和对外贸易的重要口岸。目前各港务局信息化建设已经实现了基础办公信息化、港口大型船舶调度和监控网络化、数字化、智能化，但仍存在各业务信息系统资源分散、缺乏统一视化管理中心、应急联动的快速响应能力不足等问题。</span></span></span></span></p><p style="margin-top:6.0pt; margin-right:0cm; margin-bottom:6.0pt; margin-left:0cm; margin:0cm 0cm 0.0001pt; text-align:justify"><span style="font-size:12pt"><span style="line-height:150%"><span style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;"><span style="font-family:宋体">港务应急管理系统是根据港务局信息化建设现状，利用现有信息系统资源、数据资源以&ldquo;整合、统一、提升&rdquo;框架建设原则，建设一个可&ldquo;一体化、可视化、联动指挥&rdquo;统一指挥、调度、管理、预警、监测的应急管理平台。平台通过利用港口空间地理数据、船舶动态监控数据、港口生产数据、视频监控数据和气象数据构建应急管理平台的基础数据资源，以支撑平台的应急资源管理、应急预警监测、应急指挥调度、日常管理等业务。</span></span></span></span></p><p style="margin-top:6.0pt; margin-right:0cm; margin-bottom:6.0pt; margin-left:0cm; margin:0cm 0cm 0.0001pt; text-align:justify">&nbsp;</p><p style="margin: 0cm 0cm 0.0001pt;"><span style="font-size:12pt"><span style="line-height:150%"><span style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;"><span style="font-family:宋体"><span style="color:black">【适应范围】</span></span></span></span></span></p><p style="margin-top:6.0pt; margin-right:0cm; margin-bottom:6.0pt; margin-left:0cm; margin:0cm 0cm 0.0001pt; text-align:justify"><span style="font-size:12pt"><span style="line-height:150%"><span style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;"><span style="font-family:宋体">客户群体</span> <span style="font-family:宋体">：全国各省级、地市港务局、分局、港口码头企业、公众用户等</span></span></span></span></p><p style="margin-top:6.0pt; margin-right:0cm; margin-bottom:6.0pt; margin-left:0cm; margin:0cm 0cm 0.0001pt; text-align:justify"><span style="font-size:12pt"><span style="line-height:150%"><span style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;"><span style="font-family:宋体">适用的业务范围：港务应急管理、港务指挥调度、港务预警监测、日常管理、港务综合管理平台等。</span></span></span></span></p><p style="margin-top:6.0pt; margin-right:0cm; margin-bottom:6.0pt; margin-left:0cm; margin:0cm 0cm 0.0001pt; text-align:justify">&nbsp;</p><p style="margin: 0cm 0cm 0.0001pt;"><span style="font-size:12pt"><span style="line-height:150%"><span style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;"><span style="font-family:宋体"><span style="color:black">【优势特点】</span></span></span></span></span></p><p style="margin:0cm 0cm 0.0001pt; text-align:justify"><a name="_Toc525808826"><b><span style="font-family:宋体">提供完整的流程，为快速指挥调度和分析决策参考</span></b></a></p><p style="margin:0cm 0cm 0.0001pt; text-align:justify"><span style="font-size:12pt"><span style="line-height:150%"><span style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;"><span style="font-family:宋体">一个流程指的是应急值守流程，提供事件接报、登记、分类、分级、分发、处置、跟踪、续报、查询、统计的信息化管理，为快速指挥调度和分析</span><span style="font-family:宋体">决策参考。</span></span></span></span></p><p style="margin:0cm 0cm 0.0001pt; text-align:justify">&nbsp;</p><p style="margin-right:-4.45pt; margin:0cm 0cm 0.0001pt; text-align:justify"><a name="_Toc525808827"><b><span style="font-family:宋体">通过平台快速开展救援工作</span></b></a></p><p style="margin-right:-4.45pt; margin:0cm 0cm 0.0001pt; text-align:justify"><span style="font-size:12pt"><span style="tab-stops:445.95pt"><span style="line-height:150%"><span style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;"><span style="font-family:宋体">一个平台指调度指挥平台，通过事故快速定位，紧急调集应急队伍，采用准确的应急预案，调取事发周边可用资源，了解重点保护对象和交通情况快速对事故进行救援。</span></span></span></span></span></p><p style="margin-right:-4.45pt; margin:0cm 0cm 0.0001pt; text-align:justify">&nbsp;</p><p style="margin-right:-4.45pt; margin:0cm 0cm 0.0001pt; text-align:justify"><a name="_Toc525808828"><b><span style="font-family:宋体">完善的资源管理，为救援快速匹配资源</span></b></a></p><p style="margin-right:-4.45pt; margin:0cm 0cm 0.0001pt; text-align:justify"><span style="font-size:12pt"><span style="tab-stops:445.95pt"><span style="line-height:150%"><span style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;"><span style="font-family:宋体">提供了一套应急资源管理，主要是对应急救援队伍、应急物资、专家库、知识库、特征库等、案例库、通讯录的集中管理。</span></span></span></span></span></p></div>
+				</div>
+				<div style="width: 950px;">
+					<div style="display: inline-block; position: relative; right: 100px; line-height: 80px;">
+								<a href="210EC5E0F7DA47008E15FA469B4E99B6.html">上一篇：商务会展业公共服务平台</a>
+					</div>
+					<div style="display: inline-block; position: relative; left: 100px; line-height: 80px;">
+								<a href="http://www.it2000.com.cn/solve/3E7B0D20FD0449CD923E484137A09FE1.html">政务协同系统:下一篇</a>
+					</div>
+				</div>
+			</div>
+			<!-- footer 模块 -->
+			<div style="float:left;width:100%">
+<div class="layui-footer">
+	<div class="footer-info layui-row">
+		<div class="layui-col-xs8">
+			<div class="infos">
+				<div class="info-item info-head text-left ">新手指南</div>
+				<div class="info-item info-head">关于智能</div>
+				<div class="info-item info-head">服务与支持</div>
+				<div class="info-item info-head">产品中心</div>
+				<div class="info-item info-head text-right">其他服务</div>
+				
+				<div class="info-item text-left "><a href="../index.html">网站首页</a></div>
+				<div class="info-item"><a href="../templ/contactus/index.html">企业简介</a></div>
+				<div class="info-item"><a href="index.html">解决方案</a></div>
+				<div class="info-item">产品介绍</div>
+				<div class="info-item text-right">系统集成</div>
+				
+				<div class="info-item text-left ">帮助中心</div>
+				<div class="info-item"><a href="../templ/memorabilia/index.html">发展历程</a></div>
+				<div class="info-item">服务热线</div>
+				<div class="info-item">产品资料</div>
+				<div class="info-item text-right">软件资讯</div>
+				
+				<div class="info-item text-left ">联系我们</div>
+				<div class="info-item">奖项荣誉</div>
+				<div class="info-item">下载中心</div>
+				<div class="info-item">产品试用</div>
+				<div class="info-item text-right">其他</div>
+			</div>
+		</div>
+		<div class="layui-col-xs4 qrcodes">
+			<div class="qrcode">
+				<img class="qrcode-image" src="../sites/www/images/qrcode/wx_gzh.jpg"/>
+				<span class="qrcode-title">微信公众号</span>
+			</div>
+			<div class="qrcode">
+				<img class="qrcode-image" src="../sites/www/images/qrcode/app.jpg"/>
+				<span class="qrcode-title">手机APP</span>
+			</div>
+		</div>
+	</div>
+	<div class="copy-right">Copyright © 2018 广州智能科技发展有限公司，版权所有</div>
+</div>
+
+<script type="text/javascript">
+	layui.use('element', function() {
+		var element = layui.element;
+	});
+</script>			</div>
+		</div>
+		<!-- 页面主体 end -->
+	</div>
+		
+</body>
+	<script type="text/javascript">
+	layui.use(['laypage','jquery'], function(){
+		var $ = layui.jquery;
+	});
+	</script>
+</html>

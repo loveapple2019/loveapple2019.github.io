@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh" class="ie ie8">
+<head>
+<meta http-equiv="content-Type" content="text/html; charset=utf-8" />
+<!-- 基础应用站点信息 -->
+<meta charset="utf-8" />
+<title>广州智能科技</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>系统管理</title>
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+
+<!-- 系统基础样式 -->
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+<link rel="stylesheet" type="text/css" href="../fonts/iconfont/style.css" />
+<link rel="stylesheet" type="text/css" href="../fonts/awesome/style.css" />
+<link rel="stylesheet" type="text/css" href="../fonts/feather/style.css" />
+<link rel="stylesheet" type="text/css" href="../fonts/themify/style.css" />
+<link rel="stylesheet" type="text/css" href="../sites/www/css/style.css" ></link>
+
+<link rel="stylesheet" type="text/css" href="../css/cms-style.css" ></link>
+<script charset="utf-8" type="text/javascript" src="../layui.js" ></script>
+</head>
+<body class="layui-layout-front">
+	<div class="layui-layout">
+		<!-- header 模块 -->
+<meta charset="utf-8" />
+
+<div class="layui-header">
+	<div class="layui-logo"></div>
+	<!-- 头部区域（可配合layui已有的水平导航） -->
+	<ul class="layui-nav layui-layout-left">
+		<li class="layui-nav-item"><a href="../index.html">首页</a></li>
+		<li class="layui-nav-item">
+				<a href="../product/index.html">产品中心</a>
+		</li>
+		<li class="layui-nav-item">
+				<a href="../solve/index.html">解决方案</a>
+		</li>
+		<li class="layui-nav-item">
+				<a href="../news/index.html">新闻中心</a>
+		</li>
+	</ul>
+	<ul class="layui-nav layui-layout-right">
+		<li class="layui-nav-item"><a href="../templ/memorabilia/index.html">公司大事记</a></li>
+		<li class="layui-nav-item"><a href="../templ/contactus/index.html">联系我们</a></li>
+<!-- 		 -->
+			<li class="layui-nav-item"><a href="http://www.it2000.com.cn/login-JSESSIONID=d864056c-ee6b-4461-b794-9e7980141508.html">登录|注册</a></li>
+<!-- 		 -->
+	</ul>
+</div>
+
+<!-- 右侧浮动工具栏 -->
+<ul class="layui-fixbar fixed-right-tool" id="fixtoolbar">
+	<li lay-type="airlines" class="pt-15">
+		<i class="layui-icon layui-icon-headset"></i>
+		<span class="layui-title">在线客服</span>
+	</li>
+	<li lay-type="qq" class="pt-15">
+		<i class="layui-icon layui-icon-login-qq"></i>
+		<span class="layui-title">QQ</span>
+	</li>
+	<li lay-type="tel" class="pt-15" >
+		<i class="layui-icon layui-icon-cellphone-fine"></i>
+		<span class="layui-title">电话热线</span>
+	</li>
+	<li lay-type="gestbook" class="pt-15">
+		<i class="layui-icon layui-icon-edit"></i>
+		<span class="layui-title">在线留言</span>
+	</li>
+</ul>
+
+<div name="browserMsg" class="text-center layui-layer-content" style="display: none;">
+	<div class="mt-40">
+		<span class="spanMsg">您正在使用的浏览器版本过低，将不能正常浏览和使用本网站</span>
+		<br><span class="spanMsg">请升级浏览器至IE9版本或以上，推荐浏览器如下：</span>
+	</div>
+	<div class="browserDiv mt-40">
+		<table style="width: 100%;">
+			<tr>
+				<td style="width:200px;" align="center">
+					<a href="https://support.microsoft.com/zh-cn/help/17621/internet-explorer-downloads">
+						<div class="solution-carousel-content">
+							<img src="../sites/www/images/browser/ie11-logo.png" style="height: 120px;">
+							<div class="solution-content2 mt-20">
+								<span class="spanMsg">升级IE浏览器</span>
+							</div>
+						</div>
+					</a>
+				</td>
+				<td style="width:200px;" align="center">
+					<a href="https://www.google.cn/chrome/">
+						<div class="solution-carousel-content">
+							<img src="../sites/www/images/browser/chrome-logo.png" style="height: 120px;">
+							<div class="solution-content2 mt-20">
+								<span class="spanMsg">使用谷歌浏览器</span>
+							</div>
+						</div>
+					</a>
+				</td>
+				<td style="width:200px;" align="center">
+					<a href="http://www.firefox.com.cn/">
+						<div class="solution-carousel-content">
+							<img src="../sites/www/images/browser/firefox-logo.png" style="height: 120px;">
+							<div class="solution-content2 mt-20">
+								<span class="spanMsg">使用火狐浏览器</span>
+							</div>
+						</div>
+					</a>
+				</td>
+			</tr>
+		</table>
+		
+	</div>
+</div>
+<!-- 右侧浮动工具栏 end -->
+<script type="text/javascript">
+layui.use(['jquery','util','layer'], function(){
+	var $ = layui.jquery;
+	var util = layui.util;
+	var layer = layui.layer;
+	
+	 //固定块
+	util.fixbar({
+		elem : '#fixtoolbar',
+		css : {
+			right : 20,
+			bottom : 100
+		},
+		click : function(type) {
+			window.location.href="/cms-web/templ/contactus/index.html";
+		}
+	});
+	 
+	var url = window.location.pathname;
+	// 首页url处理
+	if (url == "/cms-web/") {
+		url = "/cms-web";		
+	}
+	// 获取href=url的a标签所在的li元素，添加选中样式
+	$("div.layui-header [href='"+url+"']").parents("li.layui-nav-item").addClass("layui-this");
+	
+	// 浏览器判断
+	// 添加弹出框
+	if(navigator.appName == "Microsoft Internet Explorer" 
+			&& ( navigator.appVersion.match(/7./i)=="7." ||
+					navigator.appVersion.match(/8./i)=="8.")){ 
+		layer.open({
+			type:1,
+			title: false, // 无标题
+			content:$("div[name=browserMsg]"),
+			closeBtn: 0, // 无关闭按钮
+			shade: [0.8, '#393D49'], // 遮罩层
+			area: ['630px','390px']
+		});
+		$("div[name=browserMsg]").show();
+	}
+});
+</script>		
+		<!-- 页面主体 -->
+		<div class="layui-body">
+		<!-- 头部图片-->
+			<div align="center" class="newdetail">
+				<div class="newdetail-head">
+				<img src="http://www.it2000.com.cn/sites/www/images/newlist/1.jpg" style="width:100%; height:100%;">
+				<div  style="position:absolute;left: 300px;top: 100px;width: 900px;">
+					<div align="left" style="font-size: 35px;padding-bottom: 20px;color: #FF801E;text-shadow: 2px 2px 2px #ffffff;">
+						<span>关于智能</span>
+					</div>
+					<div align="left">
+						<span style="font-size: 20px;color: #ffffff;">软件创造价值是智能人永远的追求</span>
+					</div>
+				</div>
+				</div>
+			</div>
+			<div class="breadcrumbs">
+			<div class="layui-col-md3 pl-20 pt-10">
+				<span><img src="http://www.it2000.com.cn/sites/www/images/newlist/4.jpg.png"></span>
+				<span style="font-size: 14px;color: #4c4c4c;font-family: 雅黑;">当前位置：</span>
+				<span class="layui-breadcrumb" lay-separator="<i class='layui-icon layui-icon-right'></i>">
+				  <a href="../index.html">首页</a>
+				  <a href="">业务领域</a>
+				</span></div>
+			</div>
+			<div  align="center"  class="detail-main">
+				<div style="width: 950px;background-color: #ffffff;">
+					<div align="left" class="layui-row detail-main-title" style="">
+						<span>智慧园林</span>
+					</div>
+					<div align="left" class="layui-row detail-main-title2">
+					<span>诚信为本</span><span>客户至上</span><span>品质第一</span><span>追求卓越</span>
+					</div>
+					<div align="left" style="font-family: ArialMT Regular;padding-left: 50px;padding-top: 2px;font-size: 12px;color: #B3B3B3;margin-bottom: 20px;">Integty based customer first quilty first</div>
+					<div align="left" class="detail-content"><h1><a>&nbsp;&nbsp;&nbsp;&nbsp; 1 产品功能介绍</a></h1><h2><a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.1导演台子系统</a></h2><p>通过导演台子系统可配置林火活动相关的各种参数，如选择森林火灾起火点或起火范围从而确定了周围环境的地形地貌和可燃物类型（植被类型、结构与分布格局等），设置动态的气象条件（温度、湿度和风向）、周边的消防资源（设施设备类型、数量及分布）和邻近的重要保护目标（油站、军事设施、保护区、学校等等）。同时，导演可虚实结合调整气象条件、消防资源和保护目标，增加森林火灾发展演变的复杂性和多样性，以提高三维实训系统的实用性、趣味性和挑战性。</p><p style="text-align:center"><img alt="" height="299" src="http://www.it2000.com.cn/ftp/ckeditor/images/2018/12/20/1545299419770674.png" width="523" /></p><p style="margin: 2px 0px; text-align: center;"><strong><span style="font-size:14px"><span style="line-height:150%"><span style="font-family:宋体">图：场景可视化定义</span></span></span></strong></p><h2><a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.2<span style="font-family:宋体">指挥训练子系统</span></a></h2><p><span style="font-family:宋体">实际受训用户，通过登录系统进入到三维仿真技术创建的典型场景中，综合运用三维模型、文字、图片和声音等实现方式，以一种沉浸感极强的角色扮演形式把森林防火的操作流程、注意事项、重要指标等准确地、直观地展示给受训学员，使森林防火培训更加生动、逼真、易于接受，达到寓教于乐的效果。</span></p><p><span style="font-family:宋体">系统提供日常训练模式与考核模式，日常训练模式下主要对用户训练操作的结果进行评价计分、并更新积分；考核模式下，用户（考生）根据积分（对应等级）自动或人工选择进入导演台设置的典型场景（题库），包含火情侦查（熟悉场景与火情）、消防资源收集、火情研判、报警与火情报告、灭火方案制定、灭火资源调度、灭火善后处理、危险环境识别、逃生方式与路径选择、紧急情况处置等训练内容。</span></p><h2><a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.3<span style="font-family:宋体">训练考核管理子系统</span></a></h2><p><span style="line-height:150%"><span style="font-size:16px"><span style="line-height:150%"><span style="font-family:宋体">训练考核评价子系统由受训角色界定，训练科目设计，考核标准（原则）和评分方法四部分组成。通过记录某个受训者完成训练科目集（培训计划）操作过程、灭火决策和灭火结果，依据评分规则评定受训者的成绩。</span></span></span></span></p><h2><a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.4<span style="font-family:宋体">三维仿真与监视子系统</span></a></h2><p><span style="line-height:150%"><span style="font-size:16px"><span style="line-height:150%"><span style="font-family:宋体">通过构建和显示三维数字地球，实现二维和三维地理信息的无缝融合，在界面上显示真实的地理数据信息，并融合典型区域的三维仿真场景模型，将虚拟场景更加真实的体现出来</span></span></span></span></p><p><span style="line-height:150%"><span style="font-size:16px"><span style="line-height:150%"><span style="font-family:宋体">建立适用的林火动态模拟系统可以解决这些问题，即林火动态模拟系统可以通过变更火环境参数和防火资源配置，产生多元化的动态火场和灭火资源配置，从而实现全方位的森林消防培训，使受训者获得全面的森林消防知识与技能。</span></span></span></span></p><p style="text-align:center"><img alt="" height="289" src="http://www.it2000.com.cn/ftp/ckeditor/images/2018/12/20/1545299490619939.png" width="562" /></p><p style="text-align:center"><span style="line-height:150%"><strong><span style="line-height:150%"><span style="font-family:宋体">图：火灾三维仿真模型</span></span></strong></span></p><h1><a>&nbsp;&nbsp;&nbsp;&nbsp; 2<span style="font-family:黑体">.产品特征</span></a></h1><h2><a>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; 2.1<span style="font-family:宋体">建立了</span>16</a><span style="font-family:宋体">个大概率森林消防三维实训场景</span></h2><p><span style="line-height:150%"><a><span style="font-size:16px"><span style="line-height:150%"><span style="font-family:宋体">森林火灾随着火环境因素（气象因素、地形因素和可燃物）的不同组合而千变万化；灭火训练不可能穷尽所有的组合。本系统建立了多个大概率具代表性的火环境因素组合&mdash;&mdash;三维实训典型场景，</span></span></span></a><span style="font-size:16px"><span style="line-height:150%"><span style="font-family:宋体">力求通过三维实训典型场景下的灭火训练达到举一反三的效果。</span></span></span></span></p><h2><a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.2<span style="font-family:宋体">提供科学的火势蔓延算法</span></a></h2><p><span style="line-height:150%"><span style="font-size:16px"><span style="line-height:150%"><span style="font-family:宋体">本项目采用国内流行的王正非修改模型构造适用于森林火灾的蔓延模型，并能对影响林火蔓延的因子进行调整，主要实现蔓延模型的相关设置调整，包括坡度、可燃物类型、风力、风向、温度、湿度等参数设置。</span></span></span></span></p><h1><a>&nbsp;&nbsp; &nbsp; 3.<span style="font-family:黑体">产品成功案例</span></a></h1><h2><a>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; </a>3.1<a><span style="font-family:宋体">广州市林业和园林局森林防火三维实训系统</span></a></h2><h3><a>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; 3.1.1<span style="font-family:宋体">项目简介</span></a></h3><p><span style="line-height:150%"><span style="font-size:16px"><span style="line-height:150%"><span style="font-family:宋体">广州市林业和园林局森林防火三维实训系统是通过</span></span></span><span style="font-size:16px"><span style="line-height:150%"><span style="font-family:宋体">信息化建设来全面提升广州市森林火灾综合防治能力和应急指挥水平。广州市森林防火指挥扑救人员近2万人，但人员更新快，缺乏专业培训、火灾扑救技能，经验丰富的林火扑救指挥员更是稀缺。在此背景下，由于人员众多如采取真实场地实训演练需耗费场地和大量物资以及考虑安全性问题，亟待通过利用信息技术手段</span></span></span><span style="font-size:16px"><span style="line-height:150%"><span style="font-family:宋体">来实现灭火模拟训练，让受训人员实时熟悉全市所有防火资源的同时学习和提高火灾扑救水平。广州智能科技发展有限公司承建的广州市林业和园林局森林防火三维实训系统是以虚拟现实、网络、人工智能等信息技术为支撑的基于计算机的灭火模拟培训系统，以三维虚拟现实为引擎，通过模拟森林火灾现场的场景和各种火灾状态特征，使受训人员在计算机构建的虚拟环境中如临真实现场，实现人和装备的有机结合，融技能训练、技术训练、战术训练、心理适应性训练为一体。</span></span></span></span></p><h3><a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;3.1.2<span style="font-family:宋体">项目建设内容</span></a></h3><p style="text-align:center"><img alt="" height="681" src="http://www.it2000.com.cn/ftp/ckeditor/images/2018/12/20/1545299943881361.png" width="533" /></p><h3><a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; 3.1.3<span style="font-family:宋体">项目建设成效</span></a></h3><p><span style="line-height:150%"><span style="line-height:150%"><span style="color:black">广州市林业与园林局的森林防火三维实训系统是全国到目前为止唯一针对森林防火三维立体化实训的一套平台。通过系统建设能够让受训人员更加形象直观的学习和感受森林防火活动，熟知全市森林景区的地形植被覆盖情况、防火设备设施的分布情况，显著提升指挥决策的效率和质量，提高森林火灾指挥人员和消防人员的素质，提升单兵素质和团队协同能力，最大限度的减少森林火灾造成的人员伤亡和财产损失。</span></span></span></p><p>&nbsp;</p></div>
+				</div>
+				<div style="width: 950px;">
+					<div style="display: inline-block; position: relative; right: 100px; line-height: 80px;">
+								<a href="javascript:;">上一篇：无上一条记录</a>
+					</div>
+					<div style="display: inline-block; position: relative; left: 100px; line-height: 80px;">
+								<a href="3EE0538EFC804D8ABBFADCB0FC015369.html">智慧城市:下一篇</a>
+					</div>
+				</div>
+			</div>
+			<!-- footer 模块 -->
+			<div style="float:left;width:100%">
+<div class="layui-footer">
+	<div class="footer-info layui-row">
+		<div class="layui-col-xs8">
+			<div class="infos">
+				<div class="info-item info-head text-left ">新手指南</div>
+				<div class="info-item info-head">关于智能</div>
+				<div class="info-item info-head">服务与支持</div>
+				<div class="info-item info-head">产品中心</div>
+				<div class="info-item info-head text-right">其他服务</div>
+				
+				<div class="info-item text-left "><a href="../index.html">网站首页</a></div>
+				<div class="info-item"><a href="../templ/contactus/index.html">企业简介</a></div>
+				<div class="info-item"><a href="../solve/index.html">解决方案</a></div>
+				<div class="info-item">产品介绍</div>
+				<div class="info-item text-right">系统集成</div>
+				
+				<div class="info-item text-left ">帮助中心</div>
+				<div class="info-item"><a href="../templ/memorabilia/index.html">发展历程</a></div>
+				<div class="info-item">服务热线</div>
+				<div class="info-item">产品资料</div>
+				<div class="info-item text-right">软件资讯</div>
+				
+				<div class="info-item text-left ">联系我们</div>
+				<div class="info-item">奖项荣誉</div>
+				<div class="info-item">下载中心</div>
+				<div class="info-item">产品试用</div>
+				<div class="info-item text-right">其他</div>
+			</div>
+		</div>
+		<div class="layui-col-xs4 qrcodes">
+			<div class="qrcode">
+				<img class="qrcode-image" src="../sites/www/images/qrcode/wx_gzh.jpg"/>
+				<span class="qrcode-title">微信公众号</span>
+			</div>
+			<div class="qrcode">
+				<img class="qrcode-image" src="../sites/www/images/qrcode/app.jpg"/>
+				<span class="qrcode-title">手机APP</span>
+			</div>
+		</div>
+	</div>
+	<div class="copy-right">Copyright © 2018 广州智能科技发展有限公司，版权所有</div>
+</div>
+
+<script type="text/javascript">
+	layui.use('element', function() {
+		var element = layui.element;
+	});
+</script>			</div>
+		</div>
+		<!-- 页面主体 end -->
+	</div>
+		
+</body>
+	<script type="text/javascript">
+	layui.use(['laypage','jquery'], function(){
+		var $ = layui.jquery;
+	});
+	</script>
+</html>

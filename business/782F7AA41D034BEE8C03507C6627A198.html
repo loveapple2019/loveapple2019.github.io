@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh" class="ie ie8">
+<head>
+<meta http-equiv="content-Type" content="text/html; charset=utf-8" />
+<!-- 基础应用站点信息 -->
+<meta charset="utf-8" />
+<title>广州智能科技</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>系统管理</title>
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+
+<!-- 系统基础样式 -->
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+<link rel="stylesheet" type="text/css" href="../fonts/iconfont/style.css" />
+<link rel="stylesheet" type="text/css" href="../fonts/awesome/style.css" />
+<link rel="stylesheet" type="text/css" href="../fonts/feather/style.css" />
+<link rel="stylesheet" type="text/css" href="../fonts/themify/style.css" />
+<link rel="stylesheet" type="text/css" href="../sites/www/css/style.css" ></link>
+
+<link rel="stylesheet" type="text/css" href="../css/cms-style.css" ></link>
+<script charset="utf-8" type="text/javascript" src="../layui.js" ></script>
+</head>
+<body class="layui-layout-front">
+	<div class="layui-layout">
+		<!-- header 模块 -->
+<meta charset="utf-8" />
+
+<div class="layui-header">
+	<div class="layui-logo"></div>
+	<!-- 头部区域（可配合layui已有的水平导航） -->
+	<ul class="layui-nav layui-layout-left">
+		<li class="layui-nav-item"><a href="">首页</a></li>
+		<li class="layui-nav-item">
+				<a href="../product/index.html">产品中心</a>
+		</li>
+		<li class="layui-nav-item">
+				<a href="../solve/index.html">解决方案</a>
+		</li>
+		<li class="layui-nav-item">
+				<a href="../news/index.html">新闻中心</a>
+		</li>
+	</ul>
+	<ul class="layui-nav layui-layout-right">
+		<li class="layui-nav-item"><a href="../templ/memorabilia/index.html">公司大事记</a></li>
+		<li class="layui-nav-item"><a href="../templ/contactus/index.html">联系我们</a></li>
+<!-- 		 -->
+			<li class="layui-nav-item"><a href="../login.html">登录|注册</a></li>
+<!-- 		 -->
+	</ul>
+</div>
+
+<!-- 右侧浮动工具栏 -->
+<ul class="layui-fixbar fixed-right-tool" id="fixtoolbar">
+	<li lay-type="airlines" class="pt-15">
+		<i class="layui-icon layui-icon-headset"></i>
+		<span class="layui-title">在线客服</span>
+	</li>
+	<li lay-type="qq" class="pt-15">
+		<i class="layui-icon layui-icon-login-qq"></i>
+		<span class="layui-title">QQ</span>
+	</li>
+	<li lay-type="tel" class="pt-15" >
+		<i class="layui-icon layui-icon-cellphone-fine"></i>
+		<span class="layui-title">电话热线</span>
+	</li>
+	<li lay-type="gestbook" class="pt-15">
+		<i class="layui-icon layui-icon-edit"></i>
+		<span class="layui-title">在线留言</span>
+	</li>
+</ul>
+
+<div name="browserMsg" class="text-center layui-layer-content" style="display: none;">
+	<div class="mt-40">
+		<span class="spanMsg">您正在使用的浏览器版本过低，将不能正常浏览和使用本网站</span>
+		<br><span class="spanMsg">请升级浏览器至IE9版本或以上，推荐浏览器如下：</span>
+	</div>
+	<div class="browserDiv mt-40">
+		<table style="width: 100%;">
+			<tr>
+				<td style="width:200px;" align="center">
+					<a href="https://support.microsoft.com/zh-cn/help/17621/internet-explorer-downloads">
+						<div class="solution-carousel-content">
+							<img src="../sites/www/images/browser/ie11-logo.png" style="height: 120px;">
+							<div class="solution-content2 mt-20">
+								<span class="spanMsg">升级IE浏览器</span>
+							</div>
+						</div>
+					</a>
+				</td>
+				<td style="width:200px;" align="center">
+					<a href="https://www.google.cn/chrome/">
+						<div class="solution-carousel-content">
+							<img src="../sites/www/images/browser/chrome-logo.png" style="height: 120px;">
+							<div class="solution-content2 mt-20">
+								<span class="spanMsg">使用谷歌浏览器</span>
+							</div>
+						</div>
+					</a>
+				</td>
+				<td style="width:200px;" align="center">
+					<a href="http://www.firefox.com.cn/">
+						<div class="solution-carousel-content">
+							<img src="../sites/www/images/browser/firefox-logo.png" style="height: 120px;">
+							<div class="solution-content2 mt-20">
+								<span class="spanMsg">使用火狐浏览器</span>
+							</div>
+						</div>
+					</a>
+				</td>
+			</tr>
+		</table>
+		
+	</div>
+</div>
+<!-- 右侧浮动工具栏 end -->
+<script type="text/javascript">
+layui.use(['jquery','util','layer'], function(){
+	var $ = layui.jquery;
+	var util = layui.util;
+	var layer = layui.layer;
+	
+	 //固定块
+	util.fixbar({
+		elem : '#fixtoolbar',
+		css : {
+			right : 20,
+			bottom : 100
+		},
+		click : function(type) {
+			window.location.href="/templ/contactus/index.html";
+		}
+	});
+	 
+	var url = window.location.pathname;
+	// 首页url处理
+	if (url == "/") {
+		url = "";		
+	}
+	// 获取href=url的a标签所在的li元素，添加选中样式
+	$("div.layui-header [href='"+url+"']").parents("li.layui-nav-item").addClass("layui-this");
+	
+	// 浏览器判断
+	// 添加弹出框
+	if(navigator.appName == "Microsoft Internet Explorer" 
+			&& ( navigator.appVersion.match(/7./i)=="7." ||
+					navigator.appVersion.match(/8./i)=="8.")){ 
+		layer.open({
+			type:1,
+			title: false, // 无标题
+			content:$("div[name=browserMsg]"),
+			closeBtn: 0, // 无关闭按钮
+			shade: [0.8, '#393D49'], // 遮罩层
+			area: ['630px','390px']
+		});
+		$("div[name=browserMsg]").show();
+	}
+});
+</script>		
+		<!-- 页面主体 -->
+		<div class="layui-body">
+		<!-- 头部图片-->
+			<div align="center" class="newdetail">
+				<div class="newdetail-head">
+				<img src="http://www.it2000.com.cn/sites/www/images/newlist/1.jpg" style="width:100%; height:100%;">
+				<div  style="position:absolute;left: 300px;top: 100px;width: 900px;">
+					<div align="left" style="font-size: 35px;padding-bottom: 20px;color: #FF801E;text-shadow: 2px 2px 2px #ffffff;">
+						<span>关于智能</span>
+					</div>
+					<div align="left">
+						<span style="font-size: 20px;color: #ffffff;">软件创造价值是智能人永远的追求</span>
+					</div>
+				</div>
+				</div>
+			</div>
+			<div class="breadcrumbs">
+			<div class="layui-col-md3 pl-20 pt-10">
+				<span><img src="http://www.it2000.com.cn/sites/www/images/newlist/4.jpg.png"></span>
+				<span style="font-size: 14px;color: #4c4c4c;font-family: 雅黑;">当前位置：</span>
+				<span class="layui-breadcrumb" lay-separator="<i class='layui-icon layui-icon-right'></i>">
+				  <a href="">首页</a>
+				  <a href="">业务领域</a>
+				</span></div>
+			</div>
+			<div  align="center"  class="detail-main">
+				<div style="width: 950px;background-color: #ffffff;">
+					<div align="left" class="layui-row detail-main-title" style="">
+						<span>智慧应急</span>
+					</div>
+					<div align="left" class="layui-row detail-main-title2">
+					<span>诚信为本</span><span>客户至上</span><span>品质第一</span><span>追求卓越</span>
+					</div>
+					<div align="left" style="font-family: ArialMT Regular;padding-left: 50px;padding-top: 2px;font-size: 12px;color: #B3B3B3;margin-bottom: 20px;">Integty based customer first quilty first</div>
+					<div align="left" class="detail-content"><h1><strong>1产品特征</strong></h1><h2>1.1 常态化管理</h2><h3>1.1.1&nbsp;<strong>应急值守系统</strong></h3><p>应急值守系统实现各相关部门和各区县政府应急办向市政府应急办上报本部门或本区县发生的突发事件；市政府应急办接收各相关部门和各区县上报的突发事件，并审核。实现市政府应急办针对同一事件，综合来源不同的多条上报信息形成事件信息。实现市政府应急办管理本单位日常值班排班、值班记录以及来往公文。</p><p style="text-align:center"><img alt="" height="325" src="http://www.it2000.com.cn/ftp/ckeditor/images/2018/12/20/1545297491454330.png" width="488" /></p><h3>1.1.2&nbsp;<strong>监测监控系统</strong></h3><p>监测监控系统实现各相关部门向市政府应急办上报本部门的专业监测监控信息；市政府应急办接收各相关部门上报的专业监测监控信息，出现异常数据后能够快速进行判断，排查。</p><p>&nbsp;</p><h3>1.1.3&nbsp;<strong>公众宣传普及系统</strong></h3><p>公众宣传普及系统实现市政府应急办向社会公众发布各类突发事件的应急常识以及相关的应急手册，并提供应急考题库以测试公众对应急常识的了解程度；社会公众通过互联网访问应急办门户网站，相关的应急知识、应急手册，并可通过建言献策模块对应急管理提出建议和看法。</p><p style="text-align:center"><img alt="" height="413" src="http://www.it2000.com.cn/ftp/ckeditor/images/2018/12/20/1545297505251835.png" width="410" /></p><h3>1.1.4&nbsp;<strong>模拟演练系统</strong></h3><p>模拟演练系统是应急工作的重要组成部分，目的在于提高应急处置能力，为检验和修改应急预案提供参考。模拟演练系统也可用来对相关人员进行培训。模拟演练系统能够构建突发公共事件场景，对事件进行模拟仿真和分析，并能够自动记录演练过程，对演练效果以及其他业务系统在演练过程中的执行情况进行评估。可利用模拟演练系统构建应对经常发生灾害的模拟演练场景，对灾害的处置进行模拟仿真和分析演练，以提高应急办指挥人员应对灾害的应急处置能力，并检验和修改相关应急预案。</p><p style="text-align:center"><img alt="" height="341" src="http://www.it2000.com.cn/ftp/ckeditor/images/2018/12/20/1545297635134301.png" width="336" /></p><h2>1.2&nbsp;常态化应急</h2><h3>1.2.1&nbsp;<b>数字预案系统</b></h3><p>数字预案系统实现市政府应急办编制应急预案，将文本预案结构化形成数字预案；并对文本预案、数字预案进行查询、维护等。</p><p style="text-align:center"><img alt="" height="369" src="http://www.it2000.com.cn/ftp/ckeditor/images/2018/12/20/1545297648671483.png" width="360" /></p><h3>1.2.2&nbsp;<strong>预测预警系统</strong></h3><p>预测预警系统实现市政府应急办对预警事件和已发生的突发事件进行综合预测，分析可能引发的次生事件。实现风险分析，分析可能影响的重大危险源和防护目标。利用多种专业分析模型对事件所造成的影响及事态发展进行分析和预测。实现对分析模型及相关参数的管理。</p><p style="text-align:center"><img alt="" height="267" src="http://www.it2000.com.cn/ftp/ckeditor/images/2018/12/20/1545297664425164.png" width="544" /></p><h3>1.2.3&nbsp;<strong>应急保障系统</strong></h3><p>应急保障系统主要用于突发公共事件处置过程中对救援力量、救援物资、救援装备、应急专家、医疗力量等应急资源的调度。该系统利用信息表格和地理信息系统技术，直观的向应急指挥人员展示了应急资源的数量，位置以及分布状况，为应急指挥人员制定资源调度方案提供了辅助手段和工具。</p><p style="text-align:center"><img alt="" height="335" src="http://www.it2000.com.cn/ftp/ckeditor/images/2018/12/20/154529768281961.png" width="321" /></p><h3>1.2.4&nbsp;<strong>指挥调度系统</strong></h3><p>应急指挥调度系统实现在突发事件处置过程中，市政府应急办向现场指挥部等各参与救援机构传达应急救援任务；并跟踪各执行机构的任务执行情况；以及对所传达的各项任务的管理。实现在突发事件处置过程中，现场指挥部等各参与救援机构接收市政府应急办下达的各项任务；并及时向市政府应急办反馈任务的执行情况。实现在处置过程中，现场指挥部等各参与救援机构阶段性地向市政府应急办报告事态发展和应急救援进展等情况；处置结束后，现场指挥部、事发地区政府和相关委办局向市政府应急办报告整个事件的处置情况。</p><p style="text-align:center"><img alt="" height="383" src="http://www.it2000.com.cn/ftp/ckeditor/images/2018/12/20/1545297695178426.png" width="367" /></p><h3>1.2.5&nbsp;<strong>应急评估系统</strong></h3><p>应急评估子系统实现市政府应急办对整个突发事件的处置过程进行记录整理和评分。应急专家可对各个处置环节进行分析，评估，通过总结事件应急处置，寻找不足，完善经验，并生成评估报告，提交上级领导部门审批、备案。</p><p style="text-align:center"><img alt="" height="291" src="http://www.it2000.com.cn/ftp/ckeditor/images/2018/12/20/1545297712306656.png" width="518" /></p><p>1.3&nbsp;<strong>数据资源管理</strong></p><h3>1.3.1&nbsp;<strong>数据共享与交换系统</strong></h3><p>应急数据资源的共享与交换是市政府应急平台建设的基础。在市政府应急平台处置突发事件时，经常要涉及到多个区和委办局的资源，这些资源大多来源于市内各区、各委办局，但由于专业领域和地方条件的不同，这些资源和数据存在的形式和位置各不相同，这就需要建立市政府应急平台数据共享与交换系统，为市政府应急平台和二级平台之间的数据共享与交换提供条件。如何将这些分散的、零碎的信息进行及时有效整合，是资源共享与交换的关键。</p><p>建设扬州全市统一的应急信息共享交换服务平台，可以解决各单位现有信息系统和业务系统数据库标准不一致等问题，实现各类应急信息资源的跨部门交换、共享与整合。</p><h1><strong>2产品特征</strong></h1><h2>2.1&nbsp;<strong>多种渠道的信息收集、指挥和会商手段</strong></h2><p>本平台提供电话、传真、短信、会议、电脑、传感器等多种渠道的信息收集、指挥和会商的手段。</p><h2>2.2&nbsp;<strong>提供可配置可执行的一体化数字预案，便于指挥调度</strong></h2><p>对现有编制的应急预案进行管理，按预案等级、应对事件、所属单位等维度进行分类，包含预案录入、查询、检索、更新等功能。当发生突发事件时，可实现根据事件性质、事件等级、发生地点等属性进行预案的自动查找、匹配、推荐，便于突发事件的指挥调度。</p><h2>2.3&nbsp;<strong>基于预案的高效应急调度</strong></h2><p>通过应急调度一个数据中心，应急救援指挥GIS一张图，一个移动应急平台实现基于预案的高效应急调度。</p><p>通过应急调度一个数据中心，实现与省级、部门、区县应急平台以及电子政务系统的共享与交换。</p><p>通过应急救援指挥GIS一张图直观快捷的辅助应急指挥人员有效部署可调度应急队伍、应急物资、应急装备等资源，及时将突发公共事件发生发展情况和应急处置状况传递给相关人员，实现协调指挥、自序调度和有效监督，提高应急效率。</p><p>通过移动应急平台实现突发事件现场将拍摄的高清图片/视频、实时定位信息等实时传输到各指挥中心的显示终端上，指挥屮心可通过现有语音通话了解前方情况，还能实时观看现场高清图片/视频，从而更精准的把握现场情况，提高远程指挥调度的效率。</p><h1><strong>3产品成功案例</strong></h1><h2>3.1&nbsp;<strong><strong>松山湖城市综合管理及应急指挥平台及智能消防系统</strong></strong></h2><h3>3.1.1&nbsp;<strong>项目简介</strong></h3><p>东莞松山湖大力推进&ldquo;智慧松山湖&rdquo;建设，广州智能科技发展有限公司承建了一期工程建设项目中的松山湖城市综合管理及应急管理平台、智慧消防的建设，通过构建基于云平台的城市综合管理及应急管理平台，并建设园区智慧消防系统和统一信息门户，实现消防系统与应急管理系统的联动，对园区突发、重大事件实行快速多部门协同联动，全面提升园区管理部门的资源整合能力、应急管理能力、服务提供能力和分析决策能力，最终实现&ldquo;科学、低碳、智慧&rdquo;的创新性可持续的园区发展模式。</p><h3>3.1.2&nbsp;<strong>项目建设内容</strong></h3><p style="text-align:center"><img alt="" height="319" src="http://www.it2000.com.cn/ftp/ckeditor/images/2018/12/20/154529773364597.png" width="650" /></p><h3>3.1.3&nbsp;<strong>项目建设成效</strong></h3><p>1.实现了松山湖智能化园区管理核心业务包括但不限于应急、安防、安监、警务、环保等相关资源整合，实现整体框架下各系统间的资源共享和互联互通</p><p>2.建成了一整套完善的应急指挥中心和应急管理平台，实现应急功能同时，与纵向上的省应急办和横向上各市属局委办实现信息交换，实现跨部门、跨地区的信息交流与情报合作，有效的提高防范突发公共事件能力</p><p>3.实现消防系统与应急管理系统的联动，健全了消防设施监管机制，减少系统漏报、少报情况，极大提高火灾报警处理响应速度</p><h2>3.2&nbsp;<strong><strong><strong>第16届亚运会赛事指挥调度系统</strong></strong></strong></h2><h3>3.2.1&nbsp;<strong>项目简介</strong></h3><p>广州智能科技发展有限公司承建的第16届亚运会赛事指挥调度系统是通过先进和成熟的技术手段，将多种城市资源和亚运会相关信息资源进行整合，为亚运会指挥调度人员提供一个指挥调度综合管理平台。该平台能够快速、准确、有效地处理竞赛指挥、接待服务、组织管理、交通服务以及场馆突发事件的处置，并构建统一协调的亚运会指挥调度运行环境。</p><h3>3.2.2&nbsp;<strong>项目建设内容</strong></h3><p><span style="font-size:10px; text-align:center; -webkit-text-stroke-width:0px"><span style="color:#4d4d4d"><span style="font-family:&quot;MicrosoftYaHei Regular&quot;"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="background-color:#ffffff"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="display:inline !important"><span style="float:none">●&nbsp;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>亚运城市展现子系统</p><p><span style="font-size:10px; text-align:center; -webkit-text-stroke-width:0px"><span style="color:#4d4d4d"><span style="font-family:&quot;MicrosoftYaHei Regular&quot;"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="background-color:#ffffff"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="display:inline !important"><span style="float:none">●&nbsp;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>视频监控信息展示子系统</p><p><span style="font-size:10px; text-align:center; -webkit-text-stroke-width:0px"><span style="color:#4d4d4d"><span style="font-family:&quot;MicrosoftYaHei Regular&quot;"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="background-color:#ffffff"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="display:inline !important"><span style="float:none">●&nbsp;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>&nbsp;竞赛信息展示子系统</p><p><span style="font-size:10px; text-align:center; -webkit-text-stroke-width:0px"><span style="color:#4d4d4d"><span style="font-family:&quot;MicrosoftYaHei Regular&quot;"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="background-color:#ffffff"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="display:inline !important"><span style="float:none">●&nbsp;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>&nbsp;大会组织管理信息展示子系统</p><p><span style="font-size:10px; text-align:center; -webkit-text-stroke-width:0px"><span style="color:#4d4d4d"><span style="font-family:&quot;MicrosoftYaHei Regular&quot;"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="background-color:#ffffff"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="display:inline !important"><span style="float:none">●&nbsp;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>&nbsp;接待服务管理信息展示子系统</p><p><span style="font-size:10px; text-align:center; -webkit-text-stroke-width:0px"><span style="color:#4d4d4d"><span style="font-family:&quot;MicrosoftYaHei Regular&quot;"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="background-color:#ffffff"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="display:inline !important"><span style="float:none">●&nbsp;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>&nbsp;资源调度管理信息展示子系统</p><p><span style="font-size:10px; text-align:center; -webkit-text-stroke-width:0px"><span style="color:#4d4d4d"><span style="font-family:&quot;MicrosoftYaHei Regular&quot;"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="background-color:#ffffff"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="display:inline !important"><span style="float:none">●&nbsp;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>&nbsp;天气预报信息展示子系统</p><p><span style="font-size:10px; text-align:center; -webkit-text-stroke-width:0px"><span style="color:#4d4d4d"><span style="font-family:&quot;MicrosoftYaHei Regular&quot;"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="background-color:#ffffff"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="display:inline !important"><span style="float:none">●&nbsp;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>&nbsp;紧急事件报告子系统</p><p><span style="font-size:10px; text-align:center; -webkit-text-stroke-width:0px"><span style="color:#4d4d4d"><span style="font-family:&quot;MicrosoftYaHei Regular&quot;"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="background-color:#ffffff"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="display:inline !important"><span style="float:none">●&nbsp;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>&nbsp;应急指挥调度子系统</p><p><span style="font-size:10px; text-align:center; -webkit-text-stroke-width:0px"><span style="color:#4d4d4d"><span style="font-family:&quot;MicrosoftYaHei Regular&quot;"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="background-color:#ffffff"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="display:inline !important"><span style="float:none">●&nbsp;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>&nbsp;信息实时维护子系统</p><p><span style="font-size:10px; text-align:center; -webkit-text-stroke-width:0px"><span style="color:#4d4d4d"><span style="font-family:&quot;MicrosoftYaHei Regular&quot;"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="background-color:#ffffff"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="display:inline !important"><span style="float:none">●&nbsp;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>&nbsp;亚运会应急预案编制</p><p><span style="font-size:10px; text-align:center; -webkit-text-stroke-width:0px"><span style="color:#4d4d4d"><span style="font-family:&quot;MicrosoftYaHei Regular&quot;"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="background-color:#ffffff"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="display:inline !important"><span style="float:none">●&nbsp;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>&nbsp;运行状态监控子系统</p><p><span style="font-size:10px; text-align:center; -webkit-text-stroke-width:0px"><span style="color:#4d4d4d"><span style="font-family:&quot;MicrosoftYaHei Regular&quot;"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="background-color:#ffffff"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="display:inline !important"><span style="float:none">●&nbsp;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>&nbsp;大屏幕显示控制指令系统</p><p><span style="font-size:10px; text-align:center; -webkit-text-stroke-width:0px"><span style="color:#4d4d4d"><span style="font-family:&quot;MicrosoftYaHei Regular&quot;"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="background-color:#ffffff"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="display:inline !important"><span style="float:none">●&nbsp;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>&nbsp;GPS车辆监控子系统</p><p><span style="font-size:10px; text-align:center; -webkit-text-stroke-width:0px"><span style="color:#4d4d4d"><span style="font-family:&quot;MicrosoftYaHei Regular&quot;"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="background-color:#ffffff"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="display:inline !important"><span style="float:none">●&nbsp;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>&nbsp;领导指挥指令子系统</p><p><span style="font-size:10px; text-align:center; -webkit-text-stroke-width:0px"><span style="color:#4d4d4d"><span style="font-family:&quot;MicrosoftYaHei Regular&quot;"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="background-color:#ffffff"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="display:inline !important"><span style="float:none">●&nbsp;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>&nbsp;后台管理子系统</p><h3>3.2.3&nbsp;<strong>项目建设成效</strong></h3><p>1.建成一套功能完善且技术成熟的综合管理系统，整体技术水平达到国际先进水平</p><p>2.为大会提供一整套定制化的指挥应急平台，从紧急事件监控、预警、上报、应急指挥、应急预案实现全流程管控，能快速调度和指挥相应的资源解决赛事运行期间出现的突发事件</p><p>3.对竞赛信息、组织管理信息、接待服务、资源信息、交通信息、气象信息、突发事件等进行有效的管理和综合统一展示，为赛事的盘指挥和调度提供坚实保障</p><p>&nbsp;</p></div>
+				</div>
+				<div style="width: 950px;">
+					<div style="display: inline-block; position: relative; right: 100px; line-height: 80px;">
+								<a href="68822B8375EC4D57B48EA3D850B8742E.html">上一篇：社会信用</a>
+					</div>
+					<div style="display: inline-block; position: relative; left: 100px; line-height: 80px;">
+								<a href="7D3FE84A51CE413F932A24089C19432D.html">数据可视化:下一篇</a>
+					</div>
+				</div>
+			</div>
+			<!-- footer 模块 -->
+			<div style="float:left;width:100%">
+<div class="layui-footer">
+	<div class="footer-info layui-row">
+		<div class="layui-col-xs8">
+			<div class="infos">
+				<div class="info-item info-head text-left ">新手指南</div>
+				<div class="info-item info-head">关于智能</div>
+				<div class="info-item info-head">服务与支持</div>
+				<div class="info-item info-head">产品中心</div>
+				<div class="info-item info-head text-right">其他服务</div>
+				
+				<div class="info-item text-left "><a href="../index.html">网站首页</a></div>
+				<div class="info-item"><a href="../templ/contactus/index.html">企业简介</a></div>
+				<div class="info-item"><a href="../solve/index.html">解决方案</a></div>
+				<div class="info-item">产品介绍</div>
+				<div class="info-item text-right">系统集成</div>
+				
+				<div class="info-item text-left ">帮助中心</div>
+				<div class="info-item"><a href="../templ/memorabilia/index.html">发展历程</a></div>
+				<div class="info-item">服务热线</div>
+				<div class="info-item">产品资料</div>
+				<div class="info-item text-right">软件资讯</div>
+				
+				<div class="info-item text-left ">联系我们</div>
+				<div class="info-item">奖项荣誉</div>
+				<div class="info-item">下载中心</div>
+				<div class="info-item">产品试用</div>
+				<div class="info-item text-right">其他</div>
+			</div>
+		</div>
+		<div class="layui-col-xs4 qrcodes">
+			<div class="qrcode">
+				<img class="qrcode-image" src="../sites/www/images/qrcode/wx_gzh.jpg"/>
+				<span class="qrcode-title">微信公众号</span>
+			</div>
+			<div class="qrcode">
+				<img class="qrcode-image" src="../sites/www/images/qrcode/app.jpg"/>
+				<span class="qrcode-title">手机APP</span>
+			</div>
+		</div>
+	</div>
+	<div class="copy-right">Copyright © 2018 广州智能科技发展有限公司，版权所有</div>
+</div>
+
+<script type="text/javascript">
+	layui.use('element', function() {
+		var element = layui.element;
+	});
+</script>			</div>
+		</div>
+		<!-- 页面主体 end -->
+	</div>
+		
+</body>
+	<script type="text/javascript">
+	layui.use(['laypage','jquery'], function(){
+		var $ = layui.jquery;
+	});
+	</script>
+</html>

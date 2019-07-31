@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh" class="ie ie8">
+<head>
+<meta http-equiv="content-Type" content="text/html; charset=utf-8" />
+<!-- 基础应用站点信息 -->
+<meta charset="utf-8" />
+<title>广州智能科技</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>系统管理</title>
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+
+<!-- 系统基础样式 -->
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+<link rel="stylesheet" type="text/css" href="../fonts/iconfont/style.css" />
+<link rel="stylesheet" type="text/css" href="../fonts/awesome/style.css" />
+<link rel="stylesheet" type="text/css" href="../fonts/feather/style.css" />
+<link rel="stylesheet" type="text/css" href="../fonts/themify/style.css" />
+<link rel="stylesheet" type="text/css" href="../sites/www/css/style.css" ></link>
+
+<link rel="stylesheet" type="text/css" href="../css/cms-style.css" ></link>
+<script charset="utf-8" type="text/javascript" src="../layui.js" ></script>
+</head>
+<body class="layui-layout-front">
+	<div class="layui-layout">
+		<!-- header 模块 -->
+<meta charset="utf-8" />
+
+<div class="layui-header">
+	<div class="layui-logo"></div>
+	<!-- 头部区域（可配合layui已有的水平导航） -->
+	<ul class="layui-nav layui-layout-left">
+		<li class="layui-nav-item"><a href="../index.html">首页</a></li>
+		<li class="layui-nav-item">
+				<a href="../product/index.html">产品中心</a>
+		</li>
+		<li class="layui-nav-item">
+				<a href="../solve/index.html">解决方案</a>
+		</li>
+		<li class="layui-nav-item">
+				<a href="../news/index.html">新闻中心</a>
+		</li>
+	</ul>
+	<ul class="layui-nav layui-layout-right">
+		<li class="layui-nav-item"><a href="../templ/memorabilia/index.html">公司大事记</a></li>
+		<li class="layui-nav-item"><a href="../templ/contactus/index.html">联系我们</a></li>
+<!-- 		 -->
+			<li class="layui-nav-item"><a href="http://www.it2000.com.cn/login-JSESSIONID=d864056c-ee6b-4461-b794-9e7980141508.html">登录|注册</a></li>
+<!-- 		 -->
+	</ul>
+</div>
+
+<!-- 右侧浮动工具栏 -->
+<ul class="layui-fixbar fixed-right-tool" id="fixtoolbar">
+	<li lay-type="airlines" class="pt-15">
+		<i class="layui-icon layui-icon-headset"></i>
+		<span class="layui-title">在线客服</span>
+	</li>
+	<li lay-type="qq" class="pt-15">
+		<i class="layui-icon layui-icon-login-qq"></i>
+		<span class="layui-title">QQ</span>
+	</li>
+	<li lay-type="tel" class="pt-15" >
+		<i class="layui-icon layui-icon-cellphone-fine"></i>
+		<span class="layui-title">电话热线</span>
+	</li>
+	<li lay-type="gestbook" class="pt-15">
+		<i class="layui-icon layui-icon-edit"></i>
+		<span class="layui-title">在线留言</span>
+	</li>
+</ul>
+
+<div name="browserMsg" class="text-center layui-layer-content" style="display: none;">
+	<div class="mt-40">
+		<span class="spanMsg">您正在使用的浏览器版本过低，将不能正常浏览和使用本网站</span>
+		<br><span class="spanMsg">请升级浏览器至IE9版本或以上，推荐浏览器如下：</span>
+	</div>
+	<div class="browserDiv mt-40">
+		<table style="width: 100%;">
+			<tr>
+				<td style="width:200px;" align="center">
+					<a href="https://support.microsoft.com/zh-cn/help/17621/internet-explorer-downloads">
+						<div class="solution-carousel-content">
+							<img src="../sites/www/images/browser/ie11-logo.png" style="height: 120px;">
+							<div class="solution-content2 mt-20">
+								<span class="spanMsg">升级IE浏览器</span>
+							</div>
+						</div>
+					</a>
+				</td>
+				<td style="width:200px;" align="center">
+					<a href="https://www.google.cn/chrome/">
+						<div class="solution-carousel-content">
+							<img src="../sites/www/images/browser/chrome-logo.png" style="height: 120px;">
+							<div class="solution-content2 mt-20">
+								<span class="spanMsg">使用谷歌浏览器</span>
+							</div>
+						</div>
+					</a>
+				</td>
+				<td style="width:200px;" align="center">
+					<a href="http://www.firefox.com.cn/">
+						<div class="solution-carousel-content">
+							<img src="../sites/www/images/browser/firefox-logo.png" style="height: 120px;">
+							<div class="solution-content2 mt-20">
+								<span class="spanMsg">使用火狐浏览器</span>
+							</div>
+						</div>
+					</a>
+				</td>
+			</tr>
+		</table>
+		
+	</div>
+</div>
+<!-- 右侧浮动工具栏 end -->
+<script type="text/javascript">
+layui.use(['jquery','util','layer'], function(){
+	var $ = layui.jquery;
+	var util = layui.util;
+	var layer = layui.layer;
+	
+	 //固定块
+	util.fixbar({
+		elem : '#fixtoolbar',
+		css : {
+			right : 20,
+			bottom : 100
+		},
+		click : function(type) {
+			window.location.href="/cms-web/templ/contactus/index.html";
+		}
+	});
+	 
+	var url = window.location.pathname;
+	// 首页url处理
+	if (url == "/cms-web/") {
+		url = "/cms-web";		
+	}
+	// 获取href=url的a标签所在的li元素，添加选中样式
+	$("div.layui-header [href='"+url+"']").parents("li.layui-nav-item").addClass("layui-this");
+	
+	// 浏览器判断
+	// 添加弹出框
+	if(navigator.appName == "Microsoft Internet Explorer" 
+			&& ( navigator.appVersion.match(/7./i)=="7." ||
+					navigator.appVersion.match(/8./i)=="8.")){ 
+		layer.open({
+			type:1,
+			title: false, // 无标题
+			content:$("div[name=browserMsg]"),
+			closeBtn: 0, // 无关闭按钮
+			shade: [0.8, '#393D49'], // 遮罩层
+			area: ['630px','390px']
+		});
+		$("div[name=browserMsg]").show();
+	}
+});
+</script>		
+		<!-- 页面主体 -->
+		<div class="layui-body">
+		<!-- 头部图片-->
+			<div align="center" class="newdetail">
+				<div class="newdetail-head">
+				<img src="http://www.it2000.com.cn/sites/www/images/newlist/1.jpg" style="width:100%; height:100%;">
+				<div  style="position:absolute;left: 300px;top: 100px;width: 900px;">
+					<div align="left" style="font-size: 35px;padding-bottom: 20px;color: #FF801E;text-shadow: 2px 2px 2px #ffffff;">
+						<span>关于智能</span>
+					</div>
+					<div align="left">
+						<span style="font-size: 20px;color: #ffffff;">软件创造价值是智能人永远的追求</span>
+					</div>
+				</div>
+				</div>
+			</div>
+			<div class="breadcrumbs">
+			<div class="layui-col-md3 pl-20 pt-10">
+				<span><img src="http://www.it2000.com.cn/sites/www/images/newlist/4.jpg.png"></span>
+				<span style="font-size: 14px;color: #4c4c4c;font-family: 雅黑;">当前位置：</span>
+				<span class="layui-breadcrumb" lay-separator="<i class='layui-icon layui-icon-right'></i>">
+				  <a href="../index.html">首页</a>
+				  <a href="">业务领域</a>
+				</span></div>
+			</div>
+			<div  align="center"  class="detail-main">
+				<div style="width: 950px;background-color: #ffffff;">
+					<div align="left" class="layui-row detail-main-title" style="">
+						<span>大数据治理</span>
+					</div>
+					<div align="left" class="layui-row detail-main-title2">
+					<span>诚信为本</span><span>客户至上</span><span>品质第一</span><span>追求卓越</span>
+					</div>
+					<div align="left" style="font-family: ArialMT Regular;padding-left: 50px;padding-top: 2px;font-size: 12px;color: #B3B3B3;margin-bottom: 20px;">Integty based customer first quilty first</div>
+					<div align="left" class="detail-content"><h1 style="margin-left: 40px;">1&nbsp;<strong>产品功能介绍</strong></h1><p>1.1&nbsp;<strong><a>平台容器</a></strong><strong>管理</strong></p><p>本平台内置的容器管理是全栈化容器管理平台。具备全栈化一键部署应用、兼容多种编排调度工具、多租户、兼容多种基础架构的能力，可在多种云平台技术框架下运行，包括AWS、微软Azure、谷歌、阿里云、OpenStack、VMware等等。</p><p style="text-align:center"><img alt="" height="288" src="http://www.it2000.com.cn/ftp/ckeditor/images/2018/12/20/1545294663449223.png" width="650" /></p><p style="text-align: center;"><strong>图</strong><strong>：</strong><strong>平台容器技术框架图</strong></p><p>容器管理平台将为每个委办局用户提供独立部署的环境；在某环境下可以有多个服务共同提供业务，而每个服务可以包含多个容器。容器管理平台实现了集中和分布相结合的管理；</p><p>容器管理平台对外提供API，实现高级的跨容器编排；容器管理平台提供基于容器的微服务目录。便于微服务的快速推广。容器既可以被部署在单机，也能被扩展到数千个以上的节点。</p><p>1.2&nbsp;<strong><a>平台微服务管理</a></strong></p><p>平台容器技术是平台微服务的基础。容器负责部署、卸载、启动、加载、停止、重启，为开发者提供便捷的部署和运行服务。开发者只需将微服务应用提交到平台，容器服务自动完成应用的部署和运行，无需开发者进行复杂的容器安装、管理和维护工作。</p><p style="text-align:center"><img alt="" height="474" src="http://www.it2000.com.cn/ftp/ckeditor/images/2018/12/20/1545294678660513.png" width="650" /></p><p style="text-align: center;"><strong>图：</strong><strong>基础框架图</strong></p><p>l&nbsp;基础框架层主要是为容器提供计算、存储、网络等基础资源。</p><p>l&nbsp;基础服务层，除了有微服务本身主体程序，还需要有一些额外的辅助工具来完善对应微服务的架构体系。</p><p>l&nbsp;微服务访问层，目前服务对外暴露访问主要以DNS绑定或是负载均衡VIP方式。</p><p>5.4.2.2平台基础微服务</p><p>基础服务为平台稳定、高效的运行提供可靠的依赖，并能随着应用业务压力的变化自动进行弹性伸缩。平台自带的基础服务：健康检查服务、负载均衡服务、通信加密信道服务、数据库服务、缓存服务、日志服务、文件服务、定时服务。专为本政务平台开发的基础微服务：数据敏捷感知同步微服务、数据模型同步微服务、数据整合微服务、基础数据目录微服务、服务工单微服务、数据备份微服务、信息共享平台接口微服务。</p><p style="text-align:center"><img alt="" height="542" src="http://www.it2000.com.cn/ftp/ckeditor/images/2018/12/20/1545294693031555.png" width="650" /></p><p style="text-align: center;"><strong>图</strong><strong>：</strong><strong>平台基础微服务图</strong></p><p>1.3&nbsp;<strong><a>标准环境管理</a></strong></p><p>建立各级虚拟中心的标准环境配置，作为新建虚拟中心的配置基准。标准环境配置包括标准存储资源、标准计算资源、标准网络资源、标准软件环境、标准接口。</p><p>1.4&nbsp;<strong><a>数据中心实例管理</a></strong></p><p>建成树形的多级虚拟数据中心架构，为数据组织网以及统一管控中心提供支撑。一级虚拟数据中心的提供的对外服务功能，&nbsp;平台可按规范规划一组容器，基于标准环境，十分快速地实现一个二级虚拟数据中心必备的全部功能。从而实现树形的多级虚拟数据中心架构，为数据组织网以及统一管控中心提供支撑。</p><p>1.5&nbsp;<strong><a>数据中心初始化</a></strong></p><p>在数据中心投入使用前配置数据中心必要的基础数据目录，基础数据、基础数据模型，&nbsp;通过基础数据目录微服务实现，通过微服务实现一级数据中心与其他数据中心的对接。</p><p>1.6&nbsp;<strong><a>数据管理与服务</a></strong></p><p>l&nbsp;级虚拟数据中心同步工具功能通过微服务实现；</p><p>l&nbsp;数据同步服务功能通过微服务实现；</p><p>l&nbsp;数据模型同步服务功能通过微服务实现；</p><p>l&nbsp;算法模型同步服务功能，通过微服务实现。</p><p>&nbsp;</p><h1 style="margin-left: 40px;">2&nbsp;<strong><a>产品特征</a></strong></h1><p>2.1&nbsp;<strong><a>建立了数据全流通体系</a></strong></p><p>通过信息总线联系各线虚拟数据中心的唯一通道，数据中心数据库被严格封装，不允许除信息总线外任何系统进行访问，有效提高了数据安全。同时，信息总线作为外部访问的唯一通道，政府各部门的业务系统遵循统一的规范，避免了因建设时间、承建厂商不同造成的数据、接口规范的不一致性。</p><p>包括信息总线的建设，数据接口服务等，获取信息共享平台的数据用原有ESB服务总线，虚拟数据中心对外提供数据服务则用信息总线。</p><p>2.2&nbsp;<strong>数据分级治理</strong></p><p>建立多级虚拟数据中心，分级汇聚数据，包括物理汇聚和逻辑汇聚，最终形成集中管控分级融合分级治理的全市大数据治理格局。</p><p>平台统一提供各级中心的数据质量管理系统，数据全息化管理系统，配套的数据治理支撑工具。</p><p>各级数据中心以及接入系统之间通过统一的数据全流通体系实现互联互通，可在一级中心集中监控，其余各中心各自监控本中心进出数据。</p><p>2.3&nbsp;<strong>平台采用容器技术框架，可在多种云平台技术框架下独立运行</strong></p><p>本平台内置的容器管理是全栈化容器管理平台。具备全栈化一键部署应用、兼容多种编排调度工具、多租户、兼容多种基础架构的能力，可在多种云平台技术框架下运行，包括AWS、微软Azure、谷歌、阿里云、OpenStack、VMware。容器管理平台实现了集中和分布相结合的管理；对外提供API，实现高级的跨容器编排；提供基于容器的微服务目录，便于微服务的快速推广。容器既可以被部署在单机，也能被扩展到数千个以上的节点。</p><p>2.4&nbsp;<strong>提供数据治理支撑工具</strong></p><p>提供在数据中心数据治理的全生命周期管理过程中需要应用的支撑工具，包括元数据管理，主数据管理，数据字典管理，数据标准管理，数据模型标准管理,数据模型标准服务工具和规范,标准的自动校验和应用。通过元数据，主数据管理及数据标准及模型的统一接口及服务，协助完成整个虚拟数据中心的数据治理相关工作。</p><h1 style="margin-left: 40px;">3&nbsp;<strong>产品成功案例</strong></h1><p>3.1&nbsp;<strong><a>广州市信息化服务中心大数据分析支持系统项目之虚拟数据中心和共享数据全流通体系</a></strong></p><p>广州市信息化服务中心大数据分析支持系统项目之智慧虚拟数据中心和共享数据全流通体系项目是为了解决目前广州各政府部门的相关业务监管信息存在数据交换间隔时间长、数据资源的标准不统一、数据管理不足等问题。广州智能科技发展有限公司承建的虚拟数据中心和共享数据全流通体系项目加快了各委办局数据共享实时同步时间，统一政府数据资源标准，对各委办局共享出来的数据进行数据质量管理，并把数据打上多维度的标签，最终实现数据统一管控、分级治理、互联互通。</p><p>3.2&nbsp;<strong><a>项目建设内容</a></strong></p><p>建立多级虚拟数据中心，根据全市数据治理需要，实现对数据的分级汇聚融合、有序共享流通、分级数据质量管控，并提供高可复用的数据治理工具，支撑各级虚拟中心的数据治理，提供数据全息化工具，支撑各数据中心的全息化建设。</p><p style="text-align:center"><img alt="" height="462" src="http://www.it2000.com.cn/ftp/ckeditor/images/2018/12/20/1545294634938891.png" width="575" /></p><p><br />3.3&nbsp;<strong><a>项目建设成效</a></strong></p><p>解决了各个委办局之间数据实时交换的迫切需求、统一接口标准规范、建立全市全量资源目录、实现了各个委办局之间的算法流通避免了涉密数据的泄露、制定了统一的质量管理规则以供各委办局参考借鉴、提供给各委办局一套数据标准以及数据模型标准。</p><p>&nbsp;</p></div>
+				</div>
+				<div style="width: 950px;">
+					<div style="display: inline-block; position: relative; right: 100px; line-height: 80px;">
+								<a href="3EE0538EFC804D8ABBFADCB0FC015369.html">上一篇：智慧城市</a>
+					</div>
+					<div style="display: inline-block; position: relative; left: 100px; line-height: 80px;">
+								<a href="68822B8375EC4D57B48EA3D850B8742E.html">社会信用:下一篇</a>
+					</div>
+				</div>
+			</div>
+			<!-- footer 模块 -->
+			<div style="float:left;width:100%">
+<div class="layui-footer">
+	<div class="footer-info layui-row">
+		<div class="layui-col-xs8">
+			<div class="infos">
+				<div class="info-item info-head text-left ">新手指南</div>
+				<div class="info-item info-head">关于智能</div>
+				<div class="info-item info-head">服务与支持</div>
+				<div class="info-item info-head">产品中心</div>
+				<div class="info-item info-head text-right">其他服务</div>
+				
+				<div class="info-item text-left "><a href="../index.html">网站首页</a></div>
+				<div class="info-item"><a href="../templ/contactus/index.html">企业简介</a></div>
+				<div class="info-item"><a href="../solve/index.html">解决方案</a></div>
+				<div class="info-item">产品介绍</div>
+				<div class="info-item text-right">系统集成</div>
+				
+				<div class="info-item text-left ">帮助中心</div>
+				<div class="info-item"><a href="../templ/memorabilia/index.html">发展历程</a></div>
+				<div class="info-item">服务热线</div>
+				<div class="info-item">产品资料</div>
+				<div class="info-item text-right">软件资讯</div>
+				
+				<div class="info-item text-left ">联系我们</div>
+				<div class="info-item">奖项荣誉</div>
+				<div class="info-item">下载中心</div>
+				<div class="info-item">产品试用</div>
+				<div class="info-item text-right">其他</div>
+			</div>
+		</div>
+		<div class="layui-col-xs4 qrcodes">
+			<div class="qrcode">
+				<img class="qrcode-image" src="../sites/www/images/qrcode/wx_gzh.jpg"/>
+				<span class="qrcode-title">微信公众号</span>
+			</div>
+			<div class="qrcode">
+				<img class="qrcode-image" src="../sites/www/images/qrcode/app.jpg"/>
+				<span class="qrcode-title">手机APP</span>
+			</div>
+		</div>
+	</div>
+	<div class="copy-right">Copyright © 2018 广州智能科技发展有限公司，版权所有</div>
+</div>
+
+<script type="text/javascript">
+	layui.use('element', function() {
+		var element = layui.element;
+	});
+</script>			</div>
+		</div>
+		<!-- 页面主体 end -->
+	</div>
+		
+</body>
+	<script type="text/javascript">
+	layui.use(['laypage','jquery'], function(){
+		var $ = layui.jquery;
+	});
+	</script>
+</html>

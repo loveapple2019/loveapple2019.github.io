@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh" class="ie ie8">
+<head>
+<meta http-equiv="content-Type" content="text/html; charset=utf-8" />
+<!-- 基础应用站点信息 -->
+<meta charset="utf-8" />
+<title>广州智能科技</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>系统管理</title>
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+
+<!-- 系统基础样式 -->
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+<link rel="stylesheet" type="text/css" href="../fonts/iconfont/style.css" />
+<link rel="stylesheet" type="text/css" href="../fonts/awesome/style.css" />
+<link rel="stylesheet" type="text/css" href="../fonts/feather/style.css" />
+<link rel="stylesheet" type="text/css" href="../fonts/themify/style.css" />
+<link rel="stylesheet" type="text/css" href="../sites/www/css/style.css" ></link>
+
+<link rel="stylesheet" type="text/css" href="../css/cms-style.css" ></link>
+<script charset="utf-8" type="text/javascript" src="../layui.js" ></script>
+</head>
+<body class="layui-layout-front">
+	<div class="layui-layout">
+		<!-- header 模块 -->
+<meta charset="utf-8" />
+
+<div class="layui-header">
+	<div class="layui-logo"></div>
+	<!-- 头部区域（可配合layui已有的水平导航） -->
+	<ul class="layui-nav layui-layout-left">
+		<li class="layui-nav-item"><a href="">首页</a></li>
+		<li class="layui-nav-item">
+				<a href="../product/index.html">产品中心</a>
+		</li>
+		<li class="layui-nav-item">
+				<a href="../solve/index.html">解决方案</a>
+		</li>
+		<li class="layui-nav-item">
+				<a href="../news/index.html">新闻中心</a>
+		</li>
+	</ul>
+	<ul class="layui-nav layui-layout-right">
+		<li class="layui-nav-item"><a href="../templ/memorabilia/index.html">公司大事记</a></li>
+		<li class="layui-nav-item"><a href="../templ/contactus/index.html">联系我们</a></li>
+<!-- 		 -->
+			<li class="layui-nav-item"><a href="../login.html">登录|注册</a></li>
+<!-- 		 -->
+	</ul>
+</div>
+
+<!-- 右侧浮动工具栏 -->
+<ul class="layui-fixbar fixed-right-tool" id="fixtoolbar">
+	<li lay-type="airlines" class="pt-15">
+		<i class="layui-icon layui-icon-headset"></i>
+		<span class="layui-title">在线客服</span>
+	</li>
+	<li lay-type="qq" class="pt-15">
+		<i class="layui-icon layui-icon-login-qq"></i>
+		<span class="layui-title">QQ</span>
+	</li>
+	<li lay-type="tel" class="pt-15" >
+		<i class="layui-icon layui-icon-cellphone-fine"></i>
+		<span class="layui-title">电话热线</span>
+	</li>
+	<li lay-type="gestbook" class="pt-15">
+		<i class="layui-icon layui-icon-edit"></i>
+		<span class="layui-title">在线留言</span>
+	</li>
+</ul>
+
+<div name="browserMsg" class="text-center layui-layer-content" style="display: none;">
+	<div class="mt-40">
+		<span class="spanMsg">您正在使用的浏览器版本过低，将不能正常浏览和使用本网站</span>
+		<br><span class="spanMsg">请升级浏览器至IE9版本或以上，推荐浏览器如下：</span>
+	</div>
+	<div class="browserDiv mt-40">
+		<table style="width: 100%;">
+			<tr>
+				<td style="width:200px;" align="center">
+					<a href="https://support.microsoft.com/zh-cn/help/17621/internet-explorer-downloads">
+						<div class="solution-carousel-content">
+							<img src="../sites/www/images/browser/ie11-logo.png" style="height: 120px;">
+							<div class="solution-content2 mt-20">
+								<span class="spanMsg">升级IE浏览器</span>
+							</div>
+						</div>
+					</a>
+				</td>
+				<td style="width:200px;" align="center">
+					<a href="https://www.google.cn/chrome/">
+						<div class="solution-carousel-content">
+							<img src="../sites/www/images/browser/chrome-logo.png" style="height: 120px;">
+							<div class="solution-content2 mt-20">
+								<span class="spanMsg">使用谷歌浏览器</span>
+							</div>
+						</div>
+					</a>
+				</td>
+				<td style="width:200px;" align="center">
+					<a href="http://www.firefox.com.cn/">
+						<div class="solution-carousel-content">
+							<img src="../sites/www/images/browser/firefox-logo.png" style="height: 120px;">
+							<div class="solution-content2 mt-20">
+								<span class="spanMsg">使用火狐浏览器</span>
+							</div>
+						</div>
+					</a>
+				</td>
+			</tr>
+		</table>
+		
+	</div>
+</div>
+<!-- 右侧浮动工具栏 end -->
+<script type="text/javascript">
+layui.use(['jquery','util','layer'], function(){
+	var $ = layui.jquery;
+	var util = layui.util;
+	var layer = layui.layer;
+	
+	 //固定块
+	util.fixbar({
+		elem : '#fixtoolbar',
+		css : {
+			right : 20,
+			bottom : 100
+		},
+		click : function(type) {
+			window.location.href="/templ/contactus/index.html";
+		}
+	});
+	 
+	var url = window.location.pathname;
+	// 首页url处理
+	if (url == "/") {
+		url = "";		
+	}
+	// 获取href=url的a标签所在的li元素，添加选中样式
+	$("div.layui-header [href='"+url+"']").parents("li.layui-nav-item").addClass("layui-this");
+	
+	// 浏览器判断
+	// 添加弹出框
+	if(navigator.appName == "Microsoft Internet Explorer" 
+			&& ( navigator.appVersion.match(/7./i)=="7." ||
+					navigator.appVersion.match(/8./i)=="8.")){ 
+		layer.open({
+			type:1,
+			title: false, // 无标题
+			content:$("div[name=browserMsg]"),
+			closeBtn: 0, // 无关闭按钮
+			shade: [0.8, '#393D49'], // 遮罩层
+			area: ['630px','390px']
+		});
+		$("div[name=browserMsg]").show();
+	}
+});
+</script>		
+		<!-- 页面主体 -->
+		<div class="layui-body">
+		<!-- 头部图片-->
+			<div align="center" class="newdetail">
+				<div class="newdetail-head">
+				<img src="http://www.it2000.com.cn/sites/www/images/newlist/1.jpg" style="width:100%; height:100%;">
+				<div  style="position:absolute;left: 300px;top: 100px;width: 900px;">
+					<div align="left" style="font-size: 35px;padding-bottom: 20px;color: #FF801E;text-shadow: 2px 2px 2px #ffffff;">
+						<span>关于智能</span>
+					</div>
+					<div align="left">
+						<span style="font-size: 20px;color: #ffffff;">软件创造价值是智能人永远的追求</span>
+					</div>
+				</div>
+				</div>
+			</div>
+			<div class="breadcrumbs">
+			<div class="layui-col-md3 pl-20 pt-10">
+				<span><img src="http://www.it2000.com.cn/sites/www/images/newlist/4.jpg.png"></span>
+				<span style="font-size: 14px;color: #4c4c4c;font-family: 雅黑;">当前位置：</span>
+				<span class="layui-breadcrumb" lay-separator="<i class='layui-icon layui-icon-right'></i>">
+				  <a href="">首页</a>
+				  <a href="">业务领域</a>
+				</span></div>
+			</div>
+			<div  align="center"  class="detail-main">
+				<div style="width: 950px;background-color: #ffffff;">
+					<div align="left" class="layui-row detail-main-title" style="">
+						<span>社会信用</span>
+					</div>
+					<div align="left" class="layui-row detail-main-title2">
+					<span>诚信为本</span><span>客户至上</span><span>品质第一</span><span>追求卓越</span>
+					</div>
+					<div align="left" style="font-family: ArialMT Regular;padding-left: 50px;padding-top: 2px;font-size: 12px;color: #B3B3B3;margin-bottom: 20px;">Integty based customer first quilty first</div>
+					<div align="left" class="detail-content"><h1>1&nbsp;<strong>产品功能介绍</strong></h1><h2>1.1&nbsp;<strong>信用信息管理平台</strong></h2><h3>1.1.1&nbsp;<strong>信用目录管理</strong></h3><p>由业务部门发起的新增档案目录主题需求，通过流程将新增数据主题添加到档案目录中。由业务部门发起的变更档案目录主题需求，通过流程实现档案目录的变更。提供档案目录同步、档案目录数据查询、信用目录查询等服务的申请流程。</p><h3>1.1.2&nbsp;<strong>信用交换管理</strong></h3><p>实现对信用数据的归集，清洗，对比，分析入库和回溯，实现对信用初始数据的规范化和标准化处理，为信用数据的交换打好基础</p><h3>1.1.3&nbsp;<strong>数据质量管理</strong></h3><p>实现对数据的规则监控，对前置库的数据质量进行规范化管理，可在线对数据进行修正，生成质量报告和质量检测报告，生成数据质量核查报告，</p><h3>1.1.4&nbsp;<strong>信用数据管理</strong></h3><p>数据管理为各业务部门提供数据资源目录的注册管理以及数据资源的发现定位服务，提供了信息传递的管理与监控功能，政府部门在业务办理过程中，查询本单位信用目录，根据部门业务制度配置公示信息。信用公示信息由政府部门管理员发布，经平台审核人员审核后通过信用网站上公开发布。</p><h3>1.1.5&nbsp;<strong>接口服务管理</strong></h3><p>信用系统的接口模块，该接口模块实现信用系统对其他业务系统提供的信用服务接口。接口模块会架设WebService的服务端，其他业务系统在申请开通后，可以连接服务端，获取信用信息。</p><h3>1.1.6&nbsp;<strong>数据共享管理</strong></h3><p>服务接入申请由各委局单位发起。各委局依据自身业务应用特点及需求，整理相关应用接入要求后，以公函的形式发至信用系统管理方，再由信用系统管理方组织信用系统技术团队与申请单位的技术团队一起进行对接，按照接入技术规范进行开发接入工作。</p><h3>1.1.7&nbsp;<strong>统计分析</strong></h3><p>可对信用系统总体运营情况进行统计分析，可对信用数据归集情况进行统计分析，同时系统提供多维度分析功能</p><h3>1.1.8&nbsp;<strong>信用信息异议服务</strong></h3><p>信息主体认为征信机构采集、保存、提供的信息存在错误、遗漏的，有权向征信机构或者信息提供者提出异议，要求更正。征信机构或者信息提供者收到异议，应当按照国务院征信业监督管理部门的规定对相关信息作出存在异议的标注，并将结果书面答复异议人。</p><h3>1.1.9&nbsp;<strong>联合惩戒</strong></h3><p>建立信用联合惩戒机制，为其他信用监管部门建立守信激励和失信惩戒联动机制提供关键的信息与技术支撑，促使失信行为责任人纠正失信行为，也为广大公众及时规避信用风险提供有力的工具，从而推动社会信用体系的自我完善。</p><h2>1.2&nbsp;<strong>信用信息网站</strong></h2><h3>1.2.1&nbsp;<strong>首页栏目</strong></h3><p>网站主界面包括图片新闻、信用查询、行政许可公示、行政处罚公示、信用红榜、信用黑榜、诚信典范、联合惩戒等内容的展示，借助注册、登录完成用户认证，方便详细了解个人信用情况。</p><h3>1.2.2&nbsp;<strong>公开公示栏目</strong></h3><p>公开公示栏目需显示信用公开及公示信息，包括行政许可信息、行政处罚信息、信用红榜、信用黑榜、联合惩戒、联合激励、社会信用代码二级栏目。</p><h3>1.2.3&nbsp;<strong>信用查询栏目</strong></h3><p>社会公众可借助信用查询栏目依法查询法人已公开的信用信息，支持以法定名称查询相关信用主体信息，点击后可查看该信用主体的基础信息及信用记录。</p><h3>1.2.4&nbsp;<strong>信用建设栏目</strong></h3><p>信用建设栏目包括了工作动态、通知公告、政策法规、信用推进等二级栏目，该类栏目应详细展示信用建设情况，显示标题、时间等内容。点击后应可以查看指定记录的详细文章。</p><h3>1.2.5&nbsp;<strong>信用资讯栏目</strong></h3><p>用资讯栏目包括了社会聚焦、诚信典范、信用研究、信用知识等二级栏目，该类栏目应详细展示桂林市的信用资讯情况，显示标题、时间等内容。点击后应可以查看指定记录的详细文章。</p><h3>1.2.6&nbsp;<strong>关于我们栏目</strong></h3><p>关于我们栏目包括信用记录、平台建设、组织建设、制度标准等二级栏目，其中信用记录以柱状图形式说明了信用记录归集情况。其他栏目则应详细展示社会信用工作情况，包括平台建设、组织建设、制度标准等方面的内容。</p><h3>1.2.7&nbsp;<strong>网站栏目管理</strong></h3><p>以树结构图的方式，展示信用网站的栏目列表，点击栏目节点，在右侧显示该栏目节点的详细信息。</p><p>&nbsp;</p><h3>1.2.8&nbsp;<strong>网站内容管理</strong></h3><p>可对网站内容进行编辑和维护，提供富文本编辑功能，可以在线编辑文件，以方便远程维护。同时可以使用文档或附件上传功能，在指定位置插入图片或附件。</p><h3>1.2.9&nbsp;<strong>网站发布管理</strong></h3><p>可以选择多项内容进行立刻生成和发布。自动发布日志，形成一个文件存放到站点一个指定目录。系统自动统计24小时新闻点击排行，周新闻点击排行，月点击排行</p><p>&nbsp;</p><h1>2&nbsp;<strong>产品特征</strong></h1><h2>2.1&nbsp;<strong>数据智能融合共享技术，实现公共信用跨区域共享</strong></h2><p>公共信用采用大数据存储，提供异构数据库复制、交换同步、ETL、汇聚整合、数据分发服务等功能。支持全量FullLoad、增量CDC、交换整合等任务类型对城市所有个人、企业和各类组织的信用信息，市级平台做到全覆盖，并逐级向全国信用信息平台归集。并将通过全国平台这个&ldquo;总枢纽&rdquo;，向各城市开放全国信用共享服务，丰富市级平台的跨区域跨部门信息。</p><h2>2.2&nbsp;<strong>已构建起&ldquo;守信者一路畅通、失信者处处受限&rdquo;的政府信用联合监管手段</strong></h2><p>系统落实好了国家层面已经出台的联合奖惩备忘录，并且对照社会信用体系建设规划纲要，在所有重点领域建立起联合奖惩对象名单及管理办法，细化联合奖惩措施，并嵌入平台系统，有效的构建起&ldquo;守信者一路畅通、失信者处处受限&rdquo;的联合奖惩大格局，使&ldquo;不愿失信、主动守信&rdquo;形成风气。</p><h2>2.3&nbsp;<strong>已构建起&ldquo;守信者一路畅通、失信者处处受限&rdquo;的市场健全的主体诚信机制</strong></h2><p>建立了健全市场主体诚信档案、行业黑名单制度和市场退出机制，建立了健全联合激励与惩戒机制，使守信者一路绿灯，使失信者处处受限。</p><h2>2.4&nbsp;<strong>为市名提供了信用信息&ldquo;一站式&rdquo;服务</strong></h2><p>提供了信用信息&ldquo;一站式&rdquo;查询，整合各类信用信息，向包括金融机构开放，促进中小企业融资，信用服务机构运用信用积分，在交通出行、医疗付费、休闲旅游等方面为市民提供便捷服务;将信用信息融入公共服务和市民生活，实施信用惠民举措。</p><h1>3&nbsp;<strong>产品成功案例</strong></h1><h2>3.1&nbsp;<strong>&nbsp;广州市公共信用信息管理系统应用开发项目</strong></h2><h3>3.1.1&nbsp;<strong>项目简介</strong></h3><p>广州市公共信用信息管理系统应用开发项目是响应国家和市政府对公共信用信息体系建设要求，项目总体目标是建立&ldquo;一个信用资源目录、一个数据归集平台、五个数据库、三个应用服务系统、一个信用门户&rdquo;。</p><p>广州智能科技发展有限公司承建了该项目，一方面通过构建公共信用数据的汇聚中心，建立覆盖全市政府机构、企业、事业单位、社会组织机构、个人的信用数据库，为我市信用体系建设提供数据支撑；另一方面通过建立直接面向政府机构、专业机构、社会公众的信用信息服务通用平台，为各种专用的公共管理、公共服务以及商业应用提供信用数据支持。</p><h3>3.1.2&nbsp;<strong>项目建设内容</strong></h3><p style="text-align:center"><img alt="" height="493" src="http://www.it2000.com.cn/ftp/ckeditor/images/2018/12/20/1545296517446582.png" width="486" /></p><h3>3.1.3&nbsp;<strong>项目建设成效</strong></h3><p>1.建成有效的信用资源共享数据</p><p>2.建立一套完善的集政府、企业、个人、事业单位和社会组织于一体的公共信用信息数据库</p><p>3.为政府对社会企业投资资金审批提供信用评价依据，优化资源分配</p><p>4.实现信用信息归集，对存在重大信用缺失企事业单位进行联合惩戒提供有力支撑，极大的改善经济社会发展信用环境</p><p>&nbsp;</p><h2>3.2&nbsp;<strong>桂林市公共信用信息平台项目</strong></h2><h3>3.2.1&nbsp;<strong>项目简介</strong></h3><p>广州智能科技发展有限公司承建的桂林市公共信用信息平台项目是桂林市落实《桂林市社会信用体系建设规划（2016-2020）》要求，依托政务外网和电子政务云平台现有资源，构建信用信息资源共享为基础的覆盖全社会的信用信息系统。并在此基础上逐步纳入金融、工商登记、税收缴纳、社保缴费、安全生产、环境保护、交通违章、法院生效裁判执行等信用信息，实现信用信息全覆盖。同时，实现信用信息的记录、存储、整合和交换，完善信用监管体制；同时，通过信用平台建设推进诚信记录，完善实名登记制度，推动公共信用信息共享。</p><h3>3.2.2&nbsp;<strong>项目建设内容</strong></h3><p>项目包括&ldquo;4个1&rdquo;工程，如下：</p><p style="text-align:center"><img alt="" height="248" src="http://www.it2000.com.cn/ftp/ckeditor/images/2018/12/20/1545296537097628.png" width="480" /></p><h3>3.2.3&nbsp;<strong>项目建设成效</strong></h3><p>1.构建一套完整的覆盖桂林市企业法人、自然人信用数据库，为桂林市公共信用业务提供数据基础</p><p>2.实现信用数据从采集、管理、使用全过程的精细化管理和透明化监控</p><p>3.平台兼具政策发布窗口、在线服务窗口、信用监管曝光窗口、信用文化宣传窗口等多种角色，是公共信用系统向市民提供服务的重要渠道</p><p>4.为守信激励和失信惩戒提供有力的支撑，明显改善经济社会发展信用环境</p></div>
+				</div>
+				<div style="width: 950px;">
+					<div style="display: inline-block; position: relative; right: 100px; line-height: 80px;">
+								<a href="58B7EC2C33C94D2EB0FA7F3494F711E1.html">上一篇：大数据治理</a>
+					</div>
+					<div style="display: inline-block; position: relative; left: 100px; line-height: 80px;">
+								<a href="782F7AA41D034BEE8C03507C6627A198.html">智慧应急:下一篇</a>
+					</div>
+				</div>
+			</div>
+			<!-- footer 模块 -->
+			<div style="float:left;width:100%">
+<div class="layui-footer">
+	<div class="footer-info layui-row">
+		<div class="layui-col-xs8">
+			<div class="infos">
+				<div class="info-item info-head text-left ">新手指南</div>
+				<div class="info-item info-head">关于智能</div>
+				<div class="info-item info-head">服务与支持</div>
+				<div class="info-item info-head">产品中心</div>
+				<div class="info-item info-head text-right">其他服务</div>
+				
+				<div class="info-item text-left "><a href="../index.html">网站首页</a></div>
+				<div class="info-item"><a href="../templ/contactus/index.html">企业简介</a></div>
+				<div class="info-item"><a href="../solve/index.html">解决方案</a></div>
+				<div class="info-item">产品介绍</div>
+				<div class="info-item text-right">系统集成</div>
+				
+				<div class="info-item text-left ">帮助中心</div>
+				<div class="info-item"><a href="../templ/memorabilia/index.html">发展历程</a></div>
+				<div class="info-item">服务热线</div>
+				<div class="info-item">产品资料</div>
+				<div class="info-item text-right">软件资讯</div>
+				
+				<div class="info-item text-left ">联系我们</div>
+				<div class="info-item">奖项荣誉</div>
+				<div class="info-item">下载中心</div>
+				<div class="info-item">产品试用</div>
+				<div class="info-item text-right">其他</div>
+			</div>
+		</div>
+		<div class="layui-col-xs4 qrcodes">
+			<div class="qrcode">
+				<img class="qrcode-image" src="../sites/www/images/qrcode/wx_gzh.jpg"/>
+				<span class="qrcode-title">微信公众号</span>
+			</div>
+			<div class="qrcode">
+				<img class="qrcode-image" src="../sites/www/images/qrcode/app.jpg"/>
+				<span class="qrcode-title">手机APP</span>
+			</div>
+		</div>
+	</div>
+	<div class="copy-right">Copyright © 2018 广州智能科技发展有限公司，版权所有</div>
+</div>
+
+<script type="text/javascript">
+	layui.use('element', function() {
+		var element = layui.element;
+	});
+</script>			</div>
+		</div>
+		<!-- 页面主体 end -->
+	</div>
+		
+</body>
+	<script type="text/javascript">
+	layui.use(['laypage','jquery'], function(){
+		var $ = layui.jquery;
+	});
+	</script>
+</html>
